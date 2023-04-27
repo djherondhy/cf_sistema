@@ -1,2 +1,2 @@
-# cf_sistema
+# Connect Farma
 Sistema de Gerenciamento para Drogaria Virtual
