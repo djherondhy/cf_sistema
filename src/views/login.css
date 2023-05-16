@@ -54,7 +54,6 @@
     padding: 2%;
 }
 
-
 .login-right form{
     display: flex;
     gap: 1rem;
@@ -81,7 +80,6 @@
   box-shadow: 1px 1px 6px  var(--main-color);
   
 }
-
 
 .title{
     font-size: 1.5rem;
