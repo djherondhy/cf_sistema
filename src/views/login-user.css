@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root{
+    --main-color: #8856f6;
+    --sec-color: #2a1067;
+    --dark-color: #040824;
+    --white-color: #ffffff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--sec-color);
+}
+.login-content{
+    width: 70%;
+    height: 500px;
+    display: flex;
+    overflow: hidden;
+}
+.login-left{
+    flex:auto;
+    height: 100%;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-left h2{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+.login-right{
+    height: 100%;
+    background-color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:auto;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.login-right form{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.login-right input[type="submit"]{
+    width: 150px;
+    padding: 10px;
+    font-family: 'Poppins';
+    background: rgb(136,86,246);
+    background: linear-gradient(90deg, rgba(136,86,246,1) 0%, rgba(52,0,166,1) 50%);
+    border-radius: 30px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+
+.login-right input[type="submit"]:hover{
+  box-shadow: 1px 1px 6px  var(--main-color);
+  
+}
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+.title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.input-agroupt{
+   border-radius: 30px;
+   padding: 10px;
+   width: 200px;
+   border: 1px solid var(--main-color);
+}
+
+
+.input-agroupt svg{
+    position: absolute;
+    fill: var(--main-color);
+}
+.input-agroupt input{
+    margin-left: 30px;
+    border: 0;
+    background: none;
+    outline: 0;
+    color: #fff;
+}
+
+.input-agroupt input::-webkit-input-placeholder{
+    color: var(--main-color);
+}
+
+.text-agroup{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 1rem;
+  
+}
+.text-agroup p {
+    text-align: justify;
+    font-family: 'Poppins';
+    color: var(--dark-color);
+}
