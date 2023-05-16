@@ -126,7 +126,7 @@
     gap: 1rem;
     background: var(--dark-color);
     align-items: center;
-    border-radius: 5%;
+    border-radius: 20px;
 }
 
 .text-agroup h2 {
