@@ -134,9 +134,8 @@
 .img_login{
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 320px;
     gap: 1rem;
-    padding-bottom: 2rem;
 }
 
 
@@ -172,10 +171,12 @@
      }
      
      .login-right img{
+        width: 60%;
+        height: 10rem;
         display: block;
         background-color: var(--main-color) ;
         border-radius: 50%;
-        padding: 10px;
+        padding: none;
      }
 
   }
