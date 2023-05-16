@@ -108,7 +108,11 @@
     outline: 0;
     color: #fff;
 }
-
+.login-right img{
+    width: 100px;
+    height: 100px;
+    display: none;
+}
 .input-agroupt input::-webkit-input-placeholder{
     color: var(--main-color);
 }
@@ -118,13 +122,23 @@
     flex-direction: column;
     width: 400px;
     gap: 1rem;
+    text-align: center;
   
 }
 .text-agroup p {
     text-align: justify;
     font-family: 'Poppins';
-    color: var(--dark-color);
+    color: var(--white-color);
 }
+
+.img_login{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+
 
 @media screen and (max-width: 1024px) {
     .text-agroup{
@@ -157,5 +171,11 @@
         border: 1px solid var(--main-color);
      }
      
+     .login-right img{
+        display: block;
+        background-color: var(--main-color) ;
+        border-radius: 50%;
+        padding: 10px;
+     }
 
   }
