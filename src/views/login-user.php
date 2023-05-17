@@ -13,7 +13,7 @@
             <div class="login-left">
                 
                 <div class="text-agroup">
-                    <h2>Olá Cliente! Bem Vindo ao ConnectFarma!</h2>
+                    <h2>Olá Cliente! Bem Vindo</h2>
                 </div>    
 
                 <div class="img_login">
