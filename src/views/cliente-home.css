@@ -17,12 +17,12 @@
 }
 
 .preco{
-    background-color: #fc0352;
+    background-color:var(--sub-color);
     padding: 0.2rem;
     border-radius: 6px;
     width: 100px;
     text-align:center;
-    color: #fff;
+    color:#fff;
 }
 .container{
    flex: 1; 
@@ -89,7 +89,7 @@
 .product-list{
     display: flex;
     gap: 2rem;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -203,8 +203,9 @@
 }
 
 .action-button button:hover{
-   background-color: var(--sub-color);
+    background-color: #fc0352;
 }
 .action-button button svg{
     fill: var(--white-color);
 }
+
