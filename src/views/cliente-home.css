@@ -8,6 +8,8 @@
     --subsec-color: #210a58;
     --dark-color: #040824;
     --white-color: #ffffff;
+    --gray-color:#878787;
+    
 }
 
 
@@ -180,6 +182,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.search-button svg{
+    fill: #fff;
 }
 
 .action-button{
