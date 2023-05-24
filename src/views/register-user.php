@@ -56,7 +56,7 @@
                     <input type="submit" value="Entrar">
 
                     <div class="register">
-                        <a href="register-administrador.php">Registre-se!</a>
+                        <a href="login-user.php">Home</a>
                     </div>
                 </form>
             </div>
