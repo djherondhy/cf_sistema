@@ -43,6 +43,10 @@
                         <a href="#">Esqueceu sua Senha?</a>
                     </div>
                     <input type="submit" value="Entrar">
+
+                    <div class="register">
+                        <a href="register-administrador.php">Registre-se!</a>
+                    </div>
                 </form>
             </div>
         </div>
