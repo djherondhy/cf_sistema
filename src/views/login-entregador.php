@@ -26,6 +26,8 @@
               
             </div>
             <div class="login-right">
+            <div class="background-circle1"></div>             
+            <div class="background-circle2"></div>       
                 <form action="">
                     <img src="pictures/entrega.gif" alt="Gif Animado">
                     <p class="title">Entregador Login</p>

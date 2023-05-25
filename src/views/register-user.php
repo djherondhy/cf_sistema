@@ -15,20 +15,23 @@
                 <div class="text-agroup">
                     <h2>Olá Cliente! Bem Vindo!</h2>
                 </div>    
+                <div class="text-agroup">
+                    <p>Encontre os melhores produtos, na palma da sua mão!</p>
+                </div>
 
                 <div class="img_register">
                     <img src="pictures/cliente.gif" alt="Gif animado">
                 </div>
 
-                <div class="text-agroup">
-                    <p>Encontre os melhores produtos, na palma da sua mão!</p>
-                </div>
+              
               
             </div>
             <div class="register-right">
+            <div class="background-circle1"></div>             
+            <div class="background-circle2"></div> 
                 <form action="">
                     <img src="pictures/cliente.gif" alt="Gif animado">
-                    <p class="title">Cliente Registro</p>
+                    <p class="title">Criar Conta</p>
 
                     <div class="input-agroupt">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16"><path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/></svg>
@@ -56,7 +59,7 @@
                     <input type="submit" value="Entrar">
 
                     <div class="register">
-                        <a href="register-administrador.php">Registre-se!</a>
+                        <a href="login-user.php">Login</a>
                     </div>
                 </form>
             </div>

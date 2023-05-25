@@ -11,4 +11,9 @@ function showMorePedido(pedidoid){
        
 }
 
+$('#menu-pedidos').click(function(){
+    $('.side-pedido').delay('300').slideToggle('slow');
+})
+
+
 showCarrinho();

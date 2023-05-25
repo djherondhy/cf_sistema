@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,8 +14,9 @@
 
 <body>
     <div class="side-pedido">
-        <p class="title"> 
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <button class="close-btn" id="close-pedidos"> <i class='bx bx-x'></i> </button>
+        <p class="title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path
                     d="M21 11h-3V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v14c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3v-6a1 1 0 0 0-1-1zM5 19a1 1 0 0 1-1-1V5h12v13c0 .351.061.688.171 1H5zm15-1a1 1 0 0 1-2 0v-5h2v5z">
                 </path>
@@ -47,24 +47,24 @@
                     <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
                     <div class="itens-list">
                         <div class="item-pedido">
-                        <p>1x Omeprazol</p>
-                        <p>R$ 8.95</p>
+                            <p>1x Omeprazol</p>
+                            <p>R$ 8.95</p>
                         </div>
                         <div class="item-pedido">
-                        <p>1x Ibrupofeno</p>
-                        <p>R$ 5.75</p>
+                            <p>1x Ibrupofeno</p>
+                            <p>R$ 5.75</p>
                         </div>
                     </div>
 
                     <div class="pedido-info">
-                        <p class="info-text"><i class='bx bx-store' ></i>Retirada</p>
+                        <p class="info-text"><i class='bx bx-store'></i>Retirada</p>
                         <p class="info-text"> <i class='bx bx-money'></i> Dinheiro</p>
                     </div>
                 </div>
             </div>
 
             <div class="pedido-card">
-            <div class="more-btn" id="more-pedido" onclick="showMorePedido(2)">
+                <div class="more-btn" id="more-pedido" onclick="showMorePedido(2)">
                     <i class='bx bx-expand-vertical'></i>
                 </div>
                 <div class="pedido-header">
@@ -79,13 +79,13 @@
                     <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
                     <div class="itens-list">
                         <div class="item-pedido">
-                        <p>1x Omeprazol</p>
-                        <p>R$ 8.95</p>
+                            <p>1x Omeprazol</p>
+                            <p>R$ 8.95</p>
                         </div>
                     </div>
 
                     <div class="pedido-info">
-                        <p class="info-text"> <i class='bx bx-package' ></i> Entrega</p>
+                        <p class="info-text"> <i class='bx bx-package'></i> Entrega</p>
                         <p class="info-text"> <i class='bx bx-wallet'></i> Crédito</p>
                     </div>
                 </div>
@@ -93,8 +93,8 @@
         </div>
 
     </div>
-
     <div class="side-cart">
+        <button class="close-btn" id="close-carrinho"> <i class='bx bx-x'></i> </button>
         <p> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path
                     d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z">
@@ -105,7 +105,7 @@
             Carrinho</p>
         <div class="carrinho-list">
             <?php
-            for ($i = 0; $i < 2; $i++) {
+            for ($i = 0; $i < 5; $i++) {
 
 
                 ?>
@@ -139,7 +139,6 @@
         </div>
     </div>
     <div class="container">
-
         <div class="topbar">
 
             <div class="notificacao">
@@ -158,6 +157,7 @@
         <?php
         include "components/sidebar.php";
         ?>
+
         <div class="section">
             <div class="search-input">
                 <input type="text" placeholder="Pesquisar por medicamento">
@@ -202,7 +202,6 @@
                 </div>
             </div>
         </div>
-
         <div class="section">
             <h2 class="section-title">Produtos Recomendados</h2>
 

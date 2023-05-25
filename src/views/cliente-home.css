@@ -9,9 +9,28 @@
     --dark-color: #040824;
     --white-color: #ffffff;
     --gray-color:#878787;
-    
+    --red-color: #fc0352;
 }
 
+.close-btn{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: var(--red-color);
+    border: 1px solid var(--red-color);
+    background: none;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+
+.close-btn:hover{
+    background: var(--red-color);
+    color: var(--white-color);
+}
 
 *{
     padding: 0;

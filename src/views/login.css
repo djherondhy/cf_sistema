@@ -20,23 +20,27 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: var(--dark-color);
+   
 }
 
 .login-content{
-    width: 70%;
-    height: 500px;
     display: flex;
+    flex-direction: row-reverse;
     overflow: hidden;
+    flex:1;
+    height: 100%;
+    width: 100%;
 }
 .login-left{
     flex:auto;
     height: 100%;
-    background-color: var(--main-color);
+    background: rgb(136,86,246);
+    background: linear-gradient(90deg, rgba(136,86,246,1) 0%, rgba(56,26,122,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+   
 }
 
 .login-left h2{
@@ -52,7 +56,10 @@
     justify-content: center;
     flex:auto;
     font-family: 'Poppins', sans-serif;
+   
+    position: relative;
     padding: 2%;
+    
 }
 
 .login-right form{
@@ -61,6 +68,7 @@
     flex-direction: column;
     align-items: center;
     color: #fff;
+    z-index: 2;
 }
 
 .login-right input[type="submit"]{
@@ -111,6 +119,7 @@
     width: 100px;
     height: 100px;
     display: none;
+   
 }
 .input-agroupt input::-webkit-input-placeholder{
     color: var(--main-color);
@@ -121,13 +130,14 @@
     flex-direction: column;
     width: 400px;
     gap: 1rem;
-    text-align: center;
+    text-align: left;
 }
 .text-agroup p{
-    text-align: center;
     font-family: 'Poppins';
     color: var(--white-color);
+    text-align: justify;
 }
+
 
 .img_login{
     display: flex;
@@ -154,11 +164,51 @@
     font-size: 1rem;
 }
 
+.register{
+    border: 1px solid var(--main-color);
+     width: 150px;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0px;
+    border-radius: 30px;
+}
+
 .register :hover{
     color: var(--main-color);
     text-decoration: none;
     font-size: 1rem;
 }
+
+.background-circle1{
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    bottom: 0;
+    text-align: center;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    top: -50px;
+    left: -50px;
+    z-index: 1;
+}
+
+.background-circle2{
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    bottom: 0;
+    text-align: center;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    bottom: -50px;
+    right: -50px;
+    z-index: 1;
+}
+
+
+
+
 
 
 @media screen and (max-width: 1024px) {
@@ -196,9 +246,26 @@
         width: 60%;
         height: 10rem;
         display: block;
-        background-color: var(--main-color) ;
         border-radius: 50%;
-        padding: none;
+        padding: 10px;
+        object-fit: contain;
+        aspect-ratio: 3/4;
+        background-color:  var(--main-color);
      }
 
+  }
+
+  @media screen and (max-width: 555px){
+    .background-circle1{
+       width: 200px;
+       height: 200px;
+       top: -100px;
+       left: -100px;
+    }
+
+    .login-right img{
+      
+        background-color: none;
+       
+     }
   }
