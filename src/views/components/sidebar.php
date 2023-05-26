@@ -18,6 +18,7 @@
 
     .sidebar-active {
         background-color: var(--sub-color);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)
     }
 
     .sidebar-item {
@@ -39,16 +40,33 @@
     }
 
     .sidebar-item:hover {
-        background-color: var(--sec-color);
+        background-color: var(--sub-color);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)
     }
 
     .sidebar-active:hover {
         background-color: var(--sub-color);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37)
     }
 
     .sidebar-item svg {
         fill: var(--white-color);
     }
+
+    @media screen and (max-width: 650px){
+    .sidebar{
+        width: 100%;
+        flex-direction: row;
+        height: auto;
+        top: auto;
+        bottom: 0;
+        z-index: 999;
+        justify-self: center;
+        
+    }
+   
+}
+
 </style>
 
 <div class="sidebar">

@@ -13,7 +13,7 @@
             <div class="login-left">
 
                 <div class="text-agroup">
-                    <h2>Olá entregador! Bem Vindo!</h2>
+                    <h2>Olá entregador, Seja Bem Vindo!</h2>
                 </div>    
 
                 <div class="img_login">

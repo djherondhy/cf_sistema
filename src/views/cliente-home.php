@@ -13,6 +13,10 @@
 </head>
 
 <body>
+    
+<?php
+        include "components/sidebar.php";
+        ?>
     <div class="side-pedido">
         <button class="close-btn" id="close-pedidos"> <i class='bx bx-x'></i> </button>
         <p class="title">
@@ -105,7 +109,7 @@
             Carrinho</p>
         <div class="carrinho-list">
             <?php
-            for ($i = 0; $i < 5; $i++) {
+            for ($i = 0; $i < 2; $i++) {
 
 
                 ?>
@@ -141,22 +145,42 @@
     <div class="container">
         <div class="topbar">
 
-            <div class="notificacao">
+            <div class="notificacao" id="notificacao-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <circle cx="18" cy="6" r="3"></circle>
                     <path
                         d="M18 19H5V6h8c0-.712.153-1.387.422-2H5c-1.103 0-2 .897-2 2v13c0 1.103.897 2 2 2h13c1.103 0 2-.897 2-2v-8.422A4.962 4.962 0 0 1 18 11v8z">
                     </path>
                 </svg>
+                <div class="notificacao-modal">
+                    <div class="notificacao-item">
+                        <div class="notificacao-icon">
+                        <i class='bx bx-cycling'></i>
+                        </div>
+                        <div class="notificacao-text">
+                            <p>Seu pedido número #10056 saiu para entrega.</p>
+                            <p>10/05/2023 14:30 </p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="notificacao-item">
+                        <div class="notificacao-icon">
+                        <i class='bx bx-package'></i>
+                        </div>
+                        <div class="notificacao-text">
+                            <p>Seu pedido número #10056 foi confirmado.</p>
+                            <p>10/05/2023 14:30 </p>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
             <div class="user-perfil">
                 <img src="pictures/perfil-mockup.jpg" alt="" srcset="">
             </div>
         </div>
 
-        <?php
-        include "components/sidebar.php";
-        ?>
 
         <div class="section">
             <div class="search-input">
@@ -203,10 +227,18 @@
             </div>
         </div>
         <div class="section">
-            <h2 class="section-title">Produtos Recomendados</h2>
+        <h2 class="section-title">Produtos Recomendados</h2>
+        <div class="carousel-produtos">
+        <div class="left-btn">
+               < 
+            </div>
+           
+           
+            
 
+           
             <div class="product-list">
-
+           
                 <div class="product-card">
                     <div class="action-button">
                         <button>
@@ -237,7 +269,7 @@
                     </div>
                 </div>
                 <?php
-                for ($i = 0; $i < 3; $i++) {
+                for ($i = 0; $i < 20; $i++) {
 
 
                     ?>
@@ -274,6 +306,12 @@
                     <?php
                 }
                 ?>
+
+            </div>
+
+            <div class="right-btn">
+               >
+            </div>
 
             </div>
 

@@ -14,7 +14,7 @@
             <div class="login-left">
            
                 <div class="text-agroup">
-                    <h2>Olá Cliente! Bem Vindo</h2>
+                    <h2>Olá Cliente, Seja Bem Vindo</h2>
                 </div>    
                 <div class="text-agroup">
                 <p>Os melhores produtos farmacêuticos ao seu alcance, faça seu login escolha seu produto e receba onde quiser.</p>
