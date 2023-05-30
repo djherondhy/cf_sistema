@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {
+    --main-color: #8856f6;
+    --sub-color: #7234fa;
+    --sec-color: #2a1067;
+    --subsec-color: #210a58;
+    --dark-color: #040824;
+    --white-color: #ffffff;
+    --gray-color: #878787;
+    --red-color: #fc0352;
+    --dark-gray: #454545;
+    
+}
+
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins';
+    overflow: hidden;
+}
+
+.sidemenu {
+    width: 300px;
+    height: 95%;
+    border-radius: 30px;
+    background: #ffffff;
+    margin: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.action-btns {
+    padding: 1rem;
+    justify-content: space-around;
+    padding: 0.5rem;
+   
+}
+
+.action-btns button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    border: 0;
+    color: #fff;
+}
+
+.content{
+    padding: 1rem;
+    height: 95%;
+    width: 60%;
+    gap: 2rem;
+}
+
+.perfil-area{
+   gap: 0.2rem;
+}
+
+.perfil-area img{
+    width:100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid var(--white-color);
+    background-color: var(--main-color);
+    aspect-ratio: 3/4;
+}
+
+.perfil-area .username{
+    color:var(--sub-color);
+    font-weight: bold;
+}
+.perfil-area .welcome{
+    color: var(--gray-color)
+}
+
+.pedido-card .infos{
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+}
+
+.card-column{
+    width: 30%;
+    gap: 0.5rem;
+    color: var(--gray-color);
+
+}
+
+.infos i{
+    color: var(--main-color);
+}
+
+.sidemenu .menu{
+    padding: 1rem !important;
+    gap: 0.5rem;
+}
+
+
+
+.menu a{
+  width: 90%;
+  border-radius: 10px;
+  text-decoration: none;
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 20px;
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+  font-family: 'Poppins';
+}
+
+.menu-active{
+    background-color: var(--main-color);
+    color: var(--white-color) !important;
+   
+}
+
+.info-list-cards{
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.info-list-cards .card{
+    background-color: var(--white-color);
+    box-shadow: 6px 6px 10px #ccc;;
+    padding: 1rem;
+    width: 200px;
+    border-radius: 10px;
+    color: var(--main-color);
+    position: relative;
+}
+
+.card-icon{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 30px;
+    height: 30px;
+    color: var(--white-color);
+    background-color: var(--main-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:  6px 6px 6px #f0f0f0;
+}
+.card-info{
+    font-size: 1.2rem;
+    color: var(--subsec-color);
+    font-family: 'Roboto';
+    font-weight: bold;
+}
+
+.card-subinfo{
+    font-size: 0.9rem;
+}
+
+.pedidos{
+    width: 300px;
+    height: 95%;
+    background: #efecf0;
+    border-radius: 30px;
+    margin: 1rem;
+    color: var(--dark-color);
+}
+
+.pedidos-list{
+    gap: 1rem;
+}
+.pedido-card{
+    background-color: var(--white-color);
+    border-radius: 6px;
+    width: 75%;
+    font-size: 0.8rem;
+    padding: 1rem;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+.pedido-title{
+    font-weight: bold;
+}
+.infos span{
+    font-weight: lighter;
+    color: var(--gray-color);
+}
+.pedido-card .cards{
+    display: flex;
+    gap: 1rem;
+}
+.pedido-card .cards p{
+    padding: 0.3rem;
+    color: var(--white-color);
+    background-color: var(--gray-color);
+    border-radius: 6px;
+}
+.pedidos-header{padding: 1rem;}
+
+.pedido-btns{
+    display: flex;
+    gap: 1rem;
+}
+
+.pedido-btns button{
+    color: var(--white-color);
+    background: var(--main-color);
+    border: 0;
+    padding: 0.5rem;
+    width: 100px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.cancel-btn{
+    background-color: var(--red-color) !important;
+}
+
+.clientes-online{
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 150px;
+    border-radius: 30px;
+    padding: 1rem;
+    box-shadow:  17px 17px 34px #bebebe,
+                -17px -17px 34px #ffffff;
+    border-radius: 30px;
+}
+
+.entregadores-online{
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 150px;
+    border-radius: 30px;
+    padding: 1rem;
+    box-shadow:  17px 17px 34px #bebebe,
+                -17px -17px 34px #ffffff;
+    border-radius: 30px;
+}
+.clientes-list{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.online-card{
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.2rem;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.online-card img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    aspect-ratio: 3/4;
+  
+}
+
+.section-title{
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.cliente-nome{
+    width:30%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cliente-column{
+    width:30%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray-color);
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.online{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #31e04c;
+}
+
+.offline{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--gray-color);
+}
+
+
+
+
+
