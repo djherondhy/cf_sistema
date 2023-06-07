@@ -231,7 +231,7 @@
                 </div>
 
                 <div class="info-perfil-senha">
-                    <i class='bx bxs-lock' style="color:white; margin-left:1rem;"></i>
+                    <i class='bx bxs-lock' style="color:green; margin-left:1rem;"></i>
                     <input type="password" value="brunamarquezine" readonly>
                 </div>
             </div>
