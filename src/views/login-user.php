@@ -46,7 +46,7 @@
                         <a href="#">Esqueceu sua Senha?</a>
                     </div>
 
-                    <input type="submit" value="Entrar">
+                    <input type="submit" value="Entrar">    
 
                     <div class="register">
                         <a href="register-user.php">Registre-se!</a>
