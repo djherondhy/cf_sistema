@@ -1,28 +1,24 @@
-
+//home-cliente
 $('.side-cart').hide();//esconde carrinho
 $('.pedido-content').hide();
 $('.side-pedido').hide();
 $('.notificacao-modal').hide();
 
-//fecha carrinho
-$('#close-pedidos').click(function(){
-    $('.side-pedido').delay('300').slideToggle('slow');
-})
+//painel-produtos
+$('.secoes').hide();
+$('.cadastro-container').hide();
 
-//fecha carrinho
-$('#close-carrinho').click(function(){
-    $('.side-cart').delay('300').slideToggle('slow');
-})
 
-//abre e fecha notificacao
-$('#notificacao-btn').click(function(){
-    $('.notificacao-modal').delay('300').slideToggle('slow');
-})
+$('.confirm-container ').hide();
+$('.filtro-container').hide();
+$('.produto-detalhes').hide();
+
+
 
 //fecha notificacao se clicar fora
 
 
-
+//scroll produtos home
   $('.left-btn').click(function(){
     $('.product-list').animate({
         scrollLeft: "-=200px"

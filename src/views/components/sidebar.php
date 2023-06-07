@@ -55,16 +55,48 @@
 
     @media screen and (max-width: 650px){
     .sidebar{
-        width: 100%;
+        width: 95%;
         flex-direction: row;
         height: auto;
         top: auto;
+        justify-content: space-between;
+        padding: 1rem;
         bottom: 0;
+        left: 0;
+        border-radius: 30px 30px 0px 0px;
         z-index: 999;
-        justify-self: center;
-        
+
     }
+
+
    
+}
+
+@media screen and (max-width: 450px){
+    .sidebar-item{
+        width: 35px;
+        height: 35px;
+    }
+
+    .sidebar{
+        width: 93%;
+        justify-content: space-between;
+        padding: 1rem;
+        bottom: 0;
+        border-radius: 30px 30px 0px 0px;
+    }
+}
+
+@media screen and (max-width: 450px){
+ 
+
+    .sidebar{
+        width: 92%;
+        justify-content: space-between;
+        padding: 1rem;
+        bottom: 0;
+        border-radius: 30px 30px 0px 0px;
+    }
 }
 
 </style>

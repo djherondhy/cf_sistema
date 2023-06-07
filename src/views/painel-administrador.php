@@ -9,33 +9,15 @@
     <link rel="stylesheet" href="painel-administrador.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="preset.css">
+    <link rel="stylesheet" href="sidemenu.css">
     <script src="pluguins/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
-    <div class="container h-align">
-        <div class="sidemenu v-align neomorphism">
-            <div class="action-btns h-align h-center">
-                <p>ConnectFarma</p>
-                <div>
-                    <button><i class='bx bx-log-out'></i></button>
-                </div>
-            </div>
-            <div class="perfil-area v-align vh-center">
-                <img src="pictures/dj.jpg" alt="" srcset="">
-                <p class="username">Administrador</p>
-                <p class="welcome">Bem Vindo</p>
-            </div>
-            <div class="menu v-align h-center">
-                <a href="" class="menu-active"><i class='bx bx-scatter-chart'></i> Painel de Dados</a>
-                <a href="painel-pedido.php"><i class='bx bx-scatter-chart'></i> Pedidos</a>
-                <a href=""><i class='bx bx-scatter-chart'></i> Produtos</a>
-                <a href=""><i class='bx bx-store-alt'></i> Catálogo</a>
-                <a href=""><i class='bx bx-scatter-chart'></i> Recursos Humanos</a>
-            </div>
-        </div>
+    <div class="container h-align v-center">
+    <?php include 'components/sidemenu.php';?>
 
-        <div class="content v-align h-center">
+        <div class="content v-align">
             <div class="info-list-cards h-align">
                 <div class="card">
                     <div class="card-icon"> <i class='bx bx-scatter-chart'></i></div>
@@ -55,7 +37,7 @@
             </div>
             <div class="clientes-online v-align ">
                 <p class="section-title">Clientes Ativos</p>
-                <div class="clientes-list">
+                <div class="clientes-list h-center">
                     <div class="online-card">
                         <div class="cliente-nome">
 
@@ -110,60 +92,61 @@
                 </div>
             </div>
 
-            <div class="entregadores-online h-align">
+            <div class="entregadores-online v-align">
                 <p class="section-title">Entregadores Ativos</p>
-                <div class="entregador-list v-align">
+                <div class="entregadores-list v-align">
                     <div class="online-card">
-                        <div class="card-column h-align h-center">
+                        <div class="card-column h-align v-center">
 
                         </div>
-                        <div class="card-column h-align h-center">
+                        <div class="card-column h-align v-center">
                             <p>Atividade</p>
                         </div>
-                        <div class="card-column h-align h-center">
+                        <div class="card-column h-align v-center">
                             <p>Comissão</p>
                         </div>
                     </div>
                     <div class="online-card">
-                        <div class="card-column h-align h-center">
+                        <div class="card-column h-align v-center">
                             <img src="pictures/perfil-mockup.jpg" alt="" srcset="">
                             <p>Marcio Freitas</p>
                         </div>
-                        <div class="card-column  h-align h-center">
+                        <div class="card-column  h-align v-center">
                             <div class="online"></div>
                             <p>Online há 22 minutos</p>
                         </div>
-                        <div class="card-column  h-align h-center">
+                        <div class="card-column  h-align v-center">
                             <p>R$ 10.72</p>
                         </div>
                     </div>
                     <div class="online-card">
-                        <div class="card-column h-align h-center">
+                        <div class="card-column h-align v-center">
                             <img src="pictures/perfil-mockup.jpg" alt="" srcset="">
                             <p>Marcio Freitas</p>
                         </div>
-                        <div class="card-column h-align h-center">
+                        <div class="card-column h-align v-center">
                             <div class="online"></div>
                             <p>Online há 22 minutos</p>
                         </div>
-                        <div class="card-column  h-align h-center">
+                        <div class="card-column  h-align v-center">
                             <p>R$ 10.72</p>
                         </div>
                     </div>
                     <div class="online-card">
-                        <div class="card-column h-align h-center">
+                        <div class="card-column h-align v-center">
                             <img src="pictures/bruno.jpg" alt="" srcset="">
                             <p>Marcio Freitas</p>
                         </div>
-                        <div class="card-column  h-align h-center">
+                        <div class="card-column  h-align v-center">
                             <div class="online"></div>
                             <p>Online há 22 minutos</p>
                         </div>
-                        <div class="card-column  h-align h-center">
+                        <div class="card-column  h-align v-center">
                             <p>R$ 10.72</p>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="pedidos">
@@ -171,7 +154,7 @@
                 <p> Pedidos Recentes </p>
             </div>
 
-            <div class="pedidos-list v-align h-center">
+            <div class="pedidos-list v-align v-center">
                 <div class="pedido-card">
                     <p class="pedido-title infos">Pedido #12345 <span>Há 9 minutos</span></p>
                     <p class="infos"><i class='bx bx-user'></i> Jorge Souza</p>
