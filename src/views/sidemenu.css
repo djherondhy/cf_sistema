@@ -1,0 +1,69 @@
+
+.sidemenu {
+    width: 300px;
+    height: 95%;
+    border-radius: 30px;
+    background: #ffffff;
+    margin: 0.5rem;
+    
+}
+
+.action-btns {
+    padding: 1rem;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.action-btns button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    border: 0;
+    color: #fff;
+}
+
+.perfil-area{
+   gap: 0.2rem;
+}
+
+.perfil-area img{
+    width:100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid var(--white-color);
+    background-color: var(--main-color);
+    aspect-ratio: 3/4;
+}
+
+.perfil-area .username{
+    color:var(--sub-color);
+    font-weight: bold;
+}
+.perfil-area .welcome{
+    color: var(--gray-color)
+}
+
+.sidemenu .menu{
+    padding: 1rem !important;
+    gap: 0.5rem;
+}
+
+.menu a{
+  width: 90%;
+  border-radius: 10px;
+  text-decoration: none;
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 20px;
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+
+}
+
+.menu-active{
+    background-color: var(--main-color);
+    color: var(--white-color) !important;
+}
