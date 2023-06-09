@@ -24,7 +24,7 @@
     background-color: var(--main-color);
     padding: 0.5rem;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 30px;
     border: 0;
     color: var(--white-color);
     cursor:pointer
@@ -246,8 +246,8 @@ section {
 
 .produtos-table .head{
     border-radius: 30px;
-    font-weight: bold;
-
+    font-weight: 600;
+    color: var(--dark-gray);
 }
 
 .produtos-table td{
@@ -301,138 +301,5 @@ section {
 
 .delete{
     background-color: var(--red-color) !important;
-}
-
-.cadastro-container{
-    position: fixed;
-    background: rgba( 65, 63, 63, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    width: 100vw;
-    height: 100vh;
-   
-}
-
-.form-produto{
-    width: 60%;
-    background-color: #fff;
-    border-radius: 30px;
-    padding: 1rem;
-    min-height: 400px;
-    gap: 1rem;
-    position: relative;
-}
-
-.form-produto .close-btn{
-    top: 1rem;
-    right: 1rem;
-}
-.form-produto .formulario{
-    width: 100%;
-    gap: 1rem;
-}
-.inputs{
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    color: var(--dark-gray);
-}
-
-.input-row{
-    gap: 1rem;
-    width: 90%;
-    font-size: 0.9rem;
-    flex-wrap: wrap;
-}
-
-.input-row label{
-    font-weight: 700;
-}
-
-.input-row input[type="text"]{
-    border-radius: 6px;
-    padding: 0.5rem;
-    border: 1px solid var(--gray-color);
-    outline-color: var(--main-color);
-}
-.input-row input[type="number"]{
-    border-radius: 6px;
-    padding: 0.5rem;
-    border: 1px solid var(--gray-color);
-    outline-color: var(--main-color);
-}
-
-.input-row input[type="date"]{
-    border-radius: 6px;
-    padding: 0.3rem;
-    border: 1px solid var(--gray-color);
-    outline-color: var(--main-color);
-   
-}
-.img-input input{
-    display: none;
-}
-
-.input-row select{
-    border-radius: 6px;
-    padding: 0.4rem;
-    border: 1px solid var(--gray-color);
-    outline: 1px;
-    outline-color: var(--main-color);
-   
-}
-
-
-.input-row select:focus{
-    border: 1px solid var(--main-color);
-}
-
-.agroup-input{
-    flex: auto;
-    gap: 0.2rem;
-}
-
-.agroup-input textarea{
-    height: 100px;
-    border-radius: 6px;
-    border: 1px solid var(--gray-color);
-    resize: none;
-    outline-color: var(--main-color);
-    padding: 0.5rem;
-}
-
-.img-input{
-    width: 250px;
-    border: 3px dotted var(--gray-color);
-    border-radius: 30px;
-    height: 250px;
-    color: var(--gray-color);
-    gap: 0.5rem;
-}
-
-.img-input label{
-    z-index: 10;
-    cursor: pointer;
-}
-.action-row{
-    width: 90%;
-    justify-content: flex-end;
-}
-
-.action-row input{
-    background-color: var(--main-color);
-    border-radius: 30px;
-    padding: 0.5rem 1.5rem;
-    border: 0;
-    color: var(--white-color);
-   
-}
-
-#previewProduto{
-    width: 90%;
-    max-height: 100px;
-    object-fit: contain;
-    aspect-ratio: 3/4;
 }
 

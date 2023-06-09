@@ -17,6 +17,7 @@ function getMedicamento(id_produto) {
             $('#detalhe_nome').empty().append(response.nome_comercial);
             $('#detalhe_descricao').empty().append(response.descricao);
             $('#detalhe_categoria').empty().append(response.categoria);
+            $('#detalhe_preco').empty().append('R$ '+response.preco);
             $('#detalhe_secao').empty().append(response.secao);
         }
     });

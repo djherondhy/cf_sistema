@@ -35,4 +35,25 @@
     }
 }
 
+    if($data['tabela'] == 'secao'){
+       $sql = "INSERT INTO `secao` (`codigo`,`localizacao`)VALUES(:codigo, :localizacao)";
+       $stmt = $conn->prepare($sql);
+       $stmt->bindParam(':codigo', $data['codigo']);
+       $stmt->bindParam(':localizacao', $data['localizacao']);
+
+       if($stmt->execute()){
+        $response = array(
+            'error'=> false,
+            'message'=> 'Seção Cadastrada'
+        );
+        echo json_encode($response);
+    }else{
+        $response = array(
+            'error'=> true,
+            'message'=> 'Seção Não Cadastrado'
+        );
+        echo json_encode($response);
+    }
+    }
+
 ?>

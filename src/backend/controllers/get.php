@@ -15,4 +15,13 @@
     }
   }
 
+  if($tabela == 'secao'){
+    $sql = "SELECT * FROM `secao`";
+    $stmt = $conn->prepare($sql);
+
+    if($stmt->execute()){
+         echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+    }
+  }
+
 ?>

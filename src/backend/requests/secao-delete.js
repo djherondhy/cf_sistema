@@ -1,5 +1,4 @@
-
-function deleteProdutos(id_produto){
+function deleteSecao(id_secao){
     $('.confirm-container').fadeIn('slow');
     $('#cancelar').click(function(){
         $('.confirm-container').fadeOut('slow');
@@ -8,9 +7,9 @@ function deleteProdutos(id_produto){
         $.ajax({
             url: '../backend/controllers/delete.php',
             data: {
-                id: id_produto,
-                tabela: 'medicamentos',
-                coluna: 'id_medicamento'
+                id: id_secao,
+                tabela: 'secao',
+                coluna: 'id_secao'
             },
             method: 'POST',
             dataType: 'json',
@@ -23,8 +22,9 @@ function deleteProdutos(id_produto){
                 console.log(error);
             }
         });
-        getProdutos();
-
+        $('.confirm-container').fadeOut('slow');
+        getSecao();
+        populateProdutos();
         
     });
     

@@ -17,119 +17,14 @@ include '../backend/config/connection.php';
 </head>
 
 <body>
-    <?php include 'components/confirm.php'?>
-    <?php include 'components/filtro-produtos.php' ?>
-    <?php include 'components/produto-view.php' ?>
+    <?php include 'components/confirm.php';?>
+    <?php include 'components/filtro-produtos.php'; ?>
+    <?php include 'components/produto-view.php'; ?>
+    <?php include 'components/secao-form.php'; ?>
+    <?php include 'components/cadastro-form.php'; ?>
+    <?php include 'components/secao-modal.php' ?>
+    <?php #include 'components/fornecedores-modal.php' ?>
     
-    <div class="cadastro-container v-align vh-center">
-        <div class="form-produto v-align">
-            <button class="close-btn" id="close-prodcad"><i class='bx bx-x'></i></button>
-            <p class="title">Novo Produto</p>
-            <form action="" class="h-align formulario" id="form-produto">
-                <div class="img-input v-align vh-center">
-                    <img src="" alt="" srcset="" id="previewProduto">
-                    <label for="imagem">Upload Imagem</label>
-                    <input type="file" name="imagem" id="imagem">
-                </div>
-                
-                <div class="inputs v-align">
-                    <div class="input-row h-align">
-                        <div class="agroup-input v-align">
-                            <label for="p-nome-comercial">Nome Comercial</label>
-                            <input type="text" id="p-nome-comercial" name="nome_comercial"
-                                placeholder="Ex.. Omeprazol 100Mg">
-                        </div>
-                        <div class="agroup-input v-align">
-                            <label for="p-categoria">Categoria</label>
-                            <select name="categoria" id="p-categoria">
-                                <option value="Genérico">Genérico</option>
-                                <option value="Alopáticos">Alopáticos</option>
-                                <option value="Similar">Similar</option>
-                                <option value="Fitoterápicos">Fitoterápicos</option>
-                                <option value="Homeopáticos">Homeopáticos</option>
-                                <option value="Controlados">Controlados</option>
-                                <option value="Biológicos">Biológicos</option>
-                                <option value="Fracionados">Fracionados</option>
-                                <option value="Outros">Outros</option>
-                            </select>
-                        </div>
-                        <div class="agroup-input v-align">
-                            <label for="p-secao">Seção</label>
-                            <select name="secao" id="p-secao">
-                                <option value="Genérico">AB 123</option>
-                                <option value="Genérico">AB 123</option>
-                                <option value="Genérico">AB 123</option>
-                            </select>
-                        </div>
-                    </div>
-
-
-
-                    <div class="input-row h-align">
-                        <div class="agroup-input v-align">
-                            <label for="p-descricao">Descrição</label>
-                            <textarea name="descricao" id="p-descricao" placeholder="Descreva o produto"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="input-row h-align">
-                        <div class="agroup-input v-align">
-                            <label for="p-preco">Preço R$</label>
-                            <input type="text" id="p-preco" name="preco" placeholder="0.00">
-                        </div>
-                        <div class="agroup-input v-align">
-                            <label for="p-quantidade">Quantidade</label>
-                            <input type="number" id="p-quantidade" name="quantidade" placeholder="0">
-                        </div>
-                        <div class="agroup-input v-align">
-                            <label for="p-validade">Validade</label>
-                            <input type="date" id="p-validade" name="validade">
-                        </div>
-                    </div>
-                    <div class="action-row h-align">
-                        <input type="submit" value="Salvar Produto">
-                    </div>
-
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="secoes v-align">
-        <button class="close-btn" id="close-secoes"><i class='bx bx-x'></i></button>
-        <p class="title">Seções</p>
-        <div class="action h-align">
-            <div class="busca h-align"><input type="text" placeholder="Procura por código da seção"> <button> <i
-                        class='bx bx-search'></i></button></div>
-            <button class="add neomorphism">+ Adicionar</button>
-        </div>
-        <div class="secao-table">
-            <table>
-                <tr>
-                    <td>Código</td>
-                    <td>Localização</td>
-                    <td>Ações</td>
-                </tr>
-                <tr>
-                    <td>AB-78</td>
-                    <td>Prateleira 7, coluna 8</td>
-                    <td>
-                        <button><i class='bx bxs-edit'></i></button>
-                        <button class="delete"><i class='bx bxs-trash-alt'></i></button>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>AB-78</td>
-                    <td>Prateleira 7, coluna 8</td>
-                    <td>
-                        <button><i class='bx bxs-edit'></i></button>
-                        <button class="delete"><i class='bx bxs-trash-alt'></i></button>
-
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
     <div class="container h-align v-center">
         <?php include 'components/sidemenu.php';?>
         <div class="content v-align">
@@ -227,8 +122,11 @@ include '../backend/config/connection.php';
     <script src="../backend/requests/produto-post.js"></script>
     <script src="../backend/requests/produto-delete.js"></script>
     <script src="../backend/requests/produto-get.js"></script>
-    
     <script src="../backend/requests/produto-filter.js"></script>
+    <script src="../backend/requests/secao-post.js"></script>
+    <script src="../backend/requests/secao-get.js"></script>
+    <script src="../backend/requests/secao-delete.js"></script>
+    <script src="../backend/requests/populate.js"></script>
     <script>
     </script>
 </body>

@@ -18,7 +18,7 @@ $('#form-produto').submit(function(e){
     };
 
     var dadosJson = JSON.stringify(dados);
-   
+    
 
     $.ajax({
         url: '../backend/controllers/post.php',

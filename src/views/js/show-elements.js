@@ -39,6 +39,13 @@ $('#close-prodcad').click(function(){
         $('.cadastro-container').fadeOut('slow');
 });
 
+$('#close-secaocad').click(function(){
+        $('.secao-container').fadeOut('slow');
+});
+
+$('#btn-novasecao').click(function(){
+        $('.secao-container').fadeIn('slow');
+})
 $('#btn-novoproduto').click(function(){
         $('.cadastro-container').fadeIn('slow');
 })

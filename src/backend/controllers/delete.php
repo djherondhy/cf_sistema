@@ -6,9 +6,9 @@
 
   $tabela = $_POST['tabela'];
   $id = $_POST['id'];
-  if($tabela == 'medicamentos'){
+  $coluna = $_POST['coluna'];
 
-    $sql = "DELETE FROM `medicamentos` WHERE `id_medicamento` = $id";
+    $sql = "DELETE FROM `$tabela` WHERE `$coluna` = $id";
     $stmt = $conn->prepare($sql);
 
     if($stmt->execute()){
@@ -24,7 +24,7 @@
         );
         echo json_encode($response);
     }
-  }
+
  
 
 ?>
