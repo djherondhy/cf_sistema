@@ -177,7 +177,7 @@
                 </div>
             </div>
             <div class="user-perfil">
-                <img src="pictures/perfil-mockup.jpg" alt="" srcset="">
+                <img src="pictures/neymar.jpg" alt="" srcset="">
             </div>
         </div>
 

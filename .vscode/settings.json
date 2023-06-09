@@ -1,4 +1,6 @@
 {
     "C_Cpp.errorSquiggles": "enabled",
-    "C_Cpp.default.compilerPath": ""
+    "files.associations": {
+        "stdio.h": "c"
+    }
 }
