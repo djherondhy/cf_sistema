@@ -13,7 +13,7 @@ $('.confirm-container ').hide();
 $('.filtro-container').hide();
 $('.produto-detalhes').hide();
 $('.secao-container').hide();
-
+$('.detalhes-container').hide();
 
 //fecha notificacao se clicar fora
 
