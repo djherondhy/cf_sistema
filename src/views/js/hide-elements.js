@@ -16,6 +16,7 @@ $('.secao-container').hide();
 
 $('.fornecedores-container').hide();
 $('.fornecedor-cadastro').hide();
+$('.detalhes-container').hide();
 
 //fecha notificacao se clicar fora
 

@@ -10,9 +10,14 @@
     <link rel="stylesheet" href="pedido-sidebar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="pluguins/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="preset.css">
 </head>
 
 <body>
+
+<?php
+        include "components/detalhes.php";
+        ?>
     
 <?php
         include "components/sidebar.php";
@@ -232,10 +237,6 @@
         <div class="left-btn">
                < 
             </div>
-           
-           
-            
-
            
             <div class="product-list">
            
