@@ -71,3 +71,19 @@ button{
 input[type="submit"]{
     cursor: pointer;
 }
+
+.search-input{
+    display: flex;
+    border: 1px solid var(--main-color);
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 0.1rem;
+}
+
+.search-input input{
+    padding: 0.5rem;
+    border: 0;
+    outline: 0;
+    background: none;
+    color: var(--gray-color);
+}

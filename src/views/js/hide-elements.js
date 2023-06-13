@@ -14,6 +14,8 @@ $('.filtro-container').hide();
 $('.produto-detalhes').hide();
 $('.secao-container').hide();
 
+$('.fornecedores-container').hide();
+$('.fornecedor-cadastro').hide();
 
 //fecha notificacao se clicar fora
 

@@ -61,3 +61,19 @@ $('#close-filtroProd').click(function(){
 $('#close-detalhes').click(function(){
         $('.produto-detalhes').fadeOut('slow');
 })
+
+$('#close-fornecedores').click(function(){
+        $('.fornecedores-container').fadeOut('slow');
+})
+
+$('#btn-fornecedores').click(function () {
+        $('.fornecedores-container').fadeIn('slow');
+})
+
+$('#btn-novoFornecedor').click(function(){
+        $('.fornecedor-cadastro').fadeIn('slow');
+})
+
+$('#close-fornCad').click(function(){
+        $('.fornecedor-cadastro').fadeOut('slow');
+})
