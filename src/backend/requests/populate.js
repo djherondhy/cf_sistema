@@ -5,7 +5,7 @@ function populateProdutos(){
         data:{tabela: 'secao'},
         dataType:'json',
         success: function(response){
-            $('#p-secao option').remove();
+            $('#p-secao option').slice(1).remove();
             
             var length = response.length;
 
@@ -22,4 +22,29 @@ function populateProdutos(){
 
 }
 
+function populateFornecedores(){
+    $.ajax({
+        url: '../backend/controllers/get.php',
+        method: 'POST',
+        data:{tabela: 'fornecedores'},
+        dataType:'json',
+        success: function(response){
+            $('#p-fornecedor option').slice(1).remove();
+            
+            var length = response.length;
+
+            for(var i = 0; i< length; i++){
+                $('#p-fornecedor').append('<option value="'+response[i].codigo+'">#'+response[i].codigo+' '+response[i].nome_fantasia+'</option>');
+
+            }
+
+        },
+        error: function(status, error){
+            console.log(error);
+        }
+     })
+
+}
+
+populateFornecedores();
 populateProdutos();

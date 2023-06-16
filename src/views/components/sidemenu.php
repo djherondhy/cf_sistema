@@ -1,5 +1,8 @@
 <?php
 ?>
+<style>
+    
+</style>
 <div class="sidemenu v-align neomorphism">
     <div class="action-btns h-align v-center">
         <p>ConnectFarma</p>

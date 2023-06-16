@@ -5,23 +5,19 @@
   require_once '../config/connection.php';
 
   $tabela = $_POST['tabela'];
+ 
   
-  if($tabela == 'medicamentos'){
-    $sql = "SELECT * FROM `medicamentos`";
-    $stmt = $conn->prepare($sql);
+   
+   $stmt = $conn->prepare("SELECT * FROM `$tabela`");
 
-    if($stmt->execute()){
-         echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
-    }
-  }
-
-  if($tabela == 'secao'){
-    $sql = "SELECT * FROM `secao`";
-    $stmt = $conn->prepare($sql);
-
-    if($stmt->execute()){
-         echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
-    }
-  }
+   if($stmt->execute()){
+    echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+   }else{
+    echo json_encode('erro');
+   }
+    
+    
+   
+ 
 
 ?>

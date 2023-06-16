@@ -14,6 +14,8 @@ include '../backend/config/connection.php';
     <link rel="stylesheet" href="preset.css">
     <link rel="stylesheet" href="sidemenu.css">
     <script src="pluguins/jquery-3.6.4.min.js"></script>
+   
+
 </head>
 
 <body>
@@ -23,7 +25,8 @@ include '../backend/config/connection.php';
     <?php include 'components/secao-form.php'; ?>
     <?php include 'components/cadastro-form.php'; ?>
     <?php include 'components/secao-modal.php' ?>
-    <?php #include 'components/fornecedores-modal.php' ?>
+    <?php include 'components/fornecedores-modal.php' ?>
+    <?php include 'components/fornecedores-form.php' ?>
     
     <div class="container h-align v-center">
         <?php include 'components/sidemenu.php';?>
@@ -32,78 +35,85 @@ include '../backend/config/connection.php';
                 <div class="header-btns h-align">
                     <p class="title">Gerenciamento de Estoque</p>
                     <div class="btns-agroup h-align vh-center">
-                        <button id="btn-fornecedores"><i class='bx bx-expand-alt'></i> Fornecedores</button>
+                        <button id="btn-fornecedores"><i class='bx bxs-truck'></i> Fornecedores</button>
                         <button id="btn-secoes"> <i class='bx bx-expand-alt'></i> Seções</button>
+                        <button id="btn-secoes"> <i class='bx bx-expand-alt'></i> Movimentações</button>
                     </div>
                 </div>
             </div>
             <section class="h-align">
-                <div class="es-list v-align neomorphism">
-                    <p class="title">Entrada e Saída</p>
-                    <div class="header-list h-align h-center">
-                        <button>Hoje <i class='bx bx-chevron-down'></i> </button>
-                    </div>
-                    <div class="es-table v-align">
-                       
-                        <div class="row h-align">
-                            <div class="column h-align product-name">
-                                <span class="entrada"> <i class='bx bx-right-arrow-alt'></i> </span>
-                                L-Triptofano 250Mg 120 Cápsula
-                            </div>
-                            <div class="column"> +5 </div>
-                            <div class="column"> 12/05 14:45 </div>
-                        </div>
-                        <div class="row h-align">
-                            <div class="column h-align product-name">
-                                <span class="saida"> <i class='bx bx-left-arrow-alt'></i> </span>
-                                Fitocherry® (Melatonina Vegetal Líquida) 40mg/mL 20mL
-                            </div>
-                            <div class="column"> -16 </div>
-                            <div class="column"> 12/05 14:45 </div>
-                        </div>
-                        <div class="row h-align">
-                            <div class="column h-align product-name">
-                                <span class="entrada"> <i class='bx bx-left-arrow-alt'></i> </span>
-                                Maca Peruana 500Mg 60 Cápsulas
-                            </div>
-                            <div class="column"> -12 </div>
-                            <div class="column"> 12/05 14:45 </div>
-                        </div>
+                
 
-
-
-                        <div class="row h-align">
-                            <div class="column h-align product-name">
-                                <span class="entrada"> <i class='bx bx-left-arrow-alt'></i> </span>
-                                Maca Peruana 500Mg 60 Cápsulas
-                            </div>
-                            <div class="column"> -12 </div>
-                            <div class="column"> 12/05 14:45 </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div class="produtos-list v-align neomorphism">
+                <div class="produtos-list v-align">
                     <p class="title">Produtos</p>
+                  
                     <div class="header-list h-align v-center">
-                        <button id="btn-filtroProdutos">Todos <i class='bx bx-chevron-down'></i> 
+                        <div class="paginacao h-align v-center">
+                        <div class="total">
+                            <p>1-5 de 125</p>
+                        </div>
+                        <div class="parse-btns h-align v-center">
+                            <button disabled> < </button>
+                            <p class="atual-pag">1</p>
+                            <button> > </button>
+                        </div>
+                        </div>
+                        <div class="acoes h-align">
+                        <div class="search-input">
+                            <input type="text" placeholder="Buscar">
+                        </div>
+                            <button id="btn-filtroProdutos">Todos<i class='bx bx-filter-alt' ></i>
                         </button>
-                        <button class="h-align vh-center" id="btn-novoproduto"><i class='bx bx-list-plus'></i>Novo
+                        <button class="h-align vh-center" id="btn-novoproduto"><i class='bx bxs-layer-plus'></i>Novo
                             Produto</button>
-                    </div>
+                        </div>
+                     </div>
+                        
+               
                     <div class="produtos-table v-align">
-                        <table id="produtos-table">
-                            <tr class="head">
-                                <td>Código</td>
-                                <td>Produto</td>
-                                <td>Seção</td>
-                                <td>Categoria</td>
-                                <td>Estoque</td>
-                                <td>Ações</td>
-                            </tr>
-                        </table>     
+                    <div class="produto-card">
+                            <div class="text-agroup">
+                                <p class="produto-id"> <i class='bx bxs-basket'></i>Nenhum Produto Rehistrado</p>
+                            </div>
+                    </div>
+
+                        <div class="produto-card">
+                            <div class="text-agroup">
+                                <p class="produto-id"> <i class='bx bxs-basket'></i> Produto #75</p>
+                                <p class="produto-nome">Omeprazol 100Mg</p>
+                                <div class="tags">
+                                    <p class="tag-card">
+                                    <i class="bx bxs-capsule"></i>
+                                        Genérico
+                                    </p>
+                                    <p class="tag-card">
+                                        x12
+                                    </p>
+                                    <p class="tag-card">
+                                        R$ 75.08
+                                    </p>
+                                    <p class="tag-card">
+                                        AB-123
+                                    </p>
+                                    <div class="onCatalogo">
+                                        <p>Disponível no Catálogo</p>
+                                        <div class="checkbox" id="checkbox1" onclick="ativarCatalogo(1)">
+                                            <span id="slider1" class="">.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="produto-card-buttons">
+                            <button class="view-produto" onclick="getMedicamento('+response[i].id_medicamento+')">
+                            <i class="bx bx-chevron-left"></i></button>
+                            <button><i class="bx bxs-edit"></i></button>
+                            <button class="delete" onclick="deleteProdutos('+response[i].id_medicamento+')"><i class="bx bxs-trash-alt"></i></button>
+                            </div>
+                        </div>
+
+
+                   
+
 
                     </div>
                 </div>
@@ -127,7 +137,11 @@ include '../backend/config/connection.php';
     <script src="../backend/requests/secao-get.js"></script>
     <script src="../backend/requests/secao-delete.js"></script>
     <script src="../backend/requests/populate.js"></script>
-    <script>
+    <script src="../backend/requests/onCatalogo.js"></script>
+    <script src="../backend/requests/fornecedores-post.js"></script>
+    <script src="../backend/requests/fornecedores-get.js"></script>
+    <script src="../backend/requests/fornecedores-delete.js"></script>
+    <script>  
     </script>
 </body>
 </html>

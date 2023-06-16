@@ -7,7 +7,7 @@
     -webkit-backdrop-filter: blur( 4px );
     width: 100vw;
     height: 100vh;
-   
+    z-index: 999;
 }
 
 .form-produto{
@@ -152,6 +152,8 @@
                             <input type="text" id="p-nome-comercial" name="nome_comercial"
                                 placeholder="Ex.. Omeprazol 100Mg">
                         </div>
+                    </div>
+                    <div class="input-row h-align">
                         <div class="agroup-input v-align">
                             <label for="p-categoria">Categoria</label>
                             <select name="categoria" id="p-categoria">
@@ -169,9 +171,16 @@
                         <div class="agroup-input v-align">
                             <label for="p-secao">Seção</label>
                             <select name="secao" id="p-secao">
-                                <option value="Genérico">AB 123</option>
-                                <option value="Genérico">AB 123</option>
-                                <option value="Genérico">AB 123</option>
+                                <option value="Não Cadastrada">Não Cadastrada</option>
+                
+                            </select>
+                        </div>
+
+                        <div class="agroup-input v-align">
+                            <label for="p-fornecedor">Fornecedor</label>
+                            <select name="fornecedor" id="p-fornecedor">
+                                <option value="Genérico">Não Cadastrado</option>
+                                
                             </select>
                         </div>
                     </div>

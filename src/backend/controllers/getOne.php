@@ -9,6 +9,7 @@
 
   $tabela = $data['tabela'];
   $id = $data['id'];
+ 
 
   if($tabela == 'medicamentos'){
     $sql = "SELECT * FROM `medicamentos` WHERE `id_medicamento` = $id";
