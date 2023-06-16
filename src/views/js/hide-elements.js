@@ -7,7 +7,7 @@ $('.notificacao-modal').hide();
 //painel-produtos
 $('.secoes').hide();
 $('.cadastro-container').hide();
-
+$('.carrinho').hide();
 
 $('.confirm-container ').hide();
 $('.filtro-container').hide();
@@ -35,3 +35,5 @@ $('.detalhes-container').hide();
         scrollLeft: "+=200px"
     }, "slow");
   })
+
+  $('.popup').hide();

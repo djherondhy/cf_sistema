@@ -1,7 +1,7 @@
 
 //exibe carrinho na lateral
 $('#menu-carrinho').click(function () {
-        $('.side-cart').delay('300').slideToggle('slow');
+        $('.carrinho').delay('300').fadeToggle('slow');
 })
 
 //mostrar mais pedido Home Cliente
@@ -19,7 +19,7 @@ $('#close-pedidos').click(function () {
 
 //fecha carrinho
 $('#close-carrinho').click(function () {
-        $('.side-cart').delay('300').slideToggle('slow');
+        $('.carrinho').delay('300').fadeOut('slow');
 })
 
 //abre e fecha notificacao
@@ -77,3 +77,7 @@ $('#btn-novoFornecedor').click(function(){
 $('#close-fornCad').click(function(){
         $('.fornecedor-cadastro').fadeOut('slow');
 })
+
+function closePopup(){
+   $('.popup').fadeOut('slow');
+}
