@@ -35,116 +35,53 @@
                     <p class="card-subinfo">Clientes</p>
                 </div>
             </div>
-            <div class="clientes-online v-align ">
+            <div class="clientes-online v-align">
                 <p class="section-title">Clientes Ativos</p>
                 <div class="clientes-list h-center">
                     <div class="online-card">
-                        <div class="cliente-nome">
+                        <div class="info">
+                            <div class="user-perfil">
+                                <img src="pictures/dj.jpg" alt="" srcset="">
+                            </div>
+                            <p class="cliente-name">João Roberto</p>
+                        </div>
+                        <div class="tags">
+                            <p class="tag"><span></span>Online há x minutos</p>
+                            <p class="tag"> R$75.00</p>
+                        </div>
+                    </div>
 
+                    <div class="online-card">
+                        <div class="info">
+                            <div class="user-perfil">
+                                <img src="pictures/dj.jpg" alt="" srcset="">
+                            </div>
+                            <p class="cliente-name">João Roberto</p>
                         </div>
-                        <div class="cliente-column">
-                            <p>Atividade</p>
-                        </div>
-                        <div class="cliente-column">
-                            <p>Subtotal</p>
+                        <div class="tags">
+                            <p class="tag"><span></span>Online há x minutos</p>
+                            <p class="tag"> R$75.00</p>
                         </div>
                     </div>
                     <div class="online-card">
-                        <div class="cliente-nome">
-                            <img src="pictures/dj.jpg" alt="" srcset="">
-                            <p>João Felix</p>
+                        <div class="info">
+                            <div class="user-perfil">
+                                <img src="pictures/dj.jpg" alt="" srcset="">
+                            </div>
+                            <p class="cliente-name">João Roberto</p>
                         </div>
-                        <div class="cliente-column">
-                            <div class="online"></div>
-                            <p>Online há 7 minutos</p>
-                        </div>
-                        <div class="cliente-column">
-                            <p>R$ 12.45</p>
-                        </div>
-
-                    </div>
-                    <div class="online-card">
-                        <div class="cliente-nome">
-                            <img src="pictures/bruno.jpg" alt="" srcset="">
-                            <p>Carlos Souza</p>
-                        </div>
-                        <div class="cliente-column">
-                            <div class="online"></div>
-                            <p>Online há 22 minutos</p>
-                        </div>
-                        <div class="cliente-column">
-                            <p>R$ 00.00</p>
+                        <div class="tags">
+                            <p class="tag"><span></span>Online há x minutos</p>
+                            <p class="tag"> R$75.00</p>
                         </div>
                     </div>
-                    <div class="online-card">
-                        <div class="cliente-nome">
-                            <img src="pictures/perfil-mockup.jpg" alt="" srcset="">
-                            <p>Marcio Freitas</p>
-                        </div>
-                        <div class="cliente-column">
-                            <div class="offline"></div>
-                            <p>Offline há 5 minutos</p>
-                        </div>
-                        <div class="cliente-column">
-                            <p>R$ 36.45</p>
-                        </div>
-                    </div>
+                                       
                 </div>
             </div>
 
             <div class="entregadores-online v-align">
                 <p class="section-title">Entregadores Ativos</p>
                 <div class="entregadores-list v-align">
-                    <div class="online-card">
-                        <div class="card-column h-align v-center">
-
-                        </div>
-                        <div class="card-column h-align v-center">
-                            <p>Atividade</p>
-                        </div>
-                        <div class="card-column h-align v-center">
-                            <p>Comissão</p>
-                        </div>
-                    </div>
-                    <div class="online-card">
-                        <div class="card-column h-align v-center">
-                            <img src="pictures/perfil-mockup.jpg" alt="" srcset="">
-                            <p>Marcio Freitas</p>
-                        </div>
-                        <div class="card-column  h-align v-center">
-                            <div class="online"></div>
-                            <p>Online há 22 minutos</p>
-                        </div>
-                        <div class="card-column  h-align v-center">
-                            <p>R$ 10.72</p>
-                        </div>
-                    </div>
-                    <div class="online-card">
-                        <div class="card-column h-align v-center">
-                            <img src="pictures/perfil-mockup.jpg" alt="" srcset="">
-                            <p>Marcio Freitas</p>
-                        </div>
-                        <div class="card-column h-align v-center">
-                            <div class="online"></div>
-                            <p>Online há 22 minutos</p>
-                        </div>
-                        <div class="card-column  h-align v-center">
-                            <p>R$ 10.72</p>
-                        </div>
-                    </div>
-                    <div class="online-card">
-                        <div class="card-column h-align v-center">
-                            <img src="pictures/bruno.jpg" alt="" srcset="">
-                            <p>Marcio Freitas</p>
-                        </div>
-                        <div class="card-column  h-align v-center">
-                            <div class="online"></div>
-                            <p>Online há 22 minutos</p>
-                        </div>
-                        <div class="card-column  h-align v-center">
-                            <p>R$ 10.72</p>
-                        </div>
-                    </div>
                 </div>
 
             </div>

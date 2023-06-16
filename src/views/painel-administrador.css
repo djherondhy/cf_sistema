@@ -17,7 +17,7 @@
     --gray-color: #878787;
     --red-color: #fc0352;
     --dark-gray: #454545;
-    
+    --min-gray: #bbbbbb;
 }
 
 
@@ -25,7 +25,6 @@
 .container {
     width: 100vw;
     height: 100vh;
-    font-family: 'Poppins';
     overflow: hidden;
 }
 
@@ -160,12 +159,12 @@
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 150px;
     border-radius: 30px;
     padding: 1rem;
     box-shadow:  17px 17px 34px #bebebe,
                 -17px -17px 34px #ffffff;
     border-radius: 30px;
+    gap: 0.5rem;
 }
 
 .entregadores-online{
@@ -185,14 +184,38 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 0.2rem;
 }
 
 .online-card{
     display: flex;
+    flex-direction: column;
     gap: 0.5rem;
-    padding: 0.2rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.online-card .info{
+    display:flex;
+    gap: 0.5rem;
     align-items: center;
     font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+.online-card .tags{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag{
+    background-color: #f7f7f7;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    color: var(--dark-gray)
 }
 
 .online-card img{
@@ -209,38 +232,9 @@
     color: var(--main-color);
 }
 
-.cliente-nome{
-    width:30%;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+
+@media screen and (max-width: 1370px){
+    .info-list-cards .card{
+        width: 150px;
+    }
 }
-
-.cliente-column{
-    width:30%;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--gray-color);
-    padding-right: 2%;
-    padding-left: 2%;
-}
-
-.online{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #31e04c;
-}
-
-.offline{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--gray-color);
-}
-
-
-
-
-
