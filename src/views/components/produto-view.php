@@ -9,6 +9,7 @@
         top: 0;
         padding: 1rem;
         gap: 1rem;
+        z-index: 1000;
     }
 
     .produto-detalhes img {
