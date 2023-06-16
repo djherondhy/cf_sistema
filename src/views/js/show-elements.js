@@ -22,6 +22,11 @@ $('#close-carrinho').click(function () {
         $('.carrinho').delay('300').fadeOut('slow');
 })
 
+//fecha detalhes
+$('#close-detalhes').click(function () {
+        $('.detalhes-container').delay('300').fadeOut('slow');
+})
+
 //abre e fecha notificacao
 $('#notificacao-btn').click(function () {
         $('.notificacao-modal').delay('300').slideToggle('slow');

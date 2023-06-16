@@ -2,15 +2,14 @@
 <style>
     .detalhes-container {
         position: fixed;
-        width: 100vw;
-        height: 100vh;
         background: rgba(65, 63, 63, 0.25);
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
-        width: 100vw;
+        min-width: 100vw;
         height: 100vh;
-        z-index: 1000;
+        z-index: 2000;
+        overflow: auto;
     }
 
     .detalhes-subcontaner {
@@ -19,10 +18,8 @@
         padding: 2rem 2rem;
         position: relative;
         width: 40rem;
-        height: 20rem;
         border-radius: 30px;
         gap: 1rem;
-        
     }
 
     .detalhes-imagem{
@@ -72,9 +69,8 @@
         color: var(--main-color);
         width: 30px;
         font-size: 22px;
-        font-weight: bold;
-        
     }
+
     .cad-group{
         display: flex;
         justify-content: space-between;
@@ -85,6 +81,7 @@
         text-decoration: none;
         color: black;   
         font-weight: bold;
+        background-color:white;
     }
 
     .card-buttons{
@@ -94,7 +91,7 @@
         align-items: center;
     }
 
-    .add{
+    .add a{
         display:flex;
         align-items: center;
         border: 2px solid var(--main-color); 
@@ -102,23 +99,60 @@
         padding:0.6rem
     }
     
-    .favorito{
+    .favorito a{
         display:flex;
         align-items: center;
         border: 2px solid var(--main-color); 
         border-radius: 10rem;
         padding:0.6rem
     }
+
+    .favorito a:hover{
+        background-color: var(--main-color);
+        color: white;
+    }
+   
+    .favorito a:hover>i{
+        background-color: var(--main-color);
+        color: white;
+    }
+
+    .add a:hover{
+        background-color: var(--main-color);
+        color: white;
+    }
+   
+    .add a:hover>i{
+        background-color: var(--main-color);
+        color: white;
+    }
+
     .close-btn{
         margin-right: 0.4rem;
         margin-top: 0.3rem;
     }
 
+    @media (max-width: 768px) {
+        .detalhes-container{
+            padding-top:5rem;
+            
+        }
+
+        .detalhes-subcontaner{
+            flex-wrap: wrap;
+            width:80%;
+            margin-bottom: 8rem;
+            justify-content: center;
+        }
+
+    }
+    
+
 </style>
 
 <div class="detalhes-container h-align vh-center">
     <div class="detalhes-subcontaner h-align">
-        <button class="close-btn" id="close-secoes"><i class='bx bx-x'></i></button>
+        <button class="close-btn" id="close-detalhes"><i class='bx bx-x'></i></button>
 
         <div class="detalhes-imagem">
             <h1>Omeprazol - 100 MG</h1>
@@ -140,16 +174,21 @@
                     <i class='bx bx-money-withdraw'></i>
                     <p id="detalhe_preco">R$ 12.00</p>
                 </div>
-                <div class="card-buttons">
+                <div class="card-buttons">    
                     <div class="add">
-                        <i class='bx bxs-cart-add'></i>
-                        <a href="">Carrinho</a>
+                        <a href="">
+                            <i class='bx bxs-cart-add'></i>
+                            <p>Carrinho</p>
+                        </a>
                     </div>
                     
                     <div class="favorito">
-                        <i class='bx bxs-heart'></i>
-                        <a href="">Favorito</a>
+                        <a href="">
+                            <i class='bx bxs-heart'></i>
+                            <p>Favorito</p>
+                        </a>
                     </div>
+
                 </div>
             </div>
 

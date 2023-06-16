@@ -37,3 +37,4 @@ $('.detalhes-container').hide();
   })
 
   $('.popup').hide();
+  
