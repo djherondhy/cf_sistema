@@ -1,52 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vamos Lá, Login</title>
     <link rel="stylesheet" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="pluguins/jquery-3.6.4.min.js"></script>
 </head>
+
 <body>
+    <?php
+
+    if (isset($_GET['user'])) {
+        include 'components/popup.php';
+    }
+
+    if (isset($_GET['invalid'])) {
+        include 'components/popup.php';
+    }
+    ?>
+
     <div class="container">
         <div class="login-content">
-        
+
             <div class="login-left">
-           
+
                 <div class="text-agroup">
                     <h2>Olá Cliente, Seja Bem Vindo</h2>
-                </div>    
+                </div>
                 <div class="text-agroup">
-                <p>Os melhores produtos farmacêuticos ao seu alcance, faça seu login escolha seu produto e receba onde quiser.</p>
+                    <p>Os melhores produtos farmacêuticos ao seu alcance, faça seu login escolha seu produto e receba
+                        onde quiser.</p>
                 </div>
 
                 <div class="img_login">
                     <img src="pictures/clientep.gif">
                 </div>
 
-               
+
             </div>
             <div class="login-right">
-            <div class="background-circle1"></div>             
-            <div class="background-circle2"></div>           
-                <form action="">
-                <img src="pictures/clientep.gif">
+                <div class="background-circle1"></div>
+                <div class="background-circle2"></div>
+                <form action="../backend/controllers/loginValidation.php?type=1" method="post" id="user-login-form">
+                    <img src="pictures/clientep.gif">
                     <p class="title">Login</p>
                     <div class="input-agroupt">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg>
-                        <input type="text" placeholder="Digite seu e-mail">
+                        <i class='bx bx-user'></i>
+                        <input type="email" placeholder="Digite seu e-mail" name="email" id="login-email" required>
                     </div>
                     <div class="input-agroupt">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M17 8V7c0-2.757-2.243-5-5-5S7 4.243 7 7v3H6c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-8c0-1.103-.897-2-2-2H9V7c0-1.654 1.346-3 3-3s3 1.346 3 3v1h2zm1 4 .002 8H6v-8h12z"></path></svg>
-
-                    <input type="text" placeholder="Digite sua senha">
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" placeholder="Digite sua senha" name="senha" id="login-senha" required>
                     </div>
 
                     <div class="forget">
                         <a href="#">Esqueceu sua Senha?</a>
                     </div>
 
-                    <input type="submit" value="Entrar">    
+                    <input type="submit" value="Entrar" id="login-salvar">
 
                     <div class="register">
                         <a href="register-user.php">Registre-se!</a>
@@ -57,5 +72,7 @@
             </div>
         </div>
     </div>
+    <script src="js/show-elements.js"></script>
 </body>
+
 </html>
