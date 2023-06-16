@@ -9,15 +9,15 @@
 
   $tabela = $data['tabela'];
   $id = $data['id'];
- 
+  $coluna = $data['coluna'];
 
-  if($tabela == 'medicamentos'){
-    $sql = "SELECT * FROM `medicamentos` WHERE `id_medicamento` = $id";
+  
+    $sql = "SELECT * FROM `$tabela` WHERE `$coluna` = $id";
     $stmt = $conn->prepare($sql);
 
     if($stmt->execute()){
          echo json_encode($stmt->fetch(PDO::FETCH_ASSOC));
     }
-  }
+  
 
 ?>
