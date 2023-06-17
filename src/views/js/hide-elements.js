@@ -35,3 +35,9 @@ $('.detalhes-container').hide();
         scrollLeft: "+=200px"
     }, "slow");
   })
+
+
+//Painel do entregador
+
+$('.historico-pedido').hide();
+$('.detalhe-pedido').hide();

@@ -1,3 +1,21 @@
+//Fecha Historico de Pedidos entregador
+
+$('#close-historico').click(function () {
+        $('.historico-pedido').delay('300').slideToggle('slow');
+})
+
+$('#bnt-historico').click(function () {
+        $('.historico-pedido').delay('300').slideToggle('slow');
+})
+
+$('#close-detalhe').click(function () {
+        $('.detalhe-pedido').delay('300').slideToggle('slow');
+})
+
+$('#pedido-info').click(function () {
+        $('.detalhe-pedido').delay('300').slideToggle('slow');
+})
+
 
 //exibe carrinho na lateral
 $('#menu-carrinho').click(function () {
