@@ -1,6 +1,6 @@
 <style>
     .side-pedido {
-        width: 350px;
+        width: 400px;
         height: 100vh;
         position: fixed;
         z-index: 900;
@@ -14,8 +14,25 @@
         color: var(--white-color);
     }
 
+    .side-pedido .pedido-action{
+        display: flex;
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+    }
+    .side-pedido .pedido-action button{
+        display: flex;
+        padding: 0.2rem 0.5rem;
+        align-items: center;
+        border-radius: 6px;
+        background-color: var(--red-color);
+        border: 0;
+        color: var(--white-color);
+    }
     .pedido-filter{
         padding-left: 1rem;
+        display: flex;
+        gap: 0.2rem;
+        flex-wrap: wrap;
     }
     .side-pedido .close-btn{
         background-color: var(--subsec-color);
@@ -31,21 +48,27 @@
         fill: var(--white-color);
     }
 
-    .filter-active {
+    .side-pedido .filter-active {
         background-color: var(--sub-color) !important;
         color: var(--white-color) !important;
     }
 
-    .pedido-filter button {
+    .side-pedido .pedido-filter label {
         border: 1px solid var(--sub-color);
         padding: 0.5rem;
         border-radius: 6px;
         color: var(--sub-color);
         background: none;
         cursor: pointer;
+        font-size: 0.8rem;
     }
 
-    .pedido-list {
+    
+    .side-pedido .pedido-filter input[type="radio"] {
+       display: none;
+    }
+
+    .side-pedido .pedido-list {
         display: flex;
         flex-direction: column;
         height: 60%;
@@ -54,14 +77,14 @@
         align-items: center;
     }
 
-    .pedido-list i{
+    .side-pedido .pedido-list i{
         font-size: 0.8rem;
     }
-    .pedido-list p{
+    .side-pedido .pedido-list p{
         font-size: 0.8rem;
     }
 
-    .pedido-card{
+    .side-pedido .pedido-card{
         border: 1px solid var(--sub-color);
         border-radius: 10px;
         position: relative;
@@ -69,59 +92,59 @@
         padding: 0.5rem;
     }
 
-    .pedido-header {
+    .side-pedido .pedido-header {
         display: flex;
         justify-content: space-between;
        
     }
 
-    .pedido-id {
+    .side-pedido .pedido-id {
         font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .pedido-id i{
+    .side-pedido .pedido-id i{
         font-size: 0.8rem;
     }
 
-    .datatime {
+    .side-pedido .datatime {
         display: flex;
         font-size: 0.8rem;
         gap: 1rem;
     }
 
-    .datatime p {
+    .side-pedido .datatime p {
         color: var(--gray-color);
 
     }
 
-    .pedido-title {
+    .side-pedido .pedido-title {
         font-weight: bold;
         display: flex;
         gap: 0.2rem;
         align-items: center;
     }
 
-    .pedido-content {
+    .side-pedido .pedido-content {
         margin-top: 1rem;
     }
 
-    .item-pedido {
+    .side-pedido .item-pedido {
         font-size: 0.8rem;
         display: flex;
         padding: 0.5rem;
         justify-content: space-between;
     }
 
-    .pedido-info {
+    .side-pedido .pedido-info {
         margin-top: 1rem;
         display: flex;
         gap: 0.5rem;
     }
 
-    .pedido-info .info-text {
+    .side-pedido .pedido-info .info-text {
         background-color: var(--subsec-color);
         padding: 0.3rem;
         border-radius: 6px;
@@ -130,7 +153,7 @@
         align-items: center;
     }
 
-    .more-btn {
+    .side-pedido .more-btn {
         width: 20px;
         height: 20px;
         font-size: 1rem;
@@ -140,10 +163,60 @@
         right: 0.1rem;
     }
 
+    .side-pedido .item-pedido p {
+        width: 90%;
+    }
+
+    .side-pedido .item-pedido{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        border-bottom: 2px dashed var(--sec-color);
+    }
+
     .side-pedido .title{
         padding-top: 1rem;
         padding-left: 1rem;
     }
+
+    .pedido-list::-webkit-scrollbar {
+     width: 3px;
+    }
+
+    .pedido-list::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        border: 3px solid var(--sec-color);
+        /* creates padding around scroll thumb */
+    }
+
+    #pedido-busca{
+        padding: 0.2rem;
+        height: 25px;
+        border-radius: 6px;
+        border:1px solid var(--main-color);
+        outline: 0;
+        color: var(---main-color);
+        background: 0;
+    }
+
+    #pedido-data{
+        padding: 0.2rem;
+        height: 30px;
+        background-color: var(--main-color);
+        color: var(--white-color);
+        outline: 0;
+        border-radius: 6px;
+        border: 0;
+    }
+
+    #pedido-data option{
+        background-color: var(--sec-color);
+        color: var(--white-color);
+        outline: 0;
+       
+    }
+
+
 
     @media screen and (max-width: 650px){
         .side-pedido{
@@ -174,9 +247,26 @@
         Pedidos
     </p>
     <div class="pedido-filter">
-        <button class="filter-active">Confirmados</button>
-        <button>Enviados</button>
-        <button>Recebidos</button>
+    
+        <input type="text" name="pedido-busca" placeholder="Digite um código ou data" id="pedido-busca">
+        <select name="" id="pedido-data">
+            <option value="data = CURRENT_DATE">Hoje</option>
+            <option value="MONTH(data) = 6">Este Mês</option>
+            <option value="Year(data) = 2023">Este Ano</option>
+            <option value="data like '%%'">Todos</option>
+        </select>
+    </div>
+
+    <div class="pedido-filter">
+       <label for="filter-todos" class="filter-active">Todos</label>
+       <label for="filter-confirmado">Confirmados</label>
+       <label for="filter-recebidos">Recebidos</label>
+       <label for="filter-cancelados">Cancelados</label>
+
+       <input type="radio" name="filter-status" id="filter-todos" value="" checked>
+       <input type="radio" name="filter-status" id="filter-confirmado" value="Confirmado" >
+       <input type="radio" name="filter-status" id="filter-recebidos" value="Entregue">
+       <input type="radio" name="filter-status" id="filter-cancelados" value="Cancelado">
     </div>
 
     <div class="pedido-list">
@@ -208,196 +298,6 @@
                 <div class="pedido-info">
                     <p class="info-text"><i class='bx bx-store'></i>Retirada</p>
                     <p class="info-text"> <i class='bx bx-money'></i> Dinheiro</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="pedido-card">
-            <div class="more-btn" id="more-pedido" onclick="showMorePedido(2)">
-                <i class='bx bx-expand-vertical'></i>
-            </div>
-            <div class="pedido-header">
-                <p class="pedido-id"><i class='bx bx-purchase-tag-alt'></i> Pedido #1554</p>
-                <p>Subtotal: R$ 13.98</p>
-            </div>
-            <div class="datatime">
-                <p>22/10/2022</p>
-                <p>18:20</p>
-            </div>
-            <div class="pedido-content" id="pedido-content2">
-                <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
-                <div class="itens-list">
-                    <div class="item-pedido">
-                        <p>1x Omeprazol</p>
-                        <p>R$ 8.95</p>
-                    </div>
-                </div>
-
-                <div class="pedido-info">
-                    <p class="info-text"> <i class='bx bx-package'></i> Entrega</p>
-                    <p class="info-text"> <i class='bx bx-wallet'></i> Crédito</p>
-                </div>
-            </div>
-        </div>
-        <div class="pedido-card">
-            <div class="more-btn" id="more-pedido" onclick="showMorePedido(2)">
-                <i class='bx bx-expand-vertical'></i>
-            </div>
-            <div class="pedido-header">
-                <p class="pedido-id"><i class='bx bx-purchase-tag-alt'></i> Pedido #1554</p>
-                <p>Subtotal: R$ 13.98</p>
-            </div>
-            <div class="datatime">
-                <p>22/10/2022</p>
-                <p>18:20</p>
-            </div>
-            <div class="pedido-content" id="pedido-content2">
-                <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
-                <div class="itens-list">
-                    <div class="item-pedido">
-                        <p>1x Omeprazol</p>
-                        <p>R$ 8.95</p>
-                    </div>
-                </div>
-
-                <div class="pedido-info">
-                    <p class="info-text"> <i class='bx bx-package'></i> Entrega</p>
-                    <p class="info-text"> <i class='bx bx-wallet'></i> Crédito</p>
-                </div>
-            </div>
-        </div>
-        <div class="pedido-card">
-            <div class="more-btn" id="more-pedido" onclick="showMorePedido(2)">
-                <i class='bx bx-expand-vertical'></i>
-            </div>
-            <div class="pedido-header">
-                <p class="pedido-id"><i class='bx bx-purchase-tag-alt'></i> Pedido #1554</p>
-                <p>Subtotal: R$ 13.98</p>
-            </div>
-            <div class="datatime">
-                <p>22/10/2022</p>
-                <p>18:20</p>
-            </div>
-            <div class="pedido-content" id="pedido-content2">
-                <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
-                <div class="itens-list">
-                    <div class="item-pedido">
-                        <p>1x Omeprazol</p>
-                        <p>R$ 8.95</p>
-                    </div>
-                </div>
-
-                <div class="pedido-info">
-                    <p class="info-text"> <i class='bx bx-package'></i> Entrega</p>
-                    <p class="info-text"> <i class='bx bx-wallet'></i> Crédito</p>
-                </div>
-            </div>
-        </div>
-        <div class="pedido-card">
-            <div class="more-btn" id="more-pedido" onclick="showMorePedido(2)">
-                <i class='bx bx-expand-vertical'></i>
-            </div>
-            <div class="pedido-header">
-                <p class="pedido-id"><i class='bx bx-purchase-tag-alt'></i> Pedido #1554</p>
-                <p>Subtotal: R$ 13.98</p>
-            </div>
-            <div class="datatime">
-                <p>22/10/2022</p>
-                <p>18:20</p>
-            </div>
-            <div class="pedido-content" id="pedido-content2">
-                <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
-                <div class="itens-list">
-                    <div class="item-pedido">
-                        <p>1x Omeprazol</p>
-                        <p>R$ 8.95</p>
-                    </div>
-                </div>
-
-                <div class="pedido-info">
-                    <p class="info-text"> <i class='bx bx-package'></i> Entrega</p>
-                    <p class="info-text"> <i class='bx bx-wallet'></i> Crédito</p>
-                </div>
-            </div>
-        </div>
-        <div class="pedido-card">
-            <div class="more-btn" id="more-pedido" onclick="showMorePedido(2)">
-                <i class='bx bx-expand-vertical'></i>
-            </div>
-            <div class="pedido-header">
-                <p class="pedido-id"><i class='bx bx-purchase-tag-alt'></i> Pedido #1554</p>
-                <p>Subtotal: R$ 13.98</p>
-            </div>
-            <div class="datatime">
-                <p>22/10/2022</p>
-                <p>18:20</p>
-            </div>
-            <div class="pedido-content" id="pedido-content2">
-                <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
-                <div class="itens-list">
-                    <div class="item-pedido">
-                        <p>1x Omeprazol</p>
-                        <p>R$ 8.95</p>
-                    </div>
-                </div>
-
-                <div class="pedido-info">
-                    <p class="info-text"> <i class='bx bx-package'></i> Entrega</p>
-                    <p class="info-text"> <i class='bx bx-wallet'></i> Crédito</p>
-                </div>
-            </div>
-        </div>
-        <div class="pedido-card">
-            <div class="more-btn" id="more-pedido" onclick="showMorePedido(2)">
-                <i class='bx bx-expand-vertical'></i>
-            </div>
-            <div class="pedido-header">
-                <p class="pedido-id"><i class='bx bx-purchase-tag-alt'></i> Pedido #1554</p>
-                <p>Subtotal: R$ 13.98</p>
-            </div>
-            <div class="datatime">
-                <p>22/10/2022</p>
-                <p>18:20</p>
-            </div>
-            <div class="pedido-content" id="pedido-content2">
-                <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
-                <div class="itens-list">
-                    <div class="item-pedido">
-                        <p>1x Omeprazol</p>
-                        <p>R$ 8.95</p>
-                    </div>
-                </div>
-
-                <div class="pedido-info">
-                    <p class="info-text"> <i class='bx bx-package'></i> Entrega</p>
-                    <p class="info-text"> <i class='bx bx-wallet'></i> Crédito</p>
-                </div>
-            </div>
-        </div>
-        <div class="pedido-card">
-            <div class="more-btn" id="more-pedido" onclick="showMorePedido(2)">
-                <i class='bx bx-expand-vertical'></i>
-            </div>
-            <div class="pedido-header">
-                <p class="pedido-id"><i class='bx bx-purchase-tag-alt'></i> Pedido #1554</p>
-                <p>Subtotal: R$ 13.98</p>
-            </div>
-            <div class="datatime">
-                <p>22/10/2022</p>
-                <p>18:20</p>
-            </div>
-            <div class="pedido-content" id="pedido-content2">
-                <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
-                <div class="itens-list">
-                    <div class="item-pedido">
-                        <p>1x Omeprazol</p>
-                        <p>R$ 8.95</p>
-                    </div>
-                </div>
-
-                <div class="pedido-info">
-                    <p class="info-text"> <i class='bx bx-package'></i> Entrega</p>
-                    <p class="info-text"> <i class='bx bx-wallet'></i> Crédito</p>
                 </div>
             </div>
         </div>

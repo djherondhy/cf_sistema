@@ -12,13 +12,17 @@ session_start();
     <link rel="stylesheet" href="profile.css">
     <link rel="stylesheet" href="carrinho.css">
     <link rel="stylesheet" href="pedido-sidebar.css">
+    <link rel="stylesheet" href="preset.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="pluguins/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
-
+    <?php include "components/form-endereco.php" ?>
     <?php include "components/sidebar.php"; ?>
+    <?php include "components/confirm.php"; ?>
+    <?php include "components/carrinho.php"; ?>
+    <?php include "components/pedido-sidebar.php"; ?>
     <div class="container">
         <div class="topbar">
 
@@ -77,15 +81,15 @@ session_start();
             <div class="bottons">
                 <div class="edit-perfil">
                     <button id="btn" href="">
-                        <i class='bx bxs-lock-open-alt bx-tada' style='color:#ffffff'></i>
+                        <i class='bx bxs-lock-open-alt' style='color:#ffffff'></i>
                         <p>Alterar Senha</p>
                     </button>
                     <button id="btn" href="">
-                        <i class='bx bx-history bx-spin' style='color:#ffffff'></i>
+                        <i class='bx bx-history ' style='color:#ffffff'></i>
                         <p>Excluir Histórico</p>
                     </button>
                     <button id="btn" href="">
-                        <i class='bx bx-block bx-spin' style='color:#ffffff'></i>
+                        <i class='bx bx-block ' style='color:#ffffff'></i>
                         <p>Excluir Conta</p>
                     </button>
                 </div>
@@ -94,18 +98,17 @@ session_start();
         <h1 class="ender">Seu Endereços</h1>
         <div class="endereco-user">
             <div class="add-endereco">
-                    <i class='bx bxs-clinic bx-tada' style="color:#8856f6; font-size: 40px"></i>
+                    <i class='bx bxs-clinic ' style="color:#8856f6; font-size: 40px"></i>
                     <p>Adicionar endereço</p>
             </div>
             <div class="endereco-card">
-                <p>Neymar da Silva Santos Júnior</p>
-                <p>Rua Nossa Senhora do Roário 3164</p>
-                <p>Itacoatiara, AM 69104570</p>
-                <p>Brasil</p>
-                <p>Telefone:97981405568</p>
+                <p class="endereco-nome">Neymar da Silva Santos Júnior</p>
+                <p class="endereco-logradouro">Rua Nossa Senhora do Roário</p>
+                <p><span class="bairro">Jardim Lorena</span> <span class="numero">Nº 3164</span> </p>
+                <p><span class="cidade">Itacotiara</span> - <span class="uf">AM</span> <span class="cep">1954578</span></p>
                 <div class="btn">
-                    <button>Alterar</button>
-                    <button>Excluir</button>
+                    <button><i class="bx bx-edit"></i>Alterar</button>
+                    <button class="delete"><i class="bx bx-trash"></i> Excluir</button>
                 </div>
             </div>
         
@@ -116,11 +119,16 @@ session_start();
         <script src="../backend/requests/get-catalogo.js"></script>
         <script src="../backend/requests/ver-detalhes.js"></script>
         <script src="../backend/requests/get-userData.js"></script>
+        <script src="../backend/requests/endereco-post.js"></script>
+        <script src="../backend/requests/endereco-get.js"></script>
+        <script src="../backend/requests/endereco-delete.js"></script>
         <script>
             <?php
             if (isset($_SESSION['active'])) {
                 $userId = $_SESSION['user_id'];
-                echo "getUser($userId)";
+                echo "var user_id = $userId;";
+                echo "getUser($userId);";
+                echo "getEndereco($userId);";
             }
             ?>
         </script>

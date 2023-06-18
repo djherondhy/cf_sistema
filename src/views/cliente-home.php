@@ -24,6 +24,8 @@ session_start();
     include "components/pedido-sidebar.php";
     include "components/carrinho.php";
     include "components/popup.php";
+    include "components/form-pedido.php";
+    include "components/form-endereco.php";
     ?>
     <div class="container">
         <div class="topbar">
@@ -151,29 +153,39 @@ session_start();
             </div>
         </div>
 
-        <script src="js/show-elements.js"></script>
-        <script src="js/hide-elements.js"></script>
+      
         <script src="../backend/requests/get-catalogo.js"></script>
         <script src="../backend/requests/ver-detalhes.js"></script>
         <script src="../backend/requests/get-userData.js"></script>
         <script src="../backend/requests/add-carrinho.js"></script>
         <script src="../backend/requests/get-carrinho.js"></script>
+        <script src="../backend/requests/pedido-validation.js"></script>
+        <script src="../backend/requests/pedido-populate.js"></script>
+        <script src="../backend/requests/pedido-post.js"></script>
+        <script src="../backend/requests/endereco-get.js"></script>
+        <script src="../backend/requests/endereco-post.js"></script>
+        <script src="../backend/requests/pedido-get.js"></script>
+      
         <script>
            
             <?php
                 if(isset($_SESSION['active'])){
                     $userId = $_SESSION['user_id'];
-
-
                     echo "var user_id = $userId; ";
                     echo "getUser($userId);";
                     echo "getCarrinho($userId);";
+                    echo "populatePedido();";
+                    echo "getPedidos();";
                 }else{
                     echo "var user_id = 0; ";  
                 }
             ?>
 
+
         </script>
+
+        <script src="js/show-elements.js"></script>
+        <script src="js/hide-elements.js"></script>
 </body>
 
 </html>

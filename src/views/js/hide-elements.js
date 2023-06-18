@@ -18,8 +18,12 @@ $('.fornecedores-container').hide();
 $('.fornecedor-cadastro').hide();
 $('.detalhes-container').hide();
 
-//fecha notificacao se clicar fora
 
+$('.endereco-container').hide();
+//fecha notificacao se clicar fora
+$('#pedido-enderecos').hide();
+
+$('.pedido-container').hide();
 
 //scroll produtos home
   $('.left-btn').click(function(){
@@ -37,4 +41,6 @@ $('.detalhes-container').hide();
   })
 
   $('.popup').hide();
+
+
   
