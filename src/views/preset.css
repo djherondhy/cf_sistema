@@ -58,8 +58,6 @@ button{
     right: 0.5rem;
     border-radius: 6px;
     background: #e0e0e0;
-    box-shadow:  20px 20px 60px #bebebe,
-                 -20px -20px 60px #ffffff;
     align-items: center;
     justify-content: center;
     border: 0;

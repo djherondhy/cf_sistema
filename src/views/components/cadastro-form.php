@@ -138,7 +138,7 @@
         <div class="form-produto v-align">
             <button class="close-btn" id="close-prodcad"><i class='bx bx-x'></i></button>
             <p class="title">Novo Produto</p>
-            <form action="" class="h-align formulario" id="form-produto">
+            <form action="" class="h-align formulario" id="form-produto" enctype="multipart/form-data">
                 <div class="img-input v-align vh-center">
                     <img src="" alt="" srcset="" id="previewProduto">
                     <label for="imagem">Upload Imagem</label>
@@ -157,15 +157,16 @@
                         <div class="agroup-input v-align">
                             <label for="p-categoria">Categoria</label>
                             <select name="categoria" id="p-categoria">
-                                <option value="Genérico">Genérico</option>
-                                <option value="Alopáticos">Alopáticos</option>
-                                <option value="Similar">Similar</option>
-                                <option value="Fitoterápicos">Fitoterápicos</option>
-                                <option value="Homeopáticos">Homeopáticos</option>
-                                <option value="Controlados">Controlados</option>
-                                <option value="Biológicos">Biológicos</option>
-                                <option value="Fracionados">Fracionados</option>
                                 <option value="Outros">Outros</option>
+                                <option value="Analgésicos">Analgésicos</option>
+                                <option value="Anti-inflamatórios">Anti-inflamatórios</option>
+                                <option value="Antibióticos">Antibióticos</option>
+                                <option value="Antialérgicos">Antialérgicos</option>
+                                <option value="Antipiréticos">Antipiréticos</option>
+                                <option value="Anticoncepcionais">Anticoncepcionais</option>
+                                <option value="Anti-hipertensivos">Anti-hipertensivos</option>
+                                <option value="Antidiabéticos">Diuréticos</option>
+                                <option value="Anticonvulsivantes">Anticonvulsivantes</option>
                             </select>
                         </div>
                         <div class="agroup-input v-align">

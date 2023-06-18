@@ -3,7 +3,8 @@ function ativarCatalogo(_id){
 
     var dados = {
         tabela: 'medicamentos',
-        id: _id
+        id: _id,
+        coluna: 'id_medicamento'
     }
 
     var dadosJson = JSON.stringify(dados);
@@ -14,8 +15,7 @@ function ativarCatalogo(_id){
         data: {data: dadosJson},
         dataType: 'json',
         success: function(response){
-            console.log(response.onCatalogo);
-            //caso já esteja no catálogo
+           
             if(response.onCatalogo){
                 $('#slider'+response.id_medicamento).removeClass('check');
                 $('#checkbox'+response.id_medicamento).removeClass('purple');
@@ -32,7 +32,7 @@ function ativarCatalogo(_id){
                     data:{data: dadosJson},
                     dataType: 'json',
                     success: function(response){
-                        console.log(response);
+                        
                     }
                 });
 
@@ -53,7 +53,7 @@ function ativarCatalogo(_id){
                     data:{data: dadosJson},
                     dataType: 'json',
                     success: function(response){
-                        console.log(response);
+                        
                     }
                 });
 

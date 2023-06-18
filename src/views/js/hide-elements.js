@@ -7,7 +7,7 @@ $('.notificacao-modal').hide();
 //painel-produtos
 $('.secoes').hide();
 $('.cadastro-container').hide();
-
+$('.carrinho').hide();
 
 $('.confirm-container ').hide();
 $('.filtro-container').hide();
@@ -41,3 +41,7 @@ $('.detalhes-container').hide();
 
 $('.historico-pedido').hide();
 $('.detalhe-pedido').hide();
+
+
+  $('.popup').hide();
+  

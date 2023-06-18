@@ -47,12 +47,13 @@
 }
 
 .container {
-    height: 100vh;
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-family: 'Poppins';
     gap: 1rem;
+    padding-bottom: 5rem;
 }
 
 
@@ -99,177 +100,78 @@
     font-size: 1.8rem;
 }
 
-.user-perfil img{
-  display: flex;;
-    border-radius: 50rem;
-    width: 8rem;
-    margin-left: 1rem;
-    margin-top: 0rem;
-    border: 2px solid var(--main-color);
-}
-
-.user-perfil2 img{
+.container-perfil .user-perfil{
     display: flex;
     border-radius: 50rem;
-    width: 2.5rem;
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    top: -4rem;
+    left: 2rem;
 }
+
 
 .container-geral-perfil{
   background-color: none;
   width: 50%;
   display: flex;
   flex-direction: column;
+  max-height: 100%;
 }
 
 .container-perfil{
-  padding-top: 4rem;
+  padding-top: 5rem;
   border: 2px solid var(--main-color);
   border-radius: 1.5rem;
-  margin: 4px;
   padding-bottom: 1rem;
-}
-
-.user-perfil{
-  height: 4.3rem;
-  display: inline-block;
   position: relative;
-}
-
-.title-perfil{
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.title-perfil h1{
-  color: var(--dark-color);
-  font-weight: bold;
-  font-size: 1.8rem;
-}
-
-.bx{
-  color:white; 
-  font-size: 25px;
-  margin-right: 0.3rem;
-}
-
-.class{
-  color:white; 
-  font-size: 25px;
-  margin-right: 0.3rem;
-}
-
-.info-perfil p{
-  color: var(--dark-color);
-  font-weight: bold;
-  margin-left: 1rem;
-}
-
-.info-perfil-senha input{
-  color: var(--dark-color);
-  font-weight: bold;
-  border: none;
-  outline: none;
-  align-items: center;
-}
-
-.title-perfil i#edit{
-  color: var(--sec-color);
-  margin-left: 1rem;
-}
-
-.info-perfil-senha i#edit{
-  color: var(--sec-color);
-  margin-left: 1rem;
-}
-
-.info-perfil-email i#edit{
-  color: var(--sec-color);
-  margin-left: 1rem;
-}
-
-.info-perfil-apelido i#edit{
-  color: var(--sec-color);
-  margin-left: 1rem;
-}
-
-.info-perfil-email {
+.perfil-info{
   display: flex;
-  color: var(--daek-color);
+  padding: 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.nome_completo{
   font-weight: bold;
-  margin-left: 1rem;
-  align-items: center;
 }
 
-.info-perfil-apelido {
-  display: flex;
-  color: var(--daek-color);
-  font-weight: bold;
-  margin-left: 1rem;
-  align-items: center;
+.perfil-info i{
+ color: var(--main-color);
 }
-
-.edit-perfil a{
-  display: flex;
-  text-decoration: none;
-  color: var(--white-color);
-  padding-left: 0.7rem;
-  padding-right: 0.7rem;
-  align-items: center;
-  padding: 0.7rem;
-  background-color: var(--main-color);
-  width: 20%;
-  margin-left: 0.3rem;
-  margin-top: 1rem;
-  border-radius: 2rem;
-}
-
 
 
 .edit-perfil{
+  padding: 1rem;
   display: flex;
+  gap: 1rem;
+}
+
+.edit-perfil button{
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
   align-items: center;
-  justify-content: space-around;
-}
-
-.edit-perfil a:hover{
-  background-color: var(--sec-color);
-  transition-duration: 0.8s;
-}
-.perfil-edit{
-  display: flex;
-  align-items: center
-}
-
-.perfil-edit i{
-  display: flex;
+  background-color: var(--main-color);
+  border-radius: 30px;
+  padding: 0.3rem 1rem;
+  border: 0;
   color: var(--white-color);
-  margin-left: 1rem;
+  height: 30px;
 }
 
-.perfil-edit i:hover{
-  color: var(--main-color);
-  transition-duration: 0.8s;
-}
-
-.perfil-edit a{
-  text-decoration: none;
-}
-
-.user-perfil a{
-  position: absolute;
-  display: flex;
-  bottom: 0;
-  left: 46%;
-  transform: translateX(-50%);
-  transform: translateY(3.5rem);
-  background-color: none;
-  align-items: center;
-  text-decoration: none;
-  border-radius: 10px;
-}
-.bottons{
-  padding-top: 0;
-}
 
 .endereco-user{
   background-color: rgb(255, 255, 255);
@@ -277,7 +179,29 @@
   height: 10rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
+}
+.add-endereco{
+  border-radius: 30px;
+  border: 2px dashed var(--main-color);
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+}
+.endereco-card{
+  border: 1px solid var(--main-color);
+  border-radius: 30px;
+  height: 100%;
+  padding: 1rem;
+  min-width: 250px;
+}
+
+.endereco-card p{
+  font-size: 0.8rem;
 }
 
 .ender{
@@ -289,108 +213,69 @@
   color: var(--dark-color);
 }
 
-.one{
-  display:flex;
-  background-color: var(--white-color);
-  width: 32%;
-  height: 9.5rem;
-  border-radius: 1rem;
-  border: 2px dashed var(--main-color);
-  margin-left: 0.3%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.two{
-  background-color: var(--white-color);
-  width: 32%;
-  height: 9.5rem;
-  border-radius: 1rem;
-  border: 2px solid var(--main-color);
-  margin-left: 0.3%;
-  display: flex;
-  flex-direction: column;
-}
-
-.tree{
-  background-color: var(--white-color);
-  width: 32%;
-  height: 9.5rem;
-  border-radius: 1rem;
-  border: 2px solid var(--main-color);
-  margin-left: 0.3%;
-  margin-right: 0.3%;
-  display: flex;
-  flex-direction: column;
-}
-
-.one a{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 2.5rem;
-  color: #040824;
-}
-
-.two label{
-  margin-left: 1rem;
-  font-size: 11px;
-}
-
-.two label#title{
-  margin-right: 1rem;
-  margin-left: 0rem;
-  background-color: none;
-  padding: 0.4rem;
-  border-bottom: 2px solid var(--main-color);
-  width: 95.2%;
-  font-weight: bold;
-}
-
-.two a{
-  text-decoration: none;
-  font-size: 12px;
-  margin-left: 1rem;
-  color: rgb(111, 0, 255);
-}
-
-.two a:hover{
-  color: var(--sec-color);
-}
-
-.two label#nome{
-  font-weight: bold;
-}
-
-.tree label{
-  margin-left: 1rem;
-  margin-top: 0.2rem;
-  font-size: 11px;
-}
-
-.tree a{
-  margin-top: 0.8rem;
-  text-decoration: none;
-  font-size: 12px;
-  margin-left: 1rem;
-  color: rgb(111, 0, 255);
-}
-
-.tree label#nome{
-  font-weight: bold;
-}
-
 .container{
   display: flex;
   align-items: center;
 }
 
-.user-perfil a i{
-  color:transparent;
+
+
+
+.acessar{
+  text-decoration: none;
+  background-color: var(--main-color);
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.8rem;
+  transition: all 0.5 ease-out;
+  display: flex;
+  align-items: center;
 }
+
+.acessar i {
+  color: #fff; 
+}
+.acessar:hover{
+  background-color: var(--sub-color);
+  padding: 0.5rem;
+}
+
+.logout{
+  background-color: var(--red-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logout i{
+  color: #fff;
+}
+
+.username{
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+  font-family: 'Poppins';
+}
+
+.topbar .user-perfil {
+  background: var(--main-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+}
+
 
 @media (max-width: 768px) {
   .container-geral-perfil{

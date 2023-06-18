@@ -15,7 +15,6 @@ include '../backend/config/connection.php';
     <link rel="stylesheet" href="sidemenu.css">
     <script src="pluguins/jquery-3.6.4.min.js"></script>
    
-
 </head>
 
 <body>
@@ -42,8 +41,6 @@ include '../backend/config/connection.php';
                 </div>
             </div>
             <section class="h-align">
-                
-
                 <div class="produtos-list v-align">
                     <p class="title">Produtos</p>
                   
