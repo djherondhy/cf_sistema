@@ -139,7 +139,7 @@
         </div>
     </div>
     <div class="finalizar">
-        <p>Subtotal: R$ 12.75</p>
-        <button>Finalizar Pedido</button>
+        <p id="carrinho-subtotal"></p>
+        <button id="finalizar-pedido">Finalizar Pedido</button>
     </div>
 </div>

@@ -3,7 +3,7 @@
   header("Access-Control-Allow-Origin: *");
 
   require_once '../config/connection.php';
-
+  
   $tabela = $_POST['tabela'];
   $id = $_POST['id'];
   $coluna = $_POST['coluna'];

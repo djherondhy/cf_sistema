@@ -1,6 +1,3 @@
-<?php
-
-?>
 <style>
     .sidebar {
         position: fixed;
@@ -60,76 +57,82 @@
         fill: var(--white-color);
     }
 
-    @media screen and (max-width: 650px){
-    .sidebar{
-        width: 95%;
-        flex-direction: row;
-        height: auto;
-        top: auto;
-        justify-content: space-between;
+    .sidemenu-btn{
+        position: fixed;
+        top:1rem;
+        left:0;
         padding: 1rem;
-        bottom: 0;
-        left: 0;
-        border-radius: 30px 30px 0px 0px;
-        z-index: 999;
+        z-index: 1000;
+        background-color: var(--main-color);
+        border-radius: 0px 10px 10px 0px;
+        cursor: pointer;
+        display: none;
+    }
+    .sidemenu-btn i{
+        color: var(--white-color);
+    }
+    @media screen and (max-width: 660px){
+        .sidebar{
+            z-index: 900;
+             width: 150px;
+             display: none;
+             transition: all 0.5s ease-out;
+        }
 
+        .sidebar-item{
+            display: flex;
+            flex-direction: row;
+            width: 90%;
+            justify-content: flex-start;
+        }
+        .sidemenu-btn{
+            display: inline;
+        }
     }
 
 
-   
-}
-
-@media screen and (max-width: 450px){
-    .sidebar-item{
-        width: 35px;
-        height: 35px;
-    }
-
-    .sidebar{
-        width: 93%;
-        justify-content: space-between;
-        padding: 1rem;
-        bottom: 0;
-        border-radius: 30px 30px 0px 0px;
-    }
-}
-
-@media screen and (max-width: 450px){
- 
-
-    .sidebar{
-        width: 92%;
-        justify-content: space-between;
-        padding: 1rem;
-        bottom: 0;
-        border-radius: 30px 30px 0px 0px;
-    }
-}
 
 </style>
-
+<div class="sidemenu-btn">
+    <i class='bx bx-menu'></i>
+</div>
 <div class="sidebar">
     <div class="sidebar-item sidebar-active">
     <i class='bx bxs-dashboard'></i>
         <p>Home</p>
     </div>
-    <div class="sidebar-item" id="menu-pedidos">
+    <div class="sidebar-item" id="menu-pedidos" onclick="showPedido(<?php if (isset($_SESSION['active'])){ echo 0;}else{echo 1;} ?>)">
         <i class='bx bx-receipt'></i>
         <p>Pedidos</p>
     </div>
-    <div class="sidebar-item" id="menu-carrinho">
+    <div class="sidebar-item" id="menu-carrinho" onclick="showCarrinho(<?php if (isset($_SESSION['active'])){ echo 0;}else{echo 1;} ?>)">
     <i class='bx bx-cart-alt' ></i>
         <p>Carrinho</p>
     </div>
-    <div class="sidebar-item">
+    <div class="sidebar-item" onclick="">
     <i class='bx bx-heart' ></i>
         <p>Favoritos</p>
     </div>
+    <?php if (isset($_SESSION['active'])){ ?>
     <div class="sidebar-item" onclick="window.location.href='profile-user.php'">
         <i class='bx bx-user'></i>
         <p>Profile</p>
     </div>
+    <?php }?>
 </div>
-<?php
-
-?>
+<script>
+    $('.sidemenu-btn').click(function(){
+      
+        if($('.sidemenu-btn i').hasClass('bx-menu')){
+            $('.sidebar').delay(300).css('display', 'flex');
+            $('.sidemenu-btn i').removeClass('bx-menu');
+            $('.sidemenu-btn i').addClass('bx-x');
+        }else{
+            if($('.sidemenu-btn i').hasClass('bx-x')){
+            $('.sidebar').delay(300).css('display', 'none');
+            $('.sidemenu-btn i').addClass('bx-menu');
+            $('.sidemenu-btn i').removeClass('bx-x');
+            }
+        }        
+    })
+</script>

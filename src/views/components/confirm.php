@@ -16,7 +16,7 @@
         padding: 1rem;
         background-color: var(--white-color);
         min-width: 300px;
-        border-radius: 30px;
+        border-radius: 10px;
         gap: 1.5rem;
     }
     .confirm-modal p{
@@ -29,6 +29,7 @@
         gap: 0.5rem;
     }
     .confirm-container .action button{
+        width: 100px;
         height: 30px;
         padding: 0.5rem 1rem;
         border-radius: 30px;

@@ -30,9 +30,9 @@ if ($data['tabela'] == 'secao') {
 }
 
 
-;//cadastro de fornecedores
+; //cadastro de fornecedores
 if ($data['tabela'] == 'fornecedores') {
-   
+
     $sql = "INSERT INTO `fornecedores` (`nome_fantasia`, `cnpj`, `email`, `telefone`, `endereco`) VALUES(:nome_fantasia, :cnpj, :email, :telefone, :endereco)";
 
     $stmt = $conn->prepare($sql);
@@ -54,6 +54,40 @@ if ($data['tabela'] == 'fornecedores') {
         );
         echo json_encode($response);
     }
+}
+
+if ($data['tabela'] == 'endereco') {
+
+    $id_cliente = $data['id_cliente'];
+    $nome_completo = $data['nome_completo'];
+    $cep = $data['cep'];
+    $cidade = $data['cidade'];
+    $estado = $data['estado'];
+    $logradouro = $data['logradouro'];
+    $bairro = $data['bairro'];
+    $numero = $data['numero'];
+    $complemento = $data['complemento'];
+
+    $sql = "INSERT INTO `endereco` (`id_cliente`, `nome_completo`, `cep`, `cidade`, `estado`, `logradouro`, `bairro`, `numero`, `complemento`) VALUES ('$id_cliente', '$nome_completo', '$cep', '$cidade', '$estado', '$logradouro', '$bairro', '$numero', '$complemento');";
+    $stmt = $conn->prepare($sql);
+
+    if ($stmt->execute()) {
+        $response = array(
+            'error' => false,
+            'message' => 'Endereco Cadastrado.'
+        );
+        echo json_encode($response);
+    } else {
+        $response = array(
+            'error' => true,
+            'message' => 'Endereco Não Cadastrado.'
+        );
+        echo json_encode($response);
+    }
+
+
+
+
 }
 
 ?>
