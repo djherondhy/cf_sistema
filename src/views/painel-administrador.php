@@ -126,6 +126,10 @@
 
         </div>
     </div>
+
+    <script>
+        $('#menu-painel').addClass('menu-active');
+    </script>
 </body>
 
 </html>

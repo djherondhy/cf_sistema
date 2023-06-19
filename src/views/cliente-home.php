@@ -79,7 +79,7 @@ session_start();
             <div class="search-input">
                 <input type="text" placeholder="Pesquisar por medicamento">
                 <div class="search-button">
-                    <i class='bx bx-search'></i>
+                    <i class='bx bx-search' style="color: #ffffff;"></i>
                 </div>
             </div>
         </div>

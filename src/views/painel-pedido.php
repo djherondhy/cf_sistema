@@ -14,105 +14,78 @@
 </head>
 
 <body>
+    <?php include 'components/detalhes-pedido.php'; ?>
     <div class="container h-align v-center">
-        <?php include 'components/sidemenu.php'; ?>
+        <?php
+            include 'components/sidemenu.php';
+            include 'components/filtro-pedidos.php';
+        ?>
         <div class="content v-align">
-            <div class="pedidos v-align neomorphism">
-                <p class="title">Histórico de Pedidos</p>
-                <div class="action h-align vh-center">
-                    <button>Hoje <i class='bx bx-chevron-down'></i> </button>
+            <div class="pedido-container neomorphism">
+                <p class="title">Gerenciamento de Pedidos</p>
+                <div class="actions">
+                    <input type="text" placeholder="Busca por Código ou Cliente" id="pedido-busca">
+                    <button class="produto-filtro">Todos <i class='bx bx-filter-alt'></i></button>
                 </div>
-                <div class="pedido-table v-align ">
-                    <div class=" head row h-align">
-                        <div class="column h-align id">
-                            <i class='bx bxs-purchase-tag-alt'></i>
-                            <p>Pedido</p>
-                        </div>
-                        <div class="column h-align">
-                            <i class='bx bxs-purchase-tag-alt'></i>
-                            <p>Data</p>
-                        </div>
-                        <div class="column h-align name">
-                            <i class='bx bxs-user'></i>
-                            <p>Cliente</p>
+                <div class="status-action">
+                    <label for="filter-todos" class="active">Todos</label>
+                    <label for="filter-esperando">Esperando Confirmação</label>
+                    <label for="filter-confirmado">Confirmados</label>
+                    <label for="filter-cancelado">Cancelados</label>
+                    <label for="filter-entregue">Entregues</label>
 
+                    <input type="radio" name="filter-status" id="filter-todos" value="" checked>
+                    <input type="radio" name="filter-status" id="filter-esperando" value="Esperando Confirmação">
+                    <input type="radio" name="filter-status" id="filter-confirmado" value="Confirmado">
+                    <input type="radio" name="filter-status" id="filter-cancelado" value="Cancelado">
+                    <input type="radio" name="filter-status" id="filter-entregue" value="Entregue">
+
+                </div>
+                <div class="pedido-list">
+                    <div class="pedido-card">
+                        <div class="pedido-info">
+                            <p class="pedido-id"><i class="bx bx-package"></i>Pedido #1234</p>
+                            <p class="pedido-cliente"><i class="bx bx-user-circle"></i>Marcos</p>
+                            <p class="pedido-status"><i class="bx bx-tag"></i> Esperando Confirmação</p>
+                            <div class="pedido-tags">
+                                <p class="pedido-data"><i class="bx bx-calendar-alt"></i> 19-06-2023 14:75</p>
+                                <p class="pedido-total"><i class="bx bx-purchase-tag-alt"></i> R$ 12.75</p>
+                                <p class="pedido-pagamento"><i class="bx bx-wallet"></i> Pix</p>
+                                <p class="pedido-recebimento"><i class="bx bx-shopping-bag"></i>Retirada</p>
+                            </div>
                         </div>
-                        <div class="column h-align">
-                            <i class='bx bxs-wallet'></i>
-                            <p>Subtotal</p>
-                        </div>
-                        <div class="column h-align">
-                            <i class='bx bxs-shopping-bags'></i>
-                            <p>
-                                Forma
-                            </p>
-                        </div>
-                        <div class="column h-align">
-                            <i class='bx bxs-bookmark-star'></i>
-                            <p>
-                                Status
-                            </p>
-                        </div>
-                        <div class="column h-align">
-                            <i class='bx bxs-mouse-alt'></i>
-                            <p>
-                                Ação
-                            </p>
+                        <div class="pedido-action">
+                            <button><i class="bx bx-basket"></i>Itens </button>
+                            <button> <i class="bx bx-send"></i> Confirmar </button>
+                            <button><i class="bx bxs-truck"></i>Colocar Em Entrega </button>
+                            <button><i class="bx bxs-shopping-bags"></i>Confirmar Retirada</button>
+                            <button><i class="bx bx-x"></i> Cancelar </button>
                         </div>
                     </div>
 
-                    <?php
-                    for ($i = 0; $i < 8; $i++) {
-                        ?>
-
-                        <div class="row h-align">
-                            <div class="column id">
-
-                                <p>#000
-                                    <?php echo $i; ?>
-                                </p>
-                            </div>
-                            <div class="column h-align">
-                                <p>11/05 14:40</p>
-                            </div>
-                            <div class="column h-align name">
-                                <img src="pictures/perfil-mockup.jpg" alt="" srcset="">
-                                <p>João Pereira
-                                    <?php echo $i; ?>
-                                </p>
-
-                            </div>
-                            <div class="column">
-                                <p>R$ 12.45</p>
-                            </div>
-                            <div class="column">
-                                <p>
-                                    Entrega
-                                </p>
-                            </div>
-                            <div class="column">
-                                <p>
-                                    Confirmado
-                                </p>
-                            </div>
-                            <div class="column">
-                                <button><i class='bx bx-chevron-left'></i></button>
-                                <button><i class='bx bxs-chat'></i></button>
-                                <button><i class='bx bxs-trash-alt'></i></button>
-                            </div>
-                        </div>
-
-
-
-                        <?php
-                    }
-                    ?>
                 </div>
             </div>
 
         </div>
 
     </div>
+
+    <script src="../backend/requests/pedido-adm-get.js"></script>
+    <script src="../backend/requests/pedido-update.js"></script>
+    <script>
+        $('.filtro-container').hide();
+        $('.detalhes-pedidos').hide();
+
+        $('#close-filtroPedidos').click(function () {
+            $('.filtro-container').fadeOut('slow');
+        });
+
+        $('.produto-filtro').click(function () {
+            $('.filtro-container').fadeIn('slow');
+        });
+
+        $('#menu-pedidos').addClass('menu-active');
+    </script>
 </body>
 
 </html>

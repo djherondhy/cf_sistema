@@ -250,10 +250,10 @@
     
         <input type="text" name="pedido-busca" placeholder="Digite um código ou data" id="pedido-busca">
         <select name="" id="pedido-data">
+            <option value="data like '%%'">Todos</option>
             <option value="data = CURRENT_DATE">Hoje</option>
             <option value="MONTH(data) = 6">Este Mês</option>
             <option value="Year(data) = 2023">Este Ano</option>
-            <option value="data like '%%'">Todos</option>
         </select>
     </div>
 

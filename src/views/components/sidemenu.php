@@ -115,10 +115,10 @@
         <p class="welcome">Bem Vindo</p>
     </div>
     <div class="menu v-align h-center">
-        <a href="painel-administrador.php"><i class='bx bxs-dashboard'></i> <p>Painel de Dados</p></a>
-        <a href="painel-pedido.php"><i class='bx bx-receipt'></i>  <p>Pedidos</p></a>
-        <a href="painel-produtos.php" class="menu-active"><i class='bx bxs-capsule'></i> <p>Produtos</p></a>
-        <a href=""><i class='bx bx-store-alt'></i> <p>Catálogo</p></a>
-        <a href=""><i class='bx bx-body'></i><p>Recursos Humanos</p></a>
+        <a href="painel-administrador.php" id="menu-painel"><i class='bx bxs-dashboard'></i> <p>Painel de Dados</p></a>
+        <a href="painel-pedido.php" id="menu-pedidos"><i class='bx bx-receipt'></i>  <p>Pedidos</p></a>
+        <a href="painel-produtos.php" id="menu-produtos"><i class='bx bxs-capsule'></i> <p>Produtos</p></a>
+        <a href="" id="menu-catalogo"><i class='bx bx-store-alt'></i> <p>Movimentações</p></a>
+        <a href="" id="menu-recursos"><i class='bx bx-body'></i><p>Recursos Humanos</p></a>
     </div>
 </div>
