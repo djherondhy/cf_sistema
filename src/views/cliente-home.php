@@ -10,8 +10,8 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Farmácia ao Seu Alcance</title>
-    <link rel="stylesheet" href="preset.css">
-    <link rel="stylesheet" href="cliente-home.css">
+    <link rel="stylesheet" href="css/preset.css">
+    <link rel="stylesheet" href="css/cliente-home.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="pluguins/jquery-3.6.4.min.js"></script>
 </head>
@@ -79,7 +79,7 @@ session_start();
             <div class="search-input">
                 <input type="text" placeholder="Pesquisar por medicamento">
                 <div class="search-button">
-                    <i class='bx bx-search'></i>
+                    <i class='bx bx-search' style="color: #ffffff;"></i>
                 </div>
             </div>
         </div>

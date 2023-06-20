@@ -13,6 +13,8 @@ $('input[name="filter-status"]').change(function(){
     var status = $('input[name="filter-status"]:checked').val();
     
     getPedidosFilter(filter,status);
+
+
 })
 
 

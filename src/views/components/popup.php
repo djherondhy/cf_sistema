@@ -46,8 +46,12 @@
     .close-popup:hover{
         background-color:#bbbbbb;
     }
+    .popup .bxs-note{
+        color: var(--main-color);
+    }
 </style>
 <div class="popup">
+<i class='bx bxs-note'></i>
     <p class="popup-message">
    
     <?php 
