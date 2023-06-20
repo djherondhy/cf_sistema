@@ -118,7 +118,7 @@
         <a href="painel-administrador.php" id="menu-painel"><i class='bx bxs-dashboard'></i> <p>Painel de Dados</p></a>
         <a href="painel-pedido.php" id="menu-pedidos"><i class='bx bx-receipt'></i>  <p>Pedidos</p></a>
         <a href="painel-produtos.php" id="menu-produtos"><i class='bx bxs-capsule'></i> <p>Produtos</p></a>
-        <a href="" id="menu-catalogo"><i class='bx bx-store-alt'></i> <p>Movimentações</p></a>
+        <a href="painel-movimentacao.php" id="menu-movimentacao"><i class='bx bx-store-alt'></i> <p>Movimentações</p></a>
         <a href="" id="menu-recursos"><i class='bx bx-body'></i><p>Recursos Humanos</p></a>
     </div>
 </div>

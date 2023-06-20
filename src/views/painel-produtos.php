@@ -9,10 +9,9 @@ include '../backend/config/connection.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem Vindo, Administrador</title>
-    <link rel="stylesheet" href="painel-produtos.css">
+    <link rel="stylesheet" href="css/painel-produtos.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="preset.css">
-    <link rel="stylesheet" href="sidemenu.css">
+    <link rel="stylesheet" href="css/preset.css">
     <script src="pluguins/jquery-3.6.4.min.js"></script>
    
 </head>

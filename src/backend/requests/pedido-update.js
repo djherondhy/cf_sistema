@@ -33,6 +33,7 @@ function updateStatus(_id_pedido, _id_cliente, _status){
         dataType: 'json',
         success: function(response){
             console.log(response);
+            getPopup('Pedido Atualizado');
             getPedidos();
         }
     });

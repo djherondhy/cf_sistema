@@ -1,21 +1,37 @@
 
 
 $('input[name="filter-status"]').change(function(){
+   
+    $('.status-action label').removeClass('active');
+    if($(this).is(':checked')){
+        var radioId = $(this).attr('id')
+
+        var labelId = $('label[for="'+radioId+'"]').attr('id');
+
+        $('#' + labelId).addClass('active');
+    }
+
+    
    getPedidos();
 });
+
+$('input[name="filter-status"]').change(function(){
+    getPedidos();
+ });
+ 
 
 $('#pagamento-select').change(function(){
     getPedidos();
  });
 
- $('#recebimento-select').change(function(){
+ $('#recebimento').change(function(){
     getPedidos();
  });
 
 function getPedidos() {
     var dados = {
         status: $('input[name="filter-status"]:checked').val(),
-        forma_recebimento: $('#recebimento-select').val(),
+        forma_recebimento: $('#recebimento').val(),
         forma_pagamento: $('#pagamento-select').val(),
         busca: ''
     }
@@ -50,7 +66,7 @@ function getPedidos() {
                     + '</div>'
                     + '</div>'
                     + '<div class="pedido-action">'
-                    + '<button><i class="bx bx-chevron-left"></i>Ver Detalhes </button>'
+                    + '<button onclick="getItemPedido('+response[i].id_pedido+')"><i class="bx bx-chevron-left"></i>Ver Detalhes </button>'
                     + '</div>'
                     + '</div>');
 

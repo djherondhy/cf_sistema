@@ -14,7 +14,7 @@ $busca = $data['busca'];
 
 
 
-$sql = "SELECT *  FROM `pedido` as p JOIN `user` as u ON p.id_cliente = u.id WHERE status like '%$status%' AND forma_pagamento LIKE '%$forma_pagamento%' AND forma_recebimento LIKE '%$forma_recebimento%' AND data LIKE '%$busca%'";
+$sql = "SELECT *  FROM `pedido` as p JOIN `user` as u ON p.id_cliente = u.id WHERE status like '%$status%' AND forma_pagamento LIKE '%$forma_pagamento%' AND forma_recebimento LIKE '%$forma_recebimento%' AND data LIKE '%$busca%' ORDER BY p.id_pedido DESC";
 
 $stmt = $conn->prepare($sql);
 

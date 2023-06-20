@@ -190,3 +190,20 @@
 .pedido-id {
     font-weight: bold;
 }
+
+.input-date{
+    display: flex;
+    border: 1px solid var(--main-color);
+    border-radius: 60px;
+    padding: 0.5rem;
+}
+.input-date input{
+    border: 0;
+    background: 0;
+    outline: 0;
+    width: 250px;
+}
+.input-date label{
+    color: var(--main-color);
+    cursor: pointer;
+}

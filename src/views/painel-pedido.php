@@ -6,33 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bem Vindo, Administrador</title>
-    <link rel="stylesheet" href="painel-pedido.css">
+    <link rel="stylesheet" href="css/painel-pedido.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="preset.css">
-    <link rel="stylesheet" href="sidemenu.css">
+    <link rel="stylesheet" href="css/preset.css">
     <script src="pluguins/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
-    <?php include 'components/detalhes-pedido.php'; ?>
+    <?php
+    include 'components/detalhes-pedido.php';
+    ?>
     <div class="container h-align v-center">
         <?php
-            include 'components/sidemenu.php';
-            include 'components/filtro-pedidos.php';
+        include 'components/sidemenu.php';
+        include 'components/filtro-pedidos.php';
         ?>
         <div class="content v-align">
             <div class="pedido-container neomorphism">
                 <p class="title">Gerenciamento de Pedidos</p>
                 <div class="actions">
-                    <input type="text" placeholder="Busca por Código ou Cliente" id="pedido-busca">
+                    <div class="input-date">
+                        <input type="text" placeholder="Busca por Data, Cliente ou Código" id="busca">
+                        <label for="data" id="dataLabel"><i class='bx bx-calendar'></i></label>
+                    </div>
                     <button class="produto-filtro">Todos <i class='bx bx-filter-alt'></i></button>
                 </div>
                 <div class="status-action">
-                    <label for="filter-todos" class="active">Todos</label>
-                    <label for="filter-esperando">Esperando Confirmação</label>
-                    <label for="filter-confirmado">Confirmados</label>
-                    <label for="filter-cancelado">Cancelados</label>
-                    <label for="filter-entregue">Entregues</label>
+                    <label for="filter-todos" class="active" id="label-todos">Todos</label>
+                    <label for="filter-esperando" id="label-esperando">Esperando Confirmação</label>
+                    <label for="filter-confirmado" id="label-confirmado">Confirmados</label>
+                    <label for="filter-cancelado" id="label-cancelado">Cancelados</label>
+                    <label for="filter-entregue" id="label-entregue">Entregues</label>
 
                     <input type="radio" name="filter-status" id="filter-todos" value="" checked>
                     <input type="radio" name="filter-status" id="filter-esperando" value="Esperando Confirmação">
@@ -72,9 +76,15 @@
 
     <script src="../backend/requests/pedido-adm-get.js"></script>
     <script src="../backend/requests/pedido-update.js"></script>
+    <script src="../backend/requests/pedido-get-items.js"></script>
+    <script src="../backend/requests/getPopup.js"></script>
     <script>
         $('.filtro-container').hide();
         $('.detalhes-pedidos').hide();
+
+        $('.close-detalhes').click(function (response) {
+            $('.detalhes-pedidos').fadeOut('slow');
+        })
 
         $('#close-filtroPedidos').click(function () {
             $('.filtro-container').fadeOut('slow');

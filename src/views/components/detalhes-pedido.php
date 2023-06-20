@@ -91,7 +91,7 @@
 </style>
 <div>
     <div class="detalhes-pedidos neomorphism">
-    <button class="close-btn" id="close-detalhes"><i class='bx bx-x'></i></button>
+    <button class="close-btn close-detalhes"><i class='bx bx-x'></i></button>
         <div class="pedido-info">
             <p class="pedido-id"><i class="bx bx-package"></i>Pedido #1234</p>
             <p class="pedido-cliente"><i class="bx bx-user-circle"></i>Marcos</p>

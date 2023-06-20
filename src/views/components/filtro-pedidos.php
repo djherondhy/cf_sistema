@@ -61,10 +61,10 @@
         </div>
         <div class="agroup h-align">
         <label for="recebimento-select">Forma de Recebimento</label>
-            <select id="recebimento-select">
+            <select id="recebimento">
             <option value="">Todos</option>
-            <option value="">Retirada</option>
-            <option value="">Entrega</option>
+            <option value="Retirada">Retirada</option>
+            <option value="Entrega">Entrega</option>
             </select>
         </div>
     </div>
