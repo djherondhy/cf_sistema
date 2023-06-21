@@ -17,7 +17,7 @@
 
 <?php
         include "components/detalhes.php";
-        ?>
+?>
     
 <?php
         include "components/sidebar.php";
