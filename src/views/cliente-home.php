@@ -1,16 +1,19 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width= , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Farmácia ao Seu Alcance</title>
-    <link rel="stylesheet" href="cliente-home.css">
-    <link rel="stylesheet" href="carrinho.css">
-    <link rel="stylesheet" href="pedido-sidebar.css">
+    <link rel="stylesheet" href="css/preset.css">
+    <link rel="stylesheet" href="css/cliente-home.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="pluguins/jquery-3.6.4.min.js"></script>
-    <link rel="stylesheet" href="preset.css">
 </head>
 
 <body>
@@ -147,43 +150,60 @@
             <button class="finalizar-btn">Finalizar Pedido</button>
         </div>
     </div>
+    <?php
+    include "components/detalhes.php";
+    include "components/sidebar.php";
+    include "components/pedido-sidebar.php";
+    include "components/carrinho.php";
+    include "components/popup.php";
+    include "components/form-pedido.php";
+    include "components/form-endereco.php";
+    ?>
     <div class="container">
         <div class="topbar">
 
-            <div class="notificacao" id="notificacao-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <circle cx="18" cy="6" r="3"></circle>
-                    <path
-                        d="M18 19H5V6h8c0-.712.153-1.387.422-2H5c-1.103 0-2 .897-2 2v13c0 1.103.897 2 2 2h13c1.103 0 2-.897 2-2v-8.422A4.962 4.962 0 0 1 18 11v8z">
-                    </path>
-                </svg>
-                <div class="notificacao-modal">
-                    <div class="notificacao-item">
-                        <div class="notificacao-icon">
-                        <i class='bx bx-cycling'></i>
-                        </div>
-                        <div class="notificacao-text">
-                            <p>Seu pedido número #10056 saiu para entrega.</p>
-                            <p>10/05/2023 14:30 </p>
-                        </div>
-                        
-                    </div>
+            <?php if (isset($_SESSION['active'])) { ?>
+                <p class="username"></p>
+                
+                <div class="user-perfil">
+                   
+                </div>
+                <div class="notificacao" id="notificacao-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <circle cx="18" cy="6" r="3"></circle>
+                        <path
+                            d="M18 19H5V6h8c0-.712.153-1.387.422-2H5c-1.103 0-2 .897-2 2v13c0 1.103.897 2 2 2h13c1.103 0 2-.897 2-2v-8.422A4.962 4.962 0 0 1 18 11v8z">
+                        </path>
+                    </svg>
+                    <div class="notificacao-modal">
+                        <div class="notificacao-item">
+                            <div class="notificacao-icon">
+                                <i class='bx bx-cycling'></i>
+                            </div>
+                            <div class="notificacao-text">
+                                <p>Seu pedido número #10056 saiu para entrega.</p>
+                                <p>10/05/2023 14:30 </p>
+                            </div>
 
-                    <div class="notificacao-item">
-                        <div class="notificacao-icon">
-                        <i class='bx bx-package'></i>
                         </div>
-                        <div class="notificacao-text">
-                            <p>Seu pedido número #10056 foi confirmado.</p>
-                            <p>10/05/2023 14:30 </p>
+
+                        <div class="notificacao-item">
+                            <div class="notificacao-icon">
+                                <i class='bx bx-package'></i>
+                            </div>
+                            <div class="notificacao-text">
+                                <p>Seu pedido número #10056 foi confirmado.</p>
+                                <p>10/05/2023 14:30 </p>
+                            </div>
+
                         </div>
-                        
                     </div>
                 </div>
-            </div>
-            <div class="user-perfil">
-                <img src="pictures/neymar.jpg" alt="" srcset="">
-            </div>
+                <a href="login-user.php" class="logout"><i class='bx bx-log-out'></i></a>
+            <?php } else { ?>
+                <a href="login-user.php" class="acessar"><i class='bx bx-log-in'></i> Acessar</a>
+            <?php } ?>
+
         </div>
 
 
@@ -191,11 +211,7 @@
             <div class="search-input">
                 <input type="text" placeholder="Pesquisar por medicamento">
                 <div class="search-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path
-                            d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z">
-                        </path>
-                    </svg>
+                    <i class='bx bx-search' style="color: #ffffff;"></i>
                 </div>
             </div>
         </div>
@@ -232,96 +248,76 @@
             </div>
         </div>
         <div class="section">
-        <h2 class="section-title">Produtos Recomendados</h2>
-        <div class="carousel-produtos">
-        <div class="left-btn">
-               < 
-            </div>
-           
-            <div class="product-list">
-           
-                <div class="product-card">
-                    <div class="action-button">
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412l7.332 7.332c.17.299.498.492.875.492a.99.99 0 0 0 .792-.409l7.415-7.415c2.354-2.354 2.354-6.049-.002-8.416a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595zm6.791 1.61c1.563 1.571 1.564 4.025.002 5.588L12 18.586l-6.793-6.793c-1.562-1.563-1.561-4.017-.002-5.584.76-.756 1.754-1.172 2.799-1.172s2.035.416 2.789 1.17l.5.5a.999.999 0 0 0 1.414 0l.5-.5c1.512-1.509 4.074-1.505 5.584-.002z">
-                                </path>
-                            </svg>
-                        </button>
+            <h2 class="section-title">Produtos Recomendados</h2>
+            <div class="carousel-produtos">
+                <div class="left-btn">
+                    < </div>
 
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path
-                                    d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z">
-                                </path>
-                                <circle cx="10.5" cy="19.5" r="1.5"></circle>
-                                <circle cx="17.5" cy="19.5" r="1.5"></circle>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="product-img">
-                        <img src="pictures/remedio.png" alt="">
-                    </div>
-                    <div class="card-text">
-                        <p class="nome">Metronidazol</p>
-                        <p class="categoria">Antibiótico</p>
-                        <p class="preco">R$ 15.75</p>
-                    </div>
+                        <div class="product-list">
+                            <div class="product-card">
+                                <div class="action-button">
+                                    <button id="add-carrinho">
+                                        <i class="bx bx-heart"></i>
+                                    </button>
+
+                                    <button>
+                                        <i class="bx bx-cart-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="product-img">
+                                    <img src="pictures/remedio.png" alt="">
+                                </div>
+                                <div class="card-text">
+                                    <p class="nome">Metronidazol</p>
+                                    <p class="categoria">Antibiótico</p>
+                                    <p class="preco">R$ 15.75</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right-btn">
+                            >
+                        </div>
+
                 </div>
-                <?php
-                for ($i = 0; $i < 20; $i++) {
 
-
-                    ?>
-                    <div class="product-card">
-                        <div class="action-button">
-                            <button>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412l7.332 7.332c.17.299.498.492.875.492a.99.99 0 0 0 .792-.409l7.415-7.415c2.354-2.354 2.354-6.049-.002-8.416a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595zm6.791 1.61c1.563 1.571 1.564 4.025.002 5.588L12 18.586l-6.793-6.793c-1.562-1.563-1.561-4.017-.002-5.584.76-.756 1.754-1.172 2.799-1.172s2.035.416 2.789 1.17l.5.5a.999.999 0 0 0 1.414 0l.5-.5c1.512-1.509 4.074-1.505 5.584-.002z">
-                                    </path>
-                                </svg>
-                            </button>
-
-                            <button>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                    <path
-                                        d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z">
-                                    </path>
-                                    <circle cx="10.5" cy="19.5" r="1.5"></circle>
-                                    <circle cx="17.5" cy="19.5" r="1.5"></circle>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="product-img">
-                            <img src="pictures/remedios/omeprazol.png" alt="">
-                        </div>
-                        <div class="card-text">
-                            <p class="nome">Omeprazol</p>
-                            <p class="categoria">Antibiótico</p>
-                            <p class="preco">R$ 15.75</p>
-                        </div>
-                    </div>
-
-                    <?php
-                }
-                ?>
 
             </div>
-
-            <div class="right-btn">
-               >
-            </div>
-
-            </div>
-
-
         </div>
-    </div>
 
-    <script src="js/show-elements.js"></script>
-    <script src="js/hide-elements.js"></script>
+      
+        <script src="../backend/requests/get-catalogo.js"></script>
+        <script src="../backend/requests/ver-detalhes.js"></script>
+        <script src="../backend/requests/get-userData.js"></script>
+        <script src="../backend/requests/add-carrinho.js"></script>
+        <script src="../backend/requests/get-carrinho.js"></script>
+        <script src="../backend/requests/pedido-validation.js"></script>
+        <script src="../backend/requests/pedido-populate.js"></script>
+        <script src="../backend/requests/pedido-post.js"></script>
+        <script src="../backend/requests/endereco-get.js"></script>
+        <script src="../backend/requests/endereco-post.js"></script>
+        <script src="../backend/requests/pedido-get.js"></script>
+      
+        <script>
+           
+            <?php
+                if(isset($_SESSION['active'])){
+                    $userId = $_SESSION['user_id'];
+                    echo "var user_id = $userId; ";
+                    echo "getUser($userId);";
+                    echo "getCarrinho($userId);";
+                    echo "populatePedido();";
+                    echo "getPedidos();";
+                }else{
+                    echo "var user_id = 0; ";  
+                }
+            ?>
+
+
+        </script>
+
+        <script src="js/show-elements.js"></script>
+        <script src="js/hide-elements.js"></script>
 </body>
 
 </html>

@@ -1,17 +1,11 @@
 
-//exibe carrinho na lateral
-$('#menu-carrinho').click(function () {
-        $('.side-cart').delay('300').slideToggle('slow');
-})
 
 //mostrar mais pedido Home Cliente
 function showMorePedido(pedidoid) {
         $('#pedido-content' + pedidoid).delay('300').slideToggle('slow');
 }
 //exibe pedidos na lateral
-$('#menu-pedidos').click(function () {
-        $('.side-pedido').delay('300').slideToggle('slow');
-})
+
 //fecha carrinho
 $('#close-pedidos').click(function () {
         $('.side-pedido').delay('300').slideToggle('slow');
@@ -19,7 +13,7 @@ $('#close-pedidos').click(function () {
 
 //fecha carrinho
 $('#close-carrinho').click(function () {
-        $('.side-cart').delay('300').slideToggle('slow');
+        $('.carrinho').delay('300').fadeOut('slow');
 })
 
 //fecha detalhes
@@ -40,34 +34,34 @@ $('#close-secoes').click(function () {
         $('.secoes').slideToggle('slow');
 })
 
-$('#close-prodcad').click(function(){
+$('#close-prodcad').click(function () {
         $('.cadastro-container').fadeOut('slow');
 });
 
-$('#close-secaocad').click(function(){
+$('#close-secaocad').click(function () {
         $('.secao-container').fadeOut('slow');
 });
 
-$('#btn-novasecao').click(function(){
+$('#btn-novasecao').click(function () {
         $('.secao-container').fadeIn('slow');
 })
-$('#btn-novoproduto').click(function(){
+$('#btn-novoproduto').click(function () {
         $('.cadastro-container').fadeIn('slow');
 })
 
-$('#btn-filtroProdutos').click(function(){
+$('#btn-filtroProdutos').click(function () {
         $('.filtro-container').fadeIn('slow');
 })
 
-$('#close-filtroProd').click(function(){
+$('#close-filtroProd').click(function () {
         $('.filtro-container').fadeOut('slow');
 })
 
-$('#close-detalhes').click(function(){
+$('#close-detalhes').click(function () {
         $('.produto-detalhes').fadeOut('slow');
 })
 
-$('#close-fornecedores').click(function(){
+$('#close-fornecedores').click(function () {
         $('.fornecedores-container').fadeOut('slow');
 })
 
@@ -75,10 +69,50 @@ $('#btn-fornecedores').click(function () {
         $('.fornecedores-container').fadeIn('slow');
 })
 
-$('#btn-novoFornecedor').click(function(){
+$('#btn-novoFornecedor').click(function () {
         $('.fornecedor-cadastro').fadeIn('slow');
 })
 
-$('#close-fornCad').click(function(){
+$('#close-fornCad').click(function () {
         $('.fornecedor-cadastro').fadeOut('slow');
 })
+
+$('.add-endereco').click(function () {
+        $('.endereco-container').fadeIn('slow');
+});
+
+$('#close-endereco').click(function () {
+        $('.endereco-container').fadeOut('slow');
+});
+
+
+$('#close-pedidoForm').click(function () {
+        $('.pedido-container').fadeOut('slow');
+});
+
+function closePopup() {
+        $('.popup').fadeOut('slow');
+}
+
+function showCarrinho(lock) {
+        if (lock) {
+                $('.popup').fadeIn('slow');
+                $('.popup-message').remove();
+                $('.popup').prepend('<p class="popup-message">Faça login para acessar o carrinho!</p>');
+        } else {
+                $('.carrinho').fadeToggle('slow');
+        }
+
+}
+
+
+function showPedido(lock) {
+        if (lock) {
+                $('.popup').fadeIn('slow');
+                $('.popup-message').remove();
+                $('.popup').prepend('<p class="popup-message">Faça login para acessar os pedidos!</p>');
+        } else {
+                $('.side-pedido').fadeToggle('slow');
+        }
+
+}

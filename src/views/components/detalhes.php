@@ -155,20 +155,20 @@
         <button class="close-btn" id="close-detalhes"><i class='bx bx-x'></i></button>
 
         <div class="detalhes-imagem">
-            <h1>Omeprazol - 100 MG</h1>
+            <h1 id="detalhes-nome">Omeprazol - 100 MG</h1>
             <img src="pictures/remedios/omeprazol.png">
         </div>
 
         <div class="detalhes-info">
             <h1>Informações</h1>
-            <p>
+            <p id="detalhe-descricao">
                 Omeprazol é um medicamento protótipo da classe dos inibidores da bomba de protões, que
                 diminuem a secreção gástrica alterando a atividade da H⁺/K⁺-ATPase.
             </p>
             <div class="card-group">
                 <div class="card-category">
                     <i class='bx bx-category'></i>
-                    <p  id="detalhe_categoria">Genérico</p>
+                    <p id="detalhe_categoria">Genérico</p>
                 </div>
                 <div class="card-info">
                     <i class='bx bx-money-withdraw'></i>

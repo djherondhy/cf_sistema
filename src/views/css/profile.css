@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --main-color: #8856f6;
+  --sub-color: #7234fa;
+  --sec-color: #2a1067;
+  --subsec-color: #210a58;
+  --dark-color: #040824;
+  --white-color: #ffffff;
+  --gray-color: #878787;
+  --red-color: #fc0352;
+}
+
+.close-btn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: var(--red-color);
+  border: 1px solid var(--red-color);
+  background: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: var(--red-color);
+  color: var(--white-color);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.preco {
+  background-color: var(--sub-color);
+  padding: 0.2rem;
+  border-radius: 6px;
+  width: 100px;
+  text-align: center;
+  color: #fff;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Poppins';
+  gap: 1rem;
+  padding-bottom: 5rem;
+}
+
+
+.topbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 1rem;
+  gap: 1rem;
+  width: 95%;
+  background-color: var(--white-color);
+}
+
+.topbar .user-perfil {
+  background: var(--main-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.topbar .user-perfil img {
+  width: 100%;
+}
+
+.topbar .notificacao {
+  background: var(--main-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.notificacao svg {
+  fill: #ffffff;
+}
+
+.perfil h2 {
+  color: var(--sec-color);
+  font-size: 1.8rem;
+}
+
+.container-perfil .user-perfil {
+  display: flex;
+  border-radius: 50rem;
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  top: -4rem;
+  left: 2rem;
+}
+
+
+.container-geral-perfil {
+  background-color: none;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+}
+
+.container-perfil {
+  padding-top: 5rem;
+  border: 2px solid var(--main-color);
+  border-radius: 1.5rem;
+  padding-bottom: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.perfil-info {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.nome_completo {
+  font-weight: bold;
+}
+
+.perfil-info i {
+  color: var(--main-color);
+}
+
+
+.edit-perfil {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-perfil button {
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  background-color: var(--main-color);
+  border-radius: 30px;
+  padding: 0.3rem 1rem;
+  border: 0;
+  color: var(--white-color);
+  height: 30px;
+}
+
+
+.endereco-user {
+  background-color: rgb(255, 255, 255);
+  width: 60%;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.add-endereco {
+  border-radius: 30px;
+  border: 2px dashed var(--main-color);
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 250px;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.endereco-card {
+  border: 1px solid var(--main-color);
+  border-radius: 30px;
+  height: 100%;
+  padding: 1rem;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.endereco-card .btn {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn button {
+  padding: 0.3rem 0.5rem;
+  border: 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.delete {
+  background-color: var(--red-color);
+  color: var(--white-color);
+}
+
+.endereco-card p {
+  font-size: 0.8rem;
+  width: 90%;
+  word-break: break-all;
+}
+
+.endereco-nome{
+  font-weight: bold;
+}
+
+.ender {
+  display: flex;
+  font-size: 1.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  background-color: none;
+  color: var(--dark-color);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.acessar {
+  text-decoration: none;
+  background-color: var(--main-color);
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.8rem;
+  transition: all 0.5 ease-out;
+  display: flex;
+  align-items: center;
+}
+
+.acessar i {
+  color: #fff;
+}
+
+.acessar:hover {
+  background-color: var(--sub-color);
+  padding: 0.5rem;
+}
+
+.logout {
+  background-color: var(--red-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logout i {
+  color: #fff;
+}
+
+.username {
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+  font-family: 'Poppins';
+}
+
+.topbar .user-perfil {
+  background: var(--main-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .container-geral-perfil {
+    display: flex;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .container-perfil {
+    background-color: var(--main-color);
+    color: var(--white-color);
+  }
+
+  .title-perfil h1 {
+    color: white;
+    font-size: 1.2rem;
+  }
+
+  .edit-perfil a p {
+    display: none;
+  }
+
+  .edit-perfil a {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  .bottons {
+    background-color: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .endereco-user {
+    display: flex;
+    padding-left: rem;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .two {
+    width: 90%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .one {
+    width: 90%;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+  }
+
+  .tree {
+    width: 90%;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .info-perfil-senha input {
+    background-color: var(--main-color);
+    color: var(--white-color);
+  }
+
+  .user-perfil a i:hover {
+    color: var(--white-color);
+  }
+
+  .perfil-edit a i {
+    color: var(--main-color);
+  }
+
+  .perfil-edit a i:hover {
+    color: var(--white-color);
+  }
+
+  .container {
+    margin-bottom: 28rem;
+  }
+
+}

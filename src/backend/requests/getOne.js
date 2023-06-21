@@ -2,7 +2,8 @@ function getMedicamento(id_produto) {
 
     var dados = {
         tabela: 'medicamentos',
-        id: id_produto
+        id: id_produto,
+        coluna: 'id_medicamento'
     }
     var dadosJson = JSON.stringify(dados);
     $.ajax({
@@ -19,6 +20,15 @@ function getMedicamento(id_produto) {
             $('#detalhe_categoria').empty().append(response.categoria);
             $('#detalhe_preco').empty().append('R$ '+response.preco);
             $('#detalhe_secao').empty().append(response.secao);
+            $('#detalhe_quantidade').empty().append(response.quantidade);
+            $('#produto-img').prop('src', '../backend/upload/'+response.imagem);
+            if(response.codFornecedor == 0){
+                $('#detalhe_fornecedor').empty().append('Não Cadastrado');
+            }
+
+            if(response.secao == 'Não Cadastrada'){
+                $('#detalhe_localizacao').empty().append('Não Cadastrada');
+            }
         }
     });
 }
