@@ -53,10 +53,17 @@
     color: var(--white-color) !important;
 }
 
+.historico-filter{
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    justify-content: space-around;
+}
 .historico-filter button{
+    width: 90px;
     border: 1px solid var(--sub-color);
     padding: 0.5rem;
-    border-radius: 6px;
+    border-radius: 10px;
     justify-content: center;
     color: var(--sub-color);
     background: none;
@@ -112,6 +119,11 @@
     padding: 0.5rem;
     justify-content: space-between;
 }
+
+.list-medicamentos{
+    width: 70%;
+}
+
 .endereco{
     font-size: 0.8rem;
     margin-left: 1%;
@@ -221,3 +233,17 @@
 .detalhe-content{
     margin-top: 1rem;
 }
+
+
+@media screen and (max-width: 460px){
+
+    .historico-pedido{
+        width: 340px;
+    }
+    
+    .detalhe-pedido{
+        width: 340px;
+    }
+    
+
+ }

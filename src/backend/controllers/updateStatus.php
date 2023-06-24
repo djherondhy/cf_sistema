@@ -28,28 +28,34 @@ try {
         $conn->exec("INSERT INTO `notificacao`(`id_pedido`,`id_cliente`,`mensagem`)VALUES('$id_pedido','$id_cliente','O <b>Pedido #$id_pedido</b> foi colocado na lista de Entrega.')");
     }
 
+    if ($status == 'Em Entrega') {
+
+        $conn->exec("INSERT INTO `notificacao`(`id_pedido`,`id_cliente`,`mensagem`)VALUES('$id_pedido','$id_cliente','O <b>Pedido #$id_pedido</b> saiu para entrega.')");
+    }
+
     if ($status == 'Entregue') {
 
-        $conn->exec("INSERT INTO `notificacao`(`id_pedido`,`id_cliente`,`mensagem`)VALUES('$id_pedido','$id_cliente','O <b>Pedido #$id_pedido</b> foi entregue, obrigado pela compra.')");
+        $conn->exec("INSERT INTO `notificacao`(`id_pedido`,`id_cliente`,`mensagem`)VALUES('$id_pedido','$id_cliente','O <b>Pedido #$id_pedido</b> foi entregue Obrigado!')");
 
         $consulta = "SELECT quantidade, id_produto FROM pedido_item WHERE id_pedido = '$id_pedido'";
 
         $query = $conn->prepare($consulta);
-        $query->execute();
+       // $query->execute();
 
-        $dados = $query->fetchAll(PDO::FETCH_ASSOC);
+       // $dados = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        for($i = 0; $i< $query->rowCount(); $i++){
-            $quantidade = $dados[$i]['quantidade'];
-            $id_produto = $dados[$i]['id_produto'];
-            $dataAtual = date('Y-m-d'); 
-            $conn->exec("INSERT INTO `movimentacao` ( `id_produto`, `descricao`, `data`, `tipo`, `quantidade`) VALUES ('$id_produto', 'Pedido', '$dataAtual', '0', '$quantidade');");
+      // for($i = 0; $i< $query->rowCount(); $i++){
+        //    $quantidade = $dados[$i]['quantidade'];
+        //    $id_produto = $dados[$i]['id_produto'];
+          //  $dataAtual = date('Y-m-d'); 
+            //$conn->exec("INSERT INTO `movimentacao` ( `id_produto`, `descricao`, `data`, `tipo`, `quantidade`) VALUES ('$id_produto', 'Pedido', '$dataAtual', '0', '$quantidade');");
 
-        }
+        //}
 
 
 
     }
+    
 
 
 
