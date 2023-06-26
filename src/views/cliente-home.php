@@ -1,6 +1,6 @@
 <?php
+session_name('user');
 session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,7 +165,7 @@ session_start();
         <script src="../backend/requests/endereco-get.js"></script>
         <script src="../backend/requests/endereco-post.js"></script>
         <script src="../backend/requests/pedido-get.js"></script>
-      
+        <script src="../backend/requests/get-catalogo.js"></script>
         <script>
            
             <?php
@@ -181,6 +181,9 @@ session_start();
                 }
             ?>
 
+            $('#close-detalhe').click(function(){
+                $('detalhes-container').fadeOut('slow');
+            })
 
         </script>
 
