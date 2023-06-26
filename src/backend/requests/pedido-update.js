@@ -23,6 +23,11 @@ function updateStatus(_id_pedido, _id_cliente, _status){
         dados.status = 'Cancelado'
     }
 
+    if (_status == 5){
+        dados.status = 'Em Entrega'
+    }
+    
+
 
     var dadosJson = JSON.stringify(dados);
 
@@ -38,3 +43,4 @@ function updateStatus(_id_pedido, _id_cliente, _status){
         }
     });
 }
+

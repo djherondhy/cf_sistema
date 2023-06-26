@@ -2,6 +2,10 @@
 session_name('user');
 session_start();
 ?>
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +22,138 @@ session_start();
 
 <body>
 
+<?php
+        include "components/detalhes.php";
+?>
+    
+<?php
+        include "components/sidebar.php";
+        ?>
+    <div class="side-pedido">
+        <button class="close-btn" id="close-pedidos"> <i class='bx bx-x'></i> </button>
+        <p class="title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                    d="M21 11h-3V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v14c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3v-6a1 1 0 0 0-1-1zM5 19a1 1 0 0 1-1-1V5h12v13c0 .351.061.688.171 1H5zm15-1a1 1 0 0 1-2 0v-5h2v5z">
+                </path>
+                <path d="M6 7h8v2H6zm0 4h8v2H6zm5 4h3v2h-3z"></path>
+            </svg>
+            Pedidos
+        </p>
+        <div class="pedido-filter">
+            <button class="filter-active">Confirmados</button>
+            <button>Enviados</button>
+            <button>Recebidos</button>
+        </div>
+
+        <div class="pedido-list">
+            <div class="pedido-card">
+                <div class="more-btn" id="more-pedido" onclick="showMorePedido(1)">
+                    <i class='bx bx-expand-vertical'></i>
+                </div>
+                <div class="pedido-header">
+                    <p class="pedido-id"><i class='bx bx-purchase-tag-alt'></i> Pedido #1234</p>
+                    <p>Subtotal: R$ 13.98</p>
+                </div>
+                <div class="datatime">
+                    <p>22/10/2022</p>
+                    <p>18:20</p>
+                </div>
+                <div class="pedido-content" id="pedido-content1">
+                    <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
+                    <div class="itens-list">
+                        <div class="item-pedido">
+                            <p>1x Omeprazol</p>
+                            <p>R$ 8.95</p>
+                        </div>
+                        <div class="item-pedido">
+                            <p>1x Ibrupofeno</p>
+                            <p>R$ 5.75</p>
+                        </div>
+                    </div>
+
+                    <div class="pedido-info">
+                        <p class="info-text"><i class='bx bx-store'></i>Retirada</p>
+                        <p class="info-text"> <i class='bx bx-money'></i> Dinheiro</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pedido-card">
+                <div class="more-btn" id="more-pedido" onclick="showMorePedido(2)">
+                    <i class='bx bx-expand-vertical'></i>
+                </div>
+                <div class="pedido-header">
+                    <p class="pedido-id"><i class='bx bx-purchase-tag-alt'></i> Pedido #1554</p>
+                    <p>Subtotal: R$ 13.98</p>
+                </div>
+                <div class="datatime">
+                    <p>22/10/2022</p>
+                    <p>18:20</p>
+                </div>
+                <div class="pedido-content" id="pedido-content2">
+                    <p class="pedido-title"><i class='bx bx-basket'></i>Itens</p>
+                    <div class="itens-list">
+                        <div class="item-pedido">
+                            <p>1x Omeprazol</p>
+                            <p>R$ 8.95</p>
+                        </div>
+                    </div>
+
+                    <div class="pedido-info">
+                        <p class="info-text"> <i class='bx bx-package'></i> Entrega</p>
+                        <p class="info-text"> <i class='bx bx-wallet'></i> Crédito</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="side-cart">
+        <button class="close-btn" id="close-carrinho"> <i class='bx bx-x'></i> </button>
+        <p> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                    d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921zM17.307 15h-6.64l-2.5-6h11.39l-2.25 6z">
+                </path>
+                <circle cx="10.5" cy="19.5" r="1.5"></circle>
+                <circle cx="17.5" cy="19.5" r="1.5"></circle>
+            </svg>
+            Carrinho</p>
+        <div class="carrinho-list">
+            <?php
+            for ($i = 0; $i < 2; $i++) {
+
+
+                ?>
+
+                <div class="carrinho-card">
+                    <img src="pictures/remedios/omeprazol.png" alt="" srcset="">
+                    <div class="cart-text">
+                        <p class="nome-produto">Omeprazol</p>
+                        <p class="chart-preco">R$ 12.75 </p>
+                    </div>
+
+                    <div class="quantidade">
+                        <button> + </button>
+                        <p>5</p>
+                        <button> - </button>
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
+                                <path
+                                    d="M15 2H9c-1.103 0-2 .897-2 2v2H3v2h2v12c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2V8h2V6h-4V4c0-1.103-.897-2-2-2zM9 4h6v2H9V4zm8 16H7V8h10v12z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+
+        <div class="finalizar-cart">
+            <p><b>Total:</b> R$ 125.75 </p>
+            <button class="finalizar-btn">Finalizar Pedido</button>
+        </div>
+    </div>
     <?php
     include "components/detalhes.php";
     include "components/sidebar.php";

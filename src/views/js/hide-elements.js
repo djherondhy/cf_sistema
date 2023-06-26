@@ -40,6 +40,13 @@ $('.pedido-container').hide();
     }, "slow");
   })
 
+
+//Painel do entregador
+
+$('.historico-pedido').hide();
+$('.detalhe-pedido').hide();
+
+
   $('.popup').hide();
 
 

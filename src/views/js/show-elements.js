@@ -1,3 +1,78 @@
+//Fecha Historico de Pedidos entregador
+
+$('#close-historico').click(function () {
+        $('.historico-pedido').delay('300').slideToggle('slow');
+})
+
+$('#bnt-historico').click(function () {
+        $('.historico-pedido').delay('300').slideToggle('slow');
+})
+
+$('#close-detalhe').click(function () {
+        $('.detalhe-pedido').delay('300').slideToggle('slow');
+})
+
+$('#setaR').click(function () {
+        $('#title-painel-pronto').delay('100').fadeToggle();
+        $('#setaR').delay('100').fadeToggle();
+        $('#list-pronto-entrega').delay('100').fadeToggle();
+
+        $('#title-painel-entrega').delay('400').fadeToggle('slow');
+        $('#setaL').delay('400').fadeToggle('slow');
+        $('#list-em-entrega').delay('400').fadeToggle('slow');
+
+  $('#setaR').css('display', 'flex');
+        $('#setaL').css('display', 'none');
+        
+})
+
+$('#setaL').click(function () {
+        $('#title-painel-entrega').delay('100').fadeToggle();
+        $('#setaL').delay('100').fadeToggle();
+        $('#list-em-entrega').delay('100').fadeToggle();
+
+        $('#title-painel-pronto').delay('400').fadeToggle('slow');
+        $('#setaR').delay('400').fadeToggle('slow');   
+        $('#list-pronto-entrega').delay('400').fadeToggle('slow');
+
+        $('#setaR').css('display', 'none');
+        $('#setaL').css('display', 'flex');
+
+        
+})
+
+$(window).resize(function() {
+       
+        var ementrega = document.getElementById('list-em-entrega');
+        var pronto = document.getElementById('list-pronto-entrega');
+        var setaR  = document.getElementById('setaR');
+        var setaL  = document.getElementById('setaL');
+        var tamanhoAtual = $(window).width();
+      
+        // Verifica se o tamanho atual da tela corresponde ao tamanho desejado
+        if (tamanhoAtual > 660) {
+                        $('#list-em-entrega').css('display', 'flex');
+                        $('#list-pronto-entrega').css('display', 'flex');
+                        $('#title-painel-pronto').css('display', 'flex');
+                        $('#title-painel-entrega').css('display', 'flex');
+                        $('#setaR').css('display', 'none');
+                        $('#setaL').css('display', 'none');             
+        }
+         else{
+                $('#list-em-entrega').css('display', 'none');
+                $('#title-painel-entrega').css('display', 'none');
+                $('#setaR').css('display', 'flex');
+
+         }
+        
+        
+      });
+          
+          
+          
+                      
+         
+
 
 
 //mostrar mais pedido Home Cliente
