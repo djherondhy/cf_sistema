@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {
+    --main-color: #8856f6;
+    --sub-color: #7234fa;
+    --sec-color: #2a1067;
+    --subsec-color: #210a58;
+    --dark-color: #040824;
+    --white-color: #ffffff;
+    --gray-color: #878787;
+    --red-color: #fc0352;
+    --dark-gray: #454545;
+    --min-gray: #bbbbbb;
+}
+
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content{
+    padding: 1rem;
+    height: 95%;
+    width: 60%;
+    gap: 2rem;
+}
+
+.pedido-card .infos{
+    display: flex;
+    gap: 0.2rem;
+    align-items: center;
+}
+
+.card-column{
+    width: 30%;
+    gap: 0.5rem;
+    color: var(--gray-color);
+
+}
+
+.infos i{
+    color: var(--main-color);
+}
+
+
+.info-list-cards{
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.info-list-cards .card{
+    background-color: var(--white-color);
+    box-shadow: 6px 6px 10px #ccc;;
+    padding: 1rem;
+    width: 200px;
+    border-radius: 10px;
+    color: var(--main-color);
+    position: relative;
+}
+
+.card-icon{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 30px;
+    height: 30px;
+    color: var(--white-color);
+    background-color: var(--main-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:  6px 6px 6px #f0f0f0;
+}
+.card-info{
+    font-size: 1.2rem;
+    color: var(--subsec-color);
+    font-family: 'Roboto';
+    font-weight: bold;
+}
+
+.card-subinfo{
+    font-size: 0.9rem;
+}
+
+.pedidos{
+    width: 300px;
+    height: 95%;
+    background: #efecf0;
+    border-radius: 30px;
+    margin: 1rem;
+    color: var(--dark-color);
+}
+
+.pedidos-list{
+    gap: 1rem;
+}
+.pedido-card{
+    background-color: var(--white-color);
+    border-radius: 6px;
+    width: 75%;
+    font-size: 0.8rem;
+    padding: 1rem;
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+.pedido-title{
+    font-weight: bold;
+}
+.infos span{
+    font-weight: lighter;
+    color: var(--gray-color);
+}
+.pedido-card .cards{
+    display: flex;
+    gap: 1rem;
+}
+.pedido-card .cards p{
+    padding: 0.3rem;
+    color: var(--white-color);
+    background-color: var(--gray-color);
+    border-radius: 6px;
+}
+.pedidos-header{padding: 1rem;}
+
+.pedido-btns{
+    display: flex;
+    gap: 1rem;
+}
+
+.pedido-btns button{
+    color: var(--white-color);
+    background: var(--main-color);
+    border: 0;
+    padding: 0.5rem;
+    width: 100px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.cancel-btn{
+    background-color: var(--red-color) !important;
+}
+
+.clientes-online{
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 30px;
+    padding: 1rem;
+    box-shadow:  17px 17px 34px #bebebe,
+                -17px -17px 34px #ffffff;
+    border-radius: 30px;
+    gap: 0.5rem;
+}
+
+.entregadores-online{
+    background-color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 150px;
+    border-radius: 30px;
+    padding: 1rem;
+    box-shadow:  17px 17px 34px #bebebe,
+                -17px -17px 34px #ffffff;
+    border-radius: 30px;
+}
+
+.clientes-list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.2rem;
+}
+
+.online-card{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.online-card .info{
+    display:flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+.online-card .tags{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tag{
+    background-color: #f7f7f7;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    color: var(--dark-gray)
+}
+
+.online-card img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    aspect-ratio: 3/4;
+  
+}
+
+.section-title{
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.mov-list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 100%;
+   
+    padding-bottom: 2rem;
+}
+.mov-list::-webkit-scrollbar {
+    width: 3px;
+}
+
+.mov-list::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 3px solid #efefef;
+    /* creates padding around scroll thumb */
+}
+
+.mov-card{
+    width: 95%;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+}
+
+.mov-card-action{
+    display: flex;
+    gap: 0.2rem;
+    flex-wrap: wrap;
+}
+.mov-card-action button{
+    padding: 0.5rem;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border-radius: 6px;
+}
+
+
+.mov-card p{
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.mov-cod{
+    font-weight: bold;
+}
+
+.mov-data{
+    color: var(--gray-color);
+}
+
+.mov-descricao{
+    background-color: #ededed;
+    padding: 0.3rem;
+    border-radius: 6px;
+}
+
+.entrada{
+    color:#21cf69;
+    font-size: 1.2rem;
+}
+
+.saida{
+    color:#eb2f61;
+    font-size: 1.2rem;
+   
+}
+
+
+
+@media screen and (max-width: 1370px){
+    .info-list-cards .card{
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 710px){
+
+    .pedidos{
+        display: none;
+    }
+
+    .content{
+        width: 80%;
+    }
+}

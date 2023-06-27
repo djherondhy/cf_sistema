@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+:root {
+    --main-color: #8856f6;
+    --sub-color: #7234fa;
+    --sec-color: #2a1067;
+    --subsec-color: #210a58;
+    --dark-color: #040824;
+    --white-color: #ffffff;
+    --gray-color: #878787;
+    --red-color: #fc0352;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-right: 1rem;
+}
+
+.header {
+    background-color: #fff;
+    width: 100%;
+}
+
+.logout {
+    background-color: var(--red-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    text-decoration: none;
+    border: 0;
+    padding: 0;
+}
+
+.logout i {
+    color: #fff;
+    transform: translateX(-1px);
+}
+
+
+.perfil-img {
+    background: var(--main-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.painel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-color);
+    width: 70%;
+    height: 90%;
+    border-radius: 15px;
+
+}
+
+.top-bar {
+    width: 100%;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.top-bar img {
+    margin-top: 1%;
+    margin-left: 4%;
+    width: 70px;
+    height: 60px;
+    background-color: var(--main-color);
+    background: linear-gradient(90deg, rgba(136, 86, 246, 1) 0%, rgba(52, 0, 166, 1) 50%);
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.title-painel {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-bar h2 {
+    color: var(--main-color);
+    font-size: 30px;
+    margin-top: 1%;
+    margin-left: 15%;
+
+    justify-self: center;
+}
+
+
+.bnt-hisb {
+    display: flex;
+    justify-content: end;
+    width: 120px;
+}
+
+.top-bar input {
+    text-align: center;
+    width: 140px;
+    padding: 10px;
+    background: rgb(136, 86, 246);
+    border-radius: 30px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    border-color: white;
+}
+
+.top-bar input:hover {
+    background-color: var(--sub-color);
+}
+
+
+.container-list {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    margin-bottom: 2%;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.seta {
+    display: flex;
+    width: 30px;
+    height: 45px;
+    align-items: baseline;
+    justify-content: right;
+}
+
+.seta img {
+
+    width: 30px;
+    height: 40px;
+}
+
+#setaL {
+    display: none;
+}
+
+#setaR {
+    display: none;
+}
+
+.title {
+    width: 90%;
+    height: 5%;
+    display: flex;
+    justify-content: space-around;
+    color: var(--main-color);
+    font-size: 0.9rem;
+}
+
+.pedidos-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48%;
+    height: 99%;
+    background-color: #f7f7f7;
+    border-radius: 30px;
+    overflow-y: scroll;
+    padding: 0.5rem;
+    gap:0.3rem;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 100px;
+    background: var(--white-color);
+
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-color);
+    border-radius: 100px;
+    opacity: 0;
+
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+    padding: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.list {
+    margin-top: 2%;
+    width: 95%;
+    height: 20%;
+    border-radius: 30px;
+    border: 1px solid;
+    border-color: var(--dark-color);
+    color: white;
+    background-color: var(--main-color);
+
+
+}
+
+.pedido-card {
+    padding: 0.5rem;
+    padding-top: 0;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    width: 90%;
+    cursor: pointer;
+}
+
+.pedido-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.pedido-card .pedido-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    color: var(--dark-gray);
+}
+
+.pedido-card .pedido-info p i {
+    color: var(--main-color);
+}
+
+.pedido-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pedido-tags p {
+    background-color: #ededed;
+    border-radius: 6px;
+    padding: 0.2rem 0.5rem;
+
+}
+
+.info-list {
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+
+}
+
+.info-list2 {
+    width: 100%;
+    display: flex;
+
+}
+
+
+.bnt-pronto {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+
+#detalhe-info-pedido input {
+    margin-top: 4%;
+    margin-bottom: 2%;
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    background: rgb(17, 8, 37);
+    background: linear-gradient(90deg, rgb(74, 40, 147) 0%, rgb(31, 10, 78) 50%);
+    border-radius: 30px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+
+#bnts-config {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#bnt-entregador-status input:hover {
+
+    border: 1px solid;
+    color: #19dc53;
+    border-color: #19dc53;
+
+
+}
+
+#bnt-entregador-confirm input:hover {
+    border: 1px solid;
+    color: var(--red-color);
+    border-color: var(--red-color);
+}
+
+.list input {
+    margin-top: 4%;
+    margin-bottom: 2%;
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    background: rgb(17, 8, 37);
+    background: linear-gradient(90deg, rgb(74, 40, 147) 0%, rgb(31, 10, 78) 50%);
+    border-radius: 30px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    box-shadow: 0px 0px 1px 1px;
+}
+
+.list input:hover {
+
+    border: 1px solid;
+
+    border-color: #ffffff;
+
+}
+
+@media screen and (max-width: 898px) {
+    .painel {
+        width: 80%;
+    }
+
+
+    .top-bar h2 {
+
+        font-size: 27px;
+
+    }
+
+    .top-bar img {
+        width: 60px;
+        height: 50px;
+
+    }
+
+    .top-bar input {
+        width: 120px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 754px) {
+
+    .top-bar h2 {
+
+        font-size: 26px;
+
+    }
+
+    .top-bar input {
+        width: 100px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 660px) {
+
+    .painel {
+        width: 85%;
+    }
+
+    .top-bar h2 {
+        font-size: 25px;
+    }
+
+    .top-bar input {
+        width: 90px;
+        height: 35px;
+    }
+
+    #title-painel-entrega {
+        display: none;
+    }
+
+    #list-em-entrega {
+        display: none;
+        width: 85%;
+    }
+
+    #setaR {
+        display: flex;
+    }
+
+    #list-pronto-entrega {
+        width: 85%;
+    }
+
+    #pronto-entreg {
+        margin-left: 3%;
+    }
+
+
+    .title {
+        font-size: 13px;
+    }
+
+
+
+
+}
+
+@media screen and (max-width: 530px) {
+
+    .painel {
+        width: 92%;
+    }
+
+    .top-bar img {
+        margin-left: 2%;
+        width: 50px;
+        height: 45px;
+
+    }
+
+    .top-bar h2 {
+        font-size: 24px;
+    }
+
+    .top-bar input {
+        width: 80px;
+        height: 35px;
+    }
+
+    #title-painel-entrega {
+        display: none;
+    }
+
+    .title {
+        font-size: 13px;
+    }
+
+    #list-em-entrega {
+        display: none;
+        width: 90%;
+    }
+
+    #list-pronto-entrega {
+        width: 90%;
+    }
+
+    .container-list {
+        width: 93%;
+        justify-content: space-between;
+    }
+
+
+
+}
+
+
+@media screen and (max-width: 460px) {
+
+    .painel {
+        width: 92%;
+    }
+
+    .top-bar img {
+        display: none;
+
+    }
+
+    .title-painel {
+        width: 80%;
+    }
+
+    .top-bar h2 {
+        font-size: 22px;
+    }
+
+    .top-bar input {
+        margin-right: 5%;
+        width: 80px;
+        height: 35px;
+    }
+
+    .title {
+        font-size: 13px;
+    }
+
+
+
+}

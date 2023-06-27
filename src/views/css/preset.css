@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+button{
+    cursor: pointer;
+}
+
+.neomorphism{
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+}
+
+.h-align{
+    display: flex;
+    flex-direction: row;
+}
+
+.v-align{
+    display: flex;
+    flex-direction: column;
+}
+
+.h-center{
+    justify-content: center;
+}
+
+.v-center{
+   align-items: center;
+}
+
+.vh-center{
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+
+
+.close-btn:hover{
+    background-color:#bbbbbb;
+
+}
+
+.close-btn{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 6px;
+    background: #e0e0e0;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+}
+
+.search-input{
+    display: flex;
+    border: 1px solid var(--main-color);
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 0.1rem;
+}
+
+.search-input input{
+    padding: 0.5rem;
+    border: 0;
+    outline: 0;
+    background: none;
+    color: var(--gray-color);
+}
+
+
+.popup{
+    width: 300px;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 4000;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    }
+
+    .popup-message{
+        font-size: 0.8rem;
+        width: 80%;
+        word-break: break-all;
+        color: var(--gray-color);
+    }
+    .close-popup{
+        border: 0;
+        background: #e0e0e0;
+        padding: 0.2rem;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        transition: all 0.5s ease-out;
+       
+    }
+
+.action-btn{
+    min-width: 100px;
+    padding: 0.5rem;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border: 0;
+    border-radius: 30px;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+    .close-popup i{
+        color: var(--dark-color);
+    }
+    .close-popup:hover{
+        background-color:#bbbbbb;
+    }
+    .popup .bxs-note{
+        color: var(--main-color);
+    }
+
+    .entrada{
+        color:#21cf69;
+    }
+
+    .saida{
+        color:#eb2f61
+    }

@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+:root{
+    --main-color: #8856f6;
+    --sec-color: #2a1067;
+    --dark-color: #040824;
+    --white-color: #ffffff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+   
+}
+
+.login-content{
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+    flex:1;
+    height: 100%;
+    width: 100%;
+}
+.login-left{
+    flex:auto;
+    height: 100%;
+    background: rgb(136,86,246);
+    background: linear-gradient(90deg, rgba(136,86,246,1) 0%, rgba(56,26,122,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+
+.login-left h2{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+.login-right{
+    height: 100%;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:auto;
+    font-family: 'Poppins', sans-serif;
+   
+    position: relative;
+    padding: 2%;
+    
+}
+
+.login-right form{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.login-right input[type="submit"]{
+    width: 150px;
+    padding: 10px;
+    font-family: 'Poppins';
+    background: rgb(136,86,246);
+    border-radius: 30px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+
+.login-right input[type="submit"]:hover{
+  box-shadow: 1px 1px 6px  var(--main-color);
+  
+}
+
+.title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.input-agroupt{
+   border-radius: 30px;
+   width: 250px;
+   border: 1px solid var(--main-color);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.8rem;
+}
+
+.input-agroupt i{
+    color: var(--main-color);
+ }
+
+.input-agroupt input{
+    border: 0;
+    background: none;
+    outline: 0;
+    color: var(--main-color);
+}
+.login-right img{
+    width: 100px;
+    height: 100px;
+    display: none;
+   
+}
+.input-agroupt input::-webkit-input-placeholder{
+    color: var(--main-color);
+}
+
+.text-agroup{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 1rem;
+    text-align: left;
+}
+.text-agroup p{
+    font-family: 'Poppins';
+    color: var(--white-color);
+    text-align: justify;
+}
+
+
+.img_login{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    gap: 1rem;
+}
+
+.forget a{
+    color: var(--sec-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forget :hover{
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.register a{
+    color: var(--sec-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.register{
+    border: 1px solid var(--main-color);
+     width: 150px;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0px;
+    border-radius: 30px;
+}
+
+.register :hover{
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.background-circle1{
+    position: absolute;
+    height: 10rem;
+    width: 10rem;
+    bottom: 0;
+    text-align: center;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    top: -4rem;
+    left: -4rem;
+    z-index: 1;
+}
+
+.background-circle2{
+    position: absolute;
+    height: 10rem;
+    width: 10rem;
+    bottom: 0;
+    text-align: center;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    bottom: -4rem;
+    right: -4rem;
+    z-index: 1;
+}
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .text-agroup{
+        width: 90%;
+    }
+    .login-right{
+        padding: 5%;
+    }
+    .login-content{
+        width: 100vw;
+        height: 100vh
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .login-content{
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    .login-left{
+        display: none;
+    }
+
+    .input-agroupt{
+        border-radius: 30px;
+        padding: 10px;
+        width: 250px;
+        border: 1px solid var(--main-color);
+     }
+     
+     .login-right img{
+        width: 60%;
+        height: 10rem;
+        display: block;
+        border-radius: 50%;
+        padding: 10px;
+        object-fit: contain;
+        aspect-ratio: 3/4;
+        background-color:  var(--main-color);
+     }
+
+  }
+
+  @media screen and (max-width: 555px){
+
+    .login-right img{
+      
+        background-color: none;
+       
+     }
+  }
