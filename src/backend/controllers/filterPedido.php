@@ -13,7 +13,7 @@ $id_cliente = $data['id_cliente'];
 
 
 
-$sql = "SELECT * FROM `pedido` WHERE $filtro AND status LIKE '%$status%' AND id_cliente = '$id_cliente';";
+$sql = "SELECT * FROM `pedido` WHERE data LIKE '%$filtro%' AND status LIKE '%$status%' AND id_cliente = '$id_cliente' ORDER BY id_pedido DESC;";
 
 //echo json_encode($sql);
 $stmt = $conn->prepare($sql);

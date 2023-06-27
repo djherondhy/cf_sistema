@@ -99,8 +99,11 @@ function getCarrinho(user_id) {
                 itensPedido = [];
                 for (var i = 0; i < length; i++) {
                     subtotal = subtotal + (response[i].preco * response[i].carrinho_quantidade);
+                   
                     itensPedido.push([response[i].id_produto, response[i].carrinho_quantidade, response[i].preco]);
 
+
+                    console.log(subtotal);
                     $('.pedido-itens').append('<div class="item-agroup">'
                         + '<p class="item">' + response[i].nome_comercial + '</p>'
                         + '<div class="tags">'
@@ -131,8 +134,8 @@ function getCarrinho(user_id) {
                 }
 
                 $('#finalizar-pedido').css('display', ' flex');
-                $('#carrinho-subtotal').append('Subtotal: R$' + subtotal.toFixed(2));
-                $('#pedido-subtotal').append('Subtotal: R$' + subtotal.toFixed(2));
+                $('#carrinho-subtotal').append('Subtotal: R$' +subtotal.toFixed(2));
+                $('#pedido-subtotal').append('Subtotal: R$' +subtotal.toFixed(2));
             }
         }
     });

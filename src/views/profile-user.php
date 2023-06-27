@@ -11,6 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Farmácia ao Seu Alcance</title>
     <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/cliente-home.css">
     <link rel="stylesheet" href="css/preset.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="pluguins/jquery-3.6.4.min.js"></script>
@@ -25,6 +26,7 @@ session_start();
     <?php include "components/pedido-sidebar.php"; ?>
     <?php include "components/nova-senha.php"; ?>
     <?php include "components/form-perfil.php"; ?>
+    <?php include "components/edt-endereco.php"; ?>
     <div class="container">
         <div class="topbar">
 
@@ -42,16 +44,19 @@ session_start();
                         </path>
                     </svg>
                     <div class="notificacao-modal">
-                        <div class="notificacao-item">
-                            <div class="notificacao-icon">
-                                <i class='bx bx-cycling'></i>
-                            </div>
-                            <div class="notificacao-text">
-                                <p>Seu pedido número #10056 saiu para entrega.</p>
-                                <p>10/05/2023 14:30 </p>
-                            </div>
+                        <div class="notificacao-list">
+                            <div class="notificacao-item">
+                                <div class="notificacao-icon">
+                                    <i class='bx bx-cycling'></i>
+                                </div>
+                                <div class="notificacao-text">
+                                    <p>Seu pedido número #10056 saiu para entrega.</p>
+                                    <p>10/05/2023 14:30 </p>
+                                </div>
 
+                            </div>
                         </div>
+                        <button id='btn-limpar'> Limpar Notificações</button>
                     </div>
                 </div>
                 <a href="login-user.php" class="logout"><i class='bx bx-log-out'></i></a>
@@ -97,10 +102,6 @@ session_start();
                         <i class='bx bx-history ' style='color:#ffffff'></i>
                         <p>Excluir Histórico</p>
                     </button>
-                    <button id="excluir-conta">
-                        <i class='bx bx-block ' style='color:#ffffff'></i>
-                        <p>Excluir Conta</p>
-                    </button>
                 </div>
             </div>
         </div>
@@ -139,7 +140,7 @@ session_start();
         <script src="../backend/requests/pedido-populate.js"></script>
         <script src="../backend/requests/pedido-post.js"></script>
         <script src="../backend/requests/pedido-get.js"></script>
-
+        <script src="../backend/requests/get-notificao.js"></script>        
         <script>
 
             <?php
@@ -150,6 +151,7 @@ session_start();
                 echo "getEndereco($userId);";
                 echo "getCarrinho($userId);";
                 echo "populatePedido();";
+                echo "getNotificacoes($userId);";
                 echo "getPedidos();";
             }
             ?>

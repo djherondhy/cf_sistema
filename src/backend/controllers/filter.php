@@ -13,7 +13,8 @@
     $categoria = $data['categoria'];
     $secao = $data['secao'];
     $order = $data['order'];
-    $sql = "SELECT * FROM `medicamentos` WHERE categoria Like '%$categoria%' AND secao LIKE '%$secao%' ORDER BY nome_comercial $order";
+    $busca = $data['busca'];
+    $sql = "SELECT * FROM `medicamentos` WHERE categoria Like '%$categoria%' AND secao LIKE '%$secao%' AND nome_comercial LIKE '%$busca%' ORDER BY nome_comercial $order";
     $stmt = $conn->prepare($sql);
 
     if($stmt->execute()){

@@ -7,7 +7,7 @@
     -webkit-backdrop-filter: blur( 4px );
     width: 100vw;
     height: 100vh;
-    z-index: 999;
+    z-index: 2000;
 }
 
 .form-produto{
@@ -132,6 +132,17 @@
     aspect-ratio: 3/4;
 }
 
+@media screen and (max-width: 684px){
+    .formulario{
+        flex-wrap: wrap;
+        overflow-y: auto;
+    }
+
+    .mov-list{
+        height: 65%;
+    }
+}
+
 
 </style>
 <div class="cadastro-container v-align vh-center">
@@ -172,7 +183,7 @@
                         <div class="agroup-input v-align">
                             <label for="p-secao">Seção</label>
                             <select name="secao" id="p-secao">
-                                <option value="Não Cadastrada">Não Cadastrada</option>
+                                <option value="">Não Cadastrada</option>
                 
                             </select>
                         </div>
@@ -180,7 +191,7 @@
                         <div class="agroup-input v-align">
                             <label for="p-fornecedor">Fornecedor</label>
                             <select name="fornecedor" id="p-fornecedor">
-                                <option value="Genérico">Não Cadastrado</option>
+                                <option value="">Não Cadastrado</option>
                                 
                             </select>
                         </div>
@@ -218,3 +229,6 @@
             </form>
         </div>
     </div>
+    <script>
+          $('#p-preco').mask('###0.00', { reverse: true });
+    </script>

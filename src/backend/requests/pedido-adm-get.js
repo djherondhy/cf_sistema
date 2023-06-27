@@ -16,6 +16,30 @@ $('input[name="filter-status"]').change(function(){
 });
 
 $('input[name="filter-status"]').change(function(){
+   
+    $('.status-action label').removeClass('active');
+    if($(this).is(':checked')){
+        var radioId = $(this).attr('id')
+
+        var labelId = $('label[for="'+radioId+'"]').attr('id');
+
+        $('#' + labelId).addClass('active');
+    }
+
+    
+   getPedidos();
+});
+
+$('#busca').keyup(function(){
+    console.log($('#busca').val());
+    getPedidos()
+});
+
+$('#busca').change(function(){
+    console.log($('#busca').val());
+    getPedidos()
+});
+$('input[name="filter-status"]').change(function(){
     getPedidos();
  });
  
@@ -28,12 +52,33 @@ $('#pagamento-select').change(function(){
     getPedidos();
  });
 
+ function verificarFormatoData(string) {
+    // Formato da data: dd/mm/aaaa
+    var regex = /^\d{2}\/\d{2}\/\d{4}$/;
+    
+    return regex.test(string);
+  }
+
+
+
 function getPedidos() {
+
+    var string_busca = $('#busca').val();
+    if(verificarFormatoData($('#busca').val())){
+        var partesData = $('#busca').val().split("/");
+        var dia = partesData[0];
+        var mes = partesData[1];
+        var ano = partesData[2];
+
+        string_busca = ano + "-" + dia + "-" + mes;
+    }
+
+    
     var dados = {
         status: $('input[name="filter-status"]:checked').val(),
         forma_recebimento: $('#recebimento').val(),
         forma_pagamento: $('#pagamento-select').val(),
-        busca: ''
+        busca: string_busca
     }
     var dadosJson = JSON.stringify(dados);
 
@@ -77,7 +122,7 @@ function getPedidos() {
                     $('#pedido-card' + response[i].id_pedido + ' .pedido-action').append(
                         '<button onclick="updateStatus('+response[i].id_pedido+','+response[i].id_cliente+',1)">'
                         + '<i class="bx bx-send"></i> Confirmar </button>'
-                        + '<button><i class="bx bx-x"></i> Cancelar </button>');
+                        + '<button onclick="cancelarPedido('+response[i].id_pedido+','+response[i].id_cliente+')"><i class="bx bx-x"></i> Cancelar </button>');
                 }
 
                 if (response[i].status == 'Confirmado' && response[i].forma_recebimento == 'Entrega') {

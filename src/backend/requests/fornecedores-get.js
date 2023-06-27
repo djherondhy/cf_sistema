@@ -30,7 +30,7 @@ function getFornecedores(){
                 +'</div>'
                 +'<div class="card-action">'
                 +'<button class="view-fornecedor" onclick="moreFornecedor('+response[i].codigo+')"><i class="bx bx-expand-vertical"></i></button>'
-                +'<button><i class="bx bxs-edit"></i></button>'
+                +'<button onclick="getFornecedor('+response[i].codigo+')"><i class="bx bxs-edit"></i></button>'
                 +'<button class="delete" onclick="deleteFornecedor('+response[i].codigo+')"><i class="bx bxs-trash-alt"></i></button>'
                 +'</div>'
                 +'</div>'

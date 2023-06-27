@@ -5,9 +5,9 @@ Página Gerenciamento de Estoque/ Produto.
 [] Buscar Produtos
 [] Buscar Seção
 [] Alterar Seção
-[] Exibir Fornecedores
-[] Formulario Movimentação Entrada e Saida
-[] Painel Entrada e Saida
+[x] Exibir Fornecedores
+[x] Formulario Movimentação Entrada e Saida
+[x] Painel Entrada e Saida
 
 
 -----
@@ -23,4 +23,9 @@ Página Gerenciamento de Estoque/ Produto.
 [x] Excluir Endereços
 ---
 [x] Funcionalidade Carrinho
-[] Funcionalide Finalizar Pedido
+[x] Funcionalide Finalizar Pedido
+
+[x] Alterar Foto do Perfil
+[x] Excluir Foto anterior dos arquivos
+
+[] Editar Endereco

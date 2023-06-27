@@ -39,8 +39,14 @@ $('#pedido-form').submit(function(e){
         dataType: 'json',
         success: function(response){
             $('.pedido-container').fadeOut('slow');
-            getCarrinho(user_id);
+            $('.popup').fadeOut('slow');
+            $('.popup').fadeIn('slow');
+            $('.popup p').remove();
+            $('.popup').prepend('<p class="popup-message">'+response.message+'</p>')
+            $('.carrinho').fadeOut('slow');
+            $('.side-pedido').fadeIn('slow');
             getPedidos();
+            getCarrinho(user_id);
            
             console.log(response);
         },

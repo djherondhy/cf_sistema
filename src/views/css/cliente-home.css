@@ -19,6 +19,13 @@
     margin: 0;
 }
 
+.categoria-card input{
+    display: none;
+}
+
+.carousel-produtos i {
+    color: var(--white-color);
+}
 .preco {
     background-color: var(--sub-color);
     padding: 0.2rem;
@@ -65,6 +72,13 @@
 .topbar .user-perfil img {
     width: 100%;
 }
+.topbar .user-perfil img{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+  
+  }
 
 .topbar .notificacao {
     background: var(--main-color);
@@ -289,11 +303,13 @@
     background-color: #fc0352;
 }
 
-
+.notificacao svg{
+    cursor: pointer;
+}
 
 .notificacao-modal {
     width: 400px;
-    height: 200px;
+    height: 300px;
     background: rgba( 255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
@@ -308,8 +324,43 @@
     align-items: center;
     gap: 0.5rem;
     padding-top: 0.5rem;
-    z-index: 10;
+    z-index: 1500;
+   
 }
+
+.notificacao-modal button{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background-color: var(--main-color);
+    border: 0;
+    color: var(--white-color);
+    align-self: flex-end;
+    margin: 1rem;
+}
+
+.notificacao-list{
+    width: 90%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    z-index: 10;
+    overflow: auto;
+}
+.notificacao-list::-webkit-scrollbar {
+    width: 3px;
+}
+
+.notificacao-list::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 3px solid #ccc;
+    /* creates padding around scroll thumb */
+}
+
 
 .notificacao-item {
     width: 90%;
@@ -326,7 +377,7 @@
     font-size: 0.8rem;
 }
 
-.notificacao-icon {
+.notificacao-icon i{
     width: 30px;
     height: 30px;
     color: var(--main-color);

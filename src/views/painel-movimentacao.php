@@ -1,3 +1,4 @@
+<?php include 'components/session_verify.php'?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,13 +11,13 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/preset.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-   
     <script src="pluguins/jquery-3.6.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 
 <body>
-
+    <?php include 'components/movimentacao-form.php'; ?>
+    <?php include 'components/confirm.php'; ?>
     <div class="container h-align v-center">
         <?php
         include 'components/sidemenu.php';
@@ -29,12 +30,15 @@
                         <input type="text" placeholder="Busca por Data" id="data">
                         <label for="data" id="dataLabel"><i class='bx bx-calendar' ></i></label>
                     </div>
-                    <label for="" class="filter-label">Todos</label>
-                    <label for="" class="filter-label">Entradas</label>
-                    <label for="" class="filter-label">Saidas</label>
+                    <label for="filter-todos" class="filter-label active" id='label-todos'>Todos</label>
+                    <label for="filter-entradas" class="filter-label"  id='label-entrada'>Entradas</label>
+                    <label for="filter-saidas" class="filter-label"  id='label-saida'>Saidas</label>
+                    <input type="radio" name="filter-movimentacao" value="" id="filter-todos" checked>
+                    <input type="radio" name="filter-movimentacao" value="1" id="filter-entradas">
+                    <input type="radio" name="filter-movimentacao" value="0" id="filter-saidas">
                 </div>
                 <div class="mov-action">
-                    <button class="action-btn"><i class='bx bx-layer-plus'></i> Nova Movimentação</button>
+                    <button class="action-btn" id="nova-mov"><i class='bx bx-layer-plus'></i> Nova Movimentação</button>
                 </div>
                 <div class="mov-list">
                     <div class="mov-card">
@@ -58,13 +62,26 @@
    
     <script>
         $('#menu-movimentacao').addClass('menu-active');
-
+        $('.movimentacao-cadastro').hide();
+        $('#data').datepicker();
         $('#dataLabel').click(function () {
             $('#data').datepicker();
         })
+
+        $('#nova-mov').click(function(){
+            $('.movimentacao-cadastro').fadeIn('slow');
+        })
+
+        $('#close-formMov').click(function(){
+            $('.movimentacao-cadastro').fadeOut('slow');
+        })
     </script>
 
+<script src="../backend/requests/movimentacao-delete.js"></script>
 <script src="../backend/requests/movimentacao-get.js"></script>
+<script src="../backend/requests/movimentacao-populate.js"></script>
+<script src="../backend/requests/movimentacao-post.js"></script>
+
 </body>
 
 </html>

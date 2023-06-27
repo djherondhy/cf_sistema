@@ -1,4 +1,5 @@
 $('#previewProduto').hide();
+
 $('#imagem').change(function(){
     var file = this.files[0];
     var reader = new FileReader();
@@ -10,3 +11,5 @@ $('#imagem').change(function(){
    
     reader.readAsDataURL(file);
 });
+
+

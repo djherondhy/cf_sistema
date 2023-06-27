@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {
+    --main-color: #8856f6;
+    --sub-color: #7234fa;
+    --sec-color: #2a1067;
+    --subsec-color: #210a58;
+    --dark-color: #040824;
+    --white-color: #ffffff;
+    --gray-color: #878787;
+    --red-color: #fc0352;
+    --dark-gray: #454545;
+    --min-gray: #bbbbbb;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins';
+    position: relative;
+    overflow: hidden;
+}
+
+
+.content {
+    width: 80%;
+    height: 95%;
+    margin-left: 1rem;
+}
+
+.recursos-container{
+    width: 95%;
+    padding: 1rem;
+    border-radius: 30px;
+    background-color: var(--white-color);
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.filter{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.filter input{
+    border: 1px solid var(--main-color);
+    border-radius: 30px;
+    height: 25px;
+    padding: 0.2rem;
+}
+
+.funcionarios-table{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+
+.col-card{
+    display: flex;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    justify-content: space-between;
+}
+
+.col-card .colaborador{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.colaborador .perfil{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    color: var(--white-color);
+    font-weight: bold;
+}
+
+.col-name{
+    font-weight: bold;
+}
+
+.col-tipo{
+    color: var(--gray-color);
+}
+.col-dados{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.situacao p{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.situacao span{
+    background-color: #ededed;
+    display: flex;
+    padding: 0.2rem 0.3rem;
+    border-radius: 4px;
+} 
+
+
+.acesso p{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.acesso span{
+    background-color: #ededed;
+    display: flex;
+    padding: 0.2rem 0.3rem;
+    border-radius: 4px;
+    color:var(--white-color) !important;
+}
+
+
+.select-agroup label{
+    border-radius: 5px !important;
+}
+
+.col-card .actions{
+    display: flex;
+    gap: 0.2rem;
+}
+
+.col-action{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-end;
+}
+
+.col-card button{
+    padding: 0.5rem;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border-radius: 6px;
+}
+
+.col-action .select-agroup{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.select-agroup select{
+    padding: 0.2rem;
+    border: 0;
+  
+}
+
+.input-row{
+    gap: 1rem;
+    width: 90%;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+
+
+
+

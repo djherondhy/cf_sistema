@@ -12,6 +12,7 @@
         flex-direction: column;
         gap: 1rem;
         color: var(--white-color);
+        z-index: 2000;
     }
 
     .side-pedido .pedido-action{
@@ -248,7 +249,7 @@
     </p>
     <div class="pedido-filter">
     
-        <input type="text" name="pedido-busca" placeholder="Digite um código ou data" id="pedido-busca">
+        <input type="text" name="pedido-busca" placeholder="Escolha uma data" id="pedido-busca">
         <select name="" id="pedido-data">
             <option value="data like '%%'">Todos</option>
             <option value="data = CURRENT_DATE">Hoje</option>
@@ -258,10 +259,10 @@
     </div>
 
     <div class="pedido-filter">
-       <label for="filter-todos" class="filter-active">Todos</label>
-       <label for="filter-confirmado">Confirmados</label>
-       <label for="filter-recebidos">Recebidos</label>
-       <label for="filter-cancelados">Cancelados</label>
+       <label for="filter-todos" class="filter-active" id='label-todos'>Todos</label>
+       <label for="filter-confirmado" id='label-confirmado'>Confirmados</label>
+       <label for="filter-recebidos" id='label-recebidos'>Recebidos</label>
+       <label for="filter-cancelados" id='label-cancelados'>Cancelados</label>
 
        <input type="radio" name="filter-status" id="filter-todos" value="" checked>
        <input type="radio" name="filter-status" id="filter-confirmado" value="Confirmado" >
@@ -302,5 +303,12 @@
             </div>
         </div>
     </div>
-
 </div>
+
+<script>
+    $('#close-pedidos').click(function(){
+        $('.side-pedido').fadeOut('slow');
+    })
+
+    $('#pedido-busca').datepicker();
+</script>

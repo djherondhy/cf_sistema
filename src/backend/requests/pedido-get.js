@@ -1,18 +1,48 @@
 
 
-$('#pedido-data').change(function(){         
-    var filter = $('#pedido-data').val().toString();
+$('#pedido-busca').change(function(){         
+   
+        if($('#pedido-busca').val() != ''){
+            var partesData = $('#pedido-busca').val().split("/");
+            var dia = partesData[0];
+            var mes = partesData[1];
+            var ano = partesData[2];
+            var string_busca = ano + "-" + dia + "-" + mes;
+        }else{
+            var string_busca =' ';
+        }
+        
+
     var status = $('input[name="filter-status"]:checked').val();
+
+    getPedidosFilter(string_busca,status);
     
-    getPedidosFilter(filter,status);
-    
+  
 });
 
 $('input[name="filter-status"]').change(function(){
-    var filter = $('#pedido-data').val().toString();
+   
+        if($('#pedido-busca').val() != ''){
+            var partesData = $('#pedido-busca').val().split("/");
+            var dia = partesData[0];
+            var mes = partesData[1];
+            var ano = partesData[2];
+            var string_busca = ano + "-" + dia + "-" + mes;
+        }else{
+            var string_busca ='';
+        }
+
     var status = $('input[name="filter-status"]:checked').val();
-    
-    getPedidosFilter(filter,status);
+
+    $('.pedido-filter label').removeClass('filter-active');
+    if($(this).is(':checked')){
+        var radioId = $(this).attr('id')
+
+        var labelId = $('label[for="'+radioId+'"]').attr('id');
+
+        $('#' + labelId).addClass('filter-active');
+    }
+    getPedidosFilter(string_busca,status);
 
 
 })
@@ -38,6 +68,9 @@ function getPedidosFilter(_filtro, _status){
             var length = response.length;
             $('.pedido-list .pedido-card').remove();
 
+            if(length == 0){
+                $('.pedido-list').append('<div class="pedido-card"><p>Nenhum Pedido Encontrado</p></div>');
+            }
             for (var i = 0; i < length; i++) {
                 var dataFormatada = response[i].data;
                 var partesData = dataFormatada.split('-');
@@ -48,7 +81,7 @@ function getPedidosFilter(_filtro, _status){
                 var dataReformatada = dia + '-' + mes + '-' + ano;
 
                 $('.pedido-list').append('<div class="pedido-card" id="pedido-card' + response[i].id_pedido + '">'
-                    + '<div class="more-btn" id="more-pedido" onclick="getPedidoItens(' + response[i].id_pedido + ')">'
+                    + '<div class="more-btn" id="more-pedido" onclick="getPedidoItens('+response[i].id_pedido+')">'
                     + '<i class="bx bx-expand-vertical"></i>'
                     + '</div>'
                     + '<div class="pedido-header">'
@@ -69,8 +102,12 @@ function getPedidosFilter(_filtro, _status){
                     + '<p class="info-text"><i class="bx bx-store"></i>Retirada</p>'
                     + '<p class="info-text"> <i class="bx bx-money"></i> Dinheiro</p>'
                     + '</div>'
-                    +'<div class="pedido-action"><button>Cancelar</div>'
+                    +'<div class="pedido-action"></div>'
                     +'</div>');
+
+                    if(response[i].status == 'Esperando Confirmação'){
+                        $('#pedido-action'+response.id_pedido).append('<button onclick="cancelarPedidoInit('+response[i].id_pedido+','+response[i].id_cliente+')">Cancelar</button>')
+                    }
             }
 
             $('.pedido-content').hide();
@@ -99,7 +136,10 @@ function getPedidos() {
 
             var length = response.length;
             $('.pedido-list .pedido-card').remove();
-
+            if(length == 0){
+                $('.pedido-list').append('<div class="pedido-card"><p>Nenhum Pedido Efetuado</p></div>');
+            }
+       
             for (var i = 0; i < length; i++) {
                 var dataFormatada = response[i].data;
                 var partesData = dataFormatada.split('-');
@@ -109,8 +149,8 @@ function getPedidos() {
 
                 var dataReformatada = dia + '-' + mes + '-' + ano;
 
-                $('.pedido-list').append('<div class="pedido-card" id="pedido-card' + response[i].id_pedido + '">'
-                    + '<div class="more-btn" id="more-pedido" onclick="getPedidoItens(' + response[i].id_pedido + ')">'
+                $('.pedido-list').append('<div class="pedido-card" id="pedido-card' +response[i].id_pedido+'">'
+                    + '<div class="more-btn" id="more-pedido" onclick="getPedidoItens('+response[i].id_pedido+')">'
                     + '<i class="bx bx-expand-vertical"></i>'
                     + '</div>'
                     + '<div class="pedido-header">'
@@ -131,8 +171,12 @@ function getPedidos() {
                     + '<p class="info-text"><i class="bx bx-store"></i>Retirada</p>'
                     + '<p class="info-text"> <i class="bx bx-money"></i> Dinheiro</p>'
                     + '</div>'
-                    +'<div class="pedido-action"><button>Cancelar</div>'
+                    +'<div class="pedido-action" id="pedido-action'+response.id_pedido+'">'
                     +'</div>');
+
+                    if(response[i].status == 'Esperando Confirmação'){
+                        $('#pedido-action'+response.id_pedido).append('<button onclick="cancelarPedidoInit('+response[i].id_pedido+','+response[i].id_cliente+')">Cancelar</button>')
+                    }
             }
 
             $('.pedido-content').hide();
@@ -144,7 +188,7 @@ function getPedidos() {
 }
 
 function getPedidoItens(_id_pedido) {
-   
+ 
     $('#pedido-content'+_id_pedido).slideToggle('slow');
 
     $.ajax({

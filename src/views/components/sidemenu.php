@@ -27,14 +27,19 @@
    gap: 0.2rem;
 }
 
-.perfil-area img{
+.perfil-area .perfil-img{
     width:100px;
     height: 100px;
-    object-fit: contain;
     border-radius: 50%;
-    border: 2px solid var(--white-color);
     background-color: var(--main-color);
-    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.perfil-img p{
+    color: var(--white-color) !important;
 }
 
 .perfil-area .username{
@@ -74,6 +79,9 @@
         display: flex;
         align-items: center;
     }
+    .content{
+        overflow-y: auto;
+    }
 
     .menu a{
        justify-content: center;
@@ -81,14 +89,23 @@
        width: 40px;
        height: 40px;
     }
-    .perfil-area img{
-        width: 40px;
+    .perfil-area .perfil-img{
+        width:40px;
         height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
     }
 
-    .perfil-area p{
+
+    .perfil-area .username{
         display: none;
     }
+    .perfil-area .welcome{
+        display: none;
+    }
+
 
     .menu a p{
         display: none;
@@ -106,11 +123,13 @@
     <div class="action-btns h-align v-center">
         <p>ConnectFarma</p>
         <div>
-            <button><i class='bx bx-log-out'></i></button>
+            <button onclick="window.location.href='../backend/controllers/logout-adm.php'"><i class='bx bx-log-out'></i></button>
         </div>
     </div>
     <div class="perfil-area v-align vh-center">
-        <img src="pictures/dj.jpg" alt="" srcset="">
+        <div class="perfil-img">
+           <p></p>
+        </div>
         <p class="username">Administrador</p>
         <p class="welcome">Bem Vindo</p>
     </div>
@@ -119,6 +138,11 @@
         <a href="painel-pedido.php" id="menu-pedidos"><i class='bx bx-receipt'></i>  <p>Pedidos</p></a>
         <a href="painel-produtos.php" id="menu-produtos"><i class='bx bxs-capsule'></i> <p>Produtos</p></a>
         <a href="painel-movimentacao.php" id="menu-movimentacao"><i class='bx bx-store-alt'></i> <p>Movimentações</p></a>
-        <a href="" id="menu-recursos"><i class='bx bx-body'></i><p>Recursos Humanos</p></a>
+        <a href="painel-rh.php" id="menu-recursos"><i class='bx bx-body'></i><p>Recursos Humanos</p></a>
     </div>
 </div>
+
+<script src="../backend/requests/get-user-adm.js"></script>
+<script>
+    getAdm(<?php echo $id_user; ?>);
+</script>

@@ -6,6 +6,7 @@ $('#close-historico').click(function () {
 
 $('#bnt-historico').click(function () {
         $('.historico-pedido').delay('300').slideToggle('slow');
+        
 })
 
 $('#close-detalhe').click(function () {
@@ -21,9 +22,9 @@ $('#setaR').click(function () {
         $('#setaL').delay('400').fadeToggle('slow');
         $('#list-em-entrega').delay('400').fadeToggle('slow');
 
-  $('#setaR').css('display', 'flex');
+        $('#setaR').css('display', 'flex');
         $('#setaL').css('display', 'none');
-        
+
 })
 
 $('#setaL').click(function () {
@@ -32,59 +33,49 @@ $('#setaL').click(function () {
         $('#list-em-entrega').delay('100').fadeToggle();
 
         $('#title-painel-pronto').delay('400').fadeToggle('slow');
-        $('#setaR').delay('400').fadeToggle('slow');   
+        $('#setaR').delay('400').fadeToggle('slow');
         $('#list-pronto-entrega').delay('400').fadeToggle('slow');
 
         $('#setaR').css('display', 'none');
         $('#setaL').css('display', 'flex');
 
-        
+
 })
 
-$(window).resize(function() {
-       
+$(window).resize(function () {
+
         var ementrega = document.getElementById('list-em-entrega');
         var pronto = document.getElementById('list-pronto-entrega');
-        var setaR  = document.getElementById('setaR');
-        var setaL  = document.getElementById('setaL');
+        var setaR = document.getElementById('setaR');
+        var setaL = document.getElementById('setaL');
         var tamanhoAtual = $(window).width();
-      
+
         // Verifica se o tamanho atual da tela corresponde ao tamanho desejado
         if (tamanhoAtual > 660) {
-                        $('#list-em-entrega').css('display', 'flex');
-                        $('#list-pronto-entrega').css('display', 'flex');
-                        $('#title-painel-pronto').css('display', 'flex');
-                        $('#title-painel-entrega').css('display', 'flex');
-                        $('#setaR').css('display', 'none');
-                        $('#setaL').css('display', 'none');             
+                $('#list-em-entrega').css('display', 'flex');
+                $('#list-pronto-entrega').css('display', 'flex');
+                $('#title-painel-pronto').css('display', 'flex');
+                $('#title-painel-entrega').css('display', 'flex');
+                $('#setaR').css('display', 'none');
+                $('#setaL').css('display', 'none');
         }
-         else{
+        else {
                 $('#list-em-entrega').css('display', 'none');
                 $('#title-painel-entrega').css('display', 'none');
                 $('#setaR').css('display', 'flex');
 
-         }
-        
-        
-      });
-          
-          
-          
-                      
-         
+        }
+
+
+});
 
 
 
-//mostrar mais pedido Home Cliente
-function showMorePedido(pedidoid) {
-        $('#pedido-content' + pedidoid).delay('300').slideToggle('slow');
-}
+
+
 //exibe pedidos na lateral
 
-//fecha carrinho
-$('#close-pedidos').click(function () {
-        $('.side-pedido').delay('300').slideToggle('slow');
-})
+
 
 //fecha carrinho
 $('#close-carrinho').click(function () {
@@ -97,7 +88,7 @@ $('#close-detalhes').click(function () {
 })
 
 //abre e fecha notificacao
-$('#notificacao-btn').click(function () {
+$('#notificacao-btn svg').click(function () {
         $('.notificacao-modal').delay('300').slideToggle('slow');
 })
 
@@ -176,6 +167,7 @@ function showCarrinho(lock) {
                 $('.popup').prepend('<p class="popup-message">Faça login para acessar o carrinho!</p>');
         } else {
                 $('.carrinho').fadeToggle('slow');
+                $('.side-pedido').fadeOut('slow');
         }
 
 }
@@ -188,6 +180,7 @@ function showPedido(lock) {
                 $('.popup').prepend('<p class="popup-message">Faça login para acessar os pedidos!</p>');
         } else {
                 $('.side-pedido').fadeToggle('slow');
+                $('.carrinho').fadeOut('slow');
         }
 
 }

@@ -1,4 +1,5 @@
 <?php
+    session_name('user');
     session_start();
     header("Access-Control-Allow-Origin: *");
     require_once '../config/connection.php';
@@ -19,7 +20,7 @@
                $_SESSION['user_id'] = $data['id'];
 
                if($data['tipo'] == 1){
-                header('Location: ../..//views/cliente-home.php');
+                header('Location: ../../views/cliente-home.php');
                }
 
             }else{

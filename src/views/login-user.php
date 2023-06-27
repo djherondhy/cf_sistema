@@ -57,9 +57,6 @@
                         <input type="password" placeholder="Digite sua senha" name="senha" id="login-senha" required>
                     </div>
 
-                    <div class="forget">
-                        <a href="#">Esqueceu sua Senha?</a>
-                    </div>
 
                     <input type="submit" value="Entrar" id="login-salvar">
 

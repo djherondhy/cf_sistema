@@ -20,6 +20,7 @@ function getMedicamento(id_produto) {
             $('#detalhe_categoria').empty().append(response.categoria);
             $('#detalhe_preco').empty().append('R$ '+response.preco);
             $('#detalhe_secao').empty().append(response.secao);
+            $('#detalhe_fornecedor').empty().append(response.fornecedor);
             $('#detalhe_quantidade').empty().append(response.quantidade);
             $('#produto-img').prop('src', '../backend/upload/'+response.imagem);
             if(response.codFornecedor == 0){

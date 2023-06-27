@@ -7,7 +7,6 @@
   $tabela = $_POST['tabela'];
  
   
-   
    $stmt = $conn->prepare("SELECT * FROM `$tabela`");
 
    if($stmt->execute()){

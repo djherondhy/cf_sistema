@@ -77,7 +77,11 @@
 }
 
 .topbar .user-perfil img {
+
   width: 100%;
+  height: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
 }
 
 .topbar .notificacao {
@@ -114,6 +118,33 @@
   color: var(--white-color);
   top: -4rem;
   left: 2rem;
+  transition: all 0.5s ease-out;
+  overflow: hidden;
+}
+
+.container-perfil .user-perfil img{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+
+}
+
+
+
+.user-perfil button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-size: 2rem;
+  background: 0;
+  border: 0;
+  color: var(--white-color);
+  background: rgba(255, 255, 255, 0.073);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border-radius: 50%;
+  display: none;
 }
 
 
@@ -144,9 +175,44 @@
   font-size: 0.9rem;
 }
 
+.perfil-info input {
+  min-width: 250px;
+  cursor: pointer;
+}
+
+.perfil-info input:disabled {
+  /* Estilos para o estado disabled */
+  background-color: #fff;
+  color: #000;
+
+}
+
+.perfil-info button {
+  background: 0;
+  border: 0;
+
+}
+
+.ok-btn {
+  display: none;
+}
+
 .nome_completo {
   font-weight: bold;
+  outline: 0;
+  border: 0;
 }
+
+.username-input {
+  border: 0;
+  outline: 0;
+}
+
+.email {
+  border: 0;
+  outline: 0;
+}
+
 
 .perfil-info i {
   color: var(--main-color);
@@ -236,7 +302,7 @@
   word-break: break-all;
 }
 
-.endereco-nome{
+.endereco-nome {
   font-weight: bold;
 }
 
@@ -319,12 +385,10 @@
     margin-right: 0;
     align-items: center;
     flex-direction: column;
+    margin-top: 2rem;
   }
 
-  .container-perfil {
-    background-color: var(--main-color);
-    color: var(--white-color);
-  }
+
 
   .title-perfil h1 {
     color: white;
@@ -342,11 +406,96 @@
     padding-right: 1.3rem;
   }
 
-  .bottons {
+  .edit-perfil{
     background-color: none;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
   }
+  .notificacao svg{
+    cursor: pointer;
+}
+
+.notificacao-modal {
+    width: 400px;
+    height: 300px;
+    background: rgba( 255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    z-index: 1500;
+   
+}
+
+.notificacao-modal button{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background-color: var(--min-gray);
+    border: 0;
+    color: var(--white-color);
+    align-self: flex-end;
+    margin: 1rem;
+}
+
+.notificacao-list{
+    width: 90%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    z-index: 10;
+    overflow: auto;
+}
+.notificacao-list::-webkit-scrollbar {
+    width: 3px;
+}
+
+.notificacao-list::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 3px solid #ccc;
+    /* creates padding around scroll thumb */
+}
+
+.notificacao-item {
+    width: 90%;
+    padding: 0.5rem;
+    background-color: var(--main-color);
+    border-radius: 6px;
+    color: #fff;
+    display: flex;
+    gap: 0.5rem;
+    min-height: 40px;
+}
+
+.notificacao-text p{
+    font-size: 0.8rem;
+}
+
+.notificacao-icon i{
+    width: 30px;
+    height: 30px;
+    color: var(--main-color);
+    background-color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
   .endereco-user {
     display: flex;
@@ -356,6 +505,7 @@
     margin-right: 0;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .two {

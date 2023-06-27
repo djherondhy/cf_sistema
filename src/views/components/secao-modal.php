@@ -1,11 +1,12 @@
 <style>
-
+    .secoes{
+        z-index: 1000;
+    }
 </style>
 <div class="secoes v-align">
     <button class="close-btn" id="close-secoes"><i class='bx bx-x'></i></button>
     <p class="title">Seções</p>
     <div class="action h-align">
-        <div class="busca h-align"><input type="text" placeholder="Procura por código da seção"> <button> <i class='bx bx-search'></i></button></div>
         <button class="add" id="btn-novasecao">  <i class='bx bxs-layer-plus'></i> Nova Seção</button>
     </div>
     <div class="secao-table">

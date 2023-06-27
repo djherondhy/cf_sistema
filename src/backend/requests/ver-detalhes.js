@@ -13,8 +13,7 @@ function verDetalhes(id_produto) {
         dataType: 'json',
         success: function (response) {
             $('.detalhes-container').fadeIn('slow');
-
-          
+            
         }
     });
 }

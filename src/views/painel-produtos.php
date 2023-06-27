@@ -1,3 +1,4 @@
+<?php include 'components/session_verify.php'?>
 <?php
 include '../backend/config/connection.php';
 ?>
@@ -13,6 +14,7 @@ include '../backend/config/connection.php';
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/preset.css">
     <script src="pluguins/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
    
 </head>
 
@@ -25,7 +27,10 @@ include '../backend/config/connection.php';
     <?php include 'components/secao-modal.php' ?>
     <?php include 'components/fornecedores-modal.php' ?>
     <?php include 'components/fornecedores-form.php' ?>
-    
+    <?php include 'components/edit-produto.php' ?>
+    <?php include 'components/edit-fornecedores.php' ?>
+    <?php include 'components/edit-secao.php' ?>
+
     <div class="container h-align v-center">
         <?php include 'components/sidemenu.php';?>
         <div class="content v-align">
@@ -43,19 +48,10 @@ include '../backend/config/connection.php';
                     <p class="title">Produtos</p>
                   
                     <div class="header-list h-align v-center">
-                        <div class="paginacao h-align v-center">
-                        <div class="total">
-                            <p>1-5 de 125</p>
-                        </div>
-                        <div class="parse-btns h-align v-center">
-                            <button disabled> < </button>
-                            <p class="atual-pag">1</p>
-                            <button> > </button>
-                        </div>
-                        </div>
+                      
                         <div class="acoes h-align">
                         <div class="search-input">
-                            <input type="text" placeholder="Buscar">
+                            <input type="text" placeholder="Buscar" id="produto-busca">
                         </div>
                             <button id="btn-filtroProdutos">Todos<i class='bx bx-filter-alt' ></i>
                         </button>
@@ -105,11 +101,6 @@ include '../backend/config/connection.php';
                             <button class="delete" onclick="deleteProdutos('+response[i].id_medicamento+')"><i class="bx bxs-trash-alt"></i></button>
                             </div>
                         </div>
-
-
-                   
-
-
                     </div>
                 </div>
             </section>
@@ -136,6 +127,10 @@ include '../backend/config/connection.php';
     <script src="../backend/requests/fornecedores-post.js"></script>
     <script src="../backend/requests/fornecedores-get.js"></script>
     <script src="../backend/requests/fornecedores-delete.js"></script>
+    <script src="../backend/requests/produto-update.js"></script>
+    <script src="../backend/requests/fornecedores-update.js"></script>
+    <script src="../backend/requests/secao-update.js"></script>
+
     <script>  
 
     $('#menu-produtos').addClass('menu-active');

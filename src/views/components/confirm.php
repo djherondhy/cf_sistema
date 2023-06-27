@@ -10,7 +10,7 @@
         -webkit-backdrop-filter: blur( 4px );
         width: 100vw;
         height: 100vh;
-        z-index: 900;
+        z-index: 2000;
     }
     .confirm-modal{
         padding: 1rem;
@@ -54,4 +54,7 @@
         </div>
     </div>
 </div>
+<script>
+    $('.confirm-container').hide();
+</script>
 <?php ?>

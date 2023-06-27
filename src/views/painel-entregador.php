@@ -1,3 +1,29 @@
+<?php
+session_name('entregador');
+session_start();
+
+if (isset($_SESSION['active'])) {
+    $id_user = $_SESSION['id'];
+    
+    if($_SESSION['permissao'] == 0){
+        session_destroy();
+        header('Location: login-entregador.php?permissao=0');
+    }
+
+    if($_SESSION['tipo'] == 'Gerenciador'){
+        session_destroy();
+        header('Location: login-entregador.php?permissao=0');
+    }
+
+  
+
+} else {
+    session_destroy();
+    header('Location: login-entregador.php');
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,12 +36,10 @@
     <link rel="stylesheet" href="css/historico-sidebar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="pluguins/jquery-3.6.4.min.js"></script>
-    <link rel="stylesheet" href="preset.css">
+    <link rel="stylesheet" href="css/preset.css">
 </head>
 
 <body>
-
-
 
     <div class="historico-pedido">
         <button class="close-btn" id="close-historico"> <i class='bx bx-x'></i> </button>
@@ -90,47 +114,51 @@
             </div>
         </div>
 
-
     </div>
 
     </div>
 
+    <div class="container ">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="container">
-
-        <div class="painel">
+        <div class="painel neomorphism">
             <div class="top-bar">
                 <img src="pictures/entrega.gif" alt="Gif Animado">
-                <div class="title-painel">
-                    <h2>Painel de Entrega</h2>
+
+                <div class="actions">
+                    <p>Bem Vindo, <span class='username'></p>
+                    <div class="perfil-img">
+                        <p></p>
+                    </div>
+
+                    <div class="bnt-hisb"><input type="button" value="Histórico" id="bnt-historico"></div>
+                    <button class="logout"  onclick="window.location.href='../backend/controllers/logout-entregador.php'"><i class='bx bx-log-out'></i></button>
                 </div>
-                <div class="bnt-hisb"><input type="button" value="Histórico" id="bnt-historico"></div>
+
+            </div>
+            <div class="title-painel">
+                <h2>Painel de Entrega</h2>
             </div>
             <div class="title">
-                <h2 id="title-painel-pronto">Pronto Entrega</h2>
+                <h2 id="title-painel-pronto">Apto para Entrega</h2>
                 <h2 id="title-painel-entrega">Em Entrega</h2>
             </div>
             <div class="container-list">
 
 
                 <div class="pedidos-list" id="list-pronto-entrega">
+                    <div class="pedido-card">
+                        <div class="pedido-info">
+                            <p class="pedido-id"><i class="bx bx-package"></i>Pedido #1234</p>
+                            <p class="pedido-cliente"><i class="bx bx-user-circle"></i>Marcos</p>
 
+                            <div class="pedido-tags">
+                                <p class="pedido-data"><i class="bx bx-calendar-alt"></i> 19-06-2023 14:75</p>
+                                <p class="pedido-total"><i class="bx bx-purchase-tag-alt"></i> R$ 12.75</p>
+                                <p class="pedido-pagamento"><i class="bx bx-wallet"></i> Pix</p>
+                                <p class="pedido-recebimento"><i class="bx bx-shopping-bag"></i>Retirada</p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="seta" id="setaL">
@@ -151,5 +179,8 @@
     <script src="js/show-elements.js"></script>
     <script src="js/hide-elements.js"></script>
     <script src="../backend/requests/get-pedidos-entregador.js"></script>
-
+    <script src="../backend/requests/get-user-adm.js"></script>
+    <script>
+        getAdm(<?php echo $id_user; ?>)
+    </script>
 </body>

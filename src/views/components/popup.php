@@ -1,5 +1,5 @@
 <style>
-.popup{
+    .popup{
     width: 300px;
     padding: 1rem;
     background: white;
@@ -65,3 +65,9 @@
     </p>
     <button class="close-popup" onclick="closePopup()"><i class='bx bx-x'></i></button>
 </div>
+
+<script>
+    $('.close-popup').click(function(){
+        $('.popup').fadeOut('slow');
+    })
+</script>

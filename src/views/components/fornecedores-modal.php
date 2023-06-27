@@ -7,7 +7,7 @@
         right: 0;
         padding: 1rem;
         gap: 1rem;
-       
+        z-index: 2000;
     }
 
     .action-header {

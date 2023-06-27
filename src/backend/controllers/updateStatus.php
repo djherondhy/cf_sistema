@@ -40,25 +40,27 @@ try {
         $consulta = "SELECT quantidade, id_produto FROM pedido_item WHERE id_pedido = '$id_pedido'";
 
         $query = $conn->prepare($consulta);
-       // $query->execute();
+        $query->execute();
 
-       // $dados = $query->fetchAll(PDO::FETCH_ASSOC);
+        $dados = $query->fetchAll(PDO::FETCH_ASSOC);
 
-      // for($i = 0; $i< $query->rowCount(); $i++){
-        //    $quantidade = $dados[$i]['quantidade'];
-        //    $id_produto = $dados[$i]['id_produto'];
-          //  $dataAtual = date('Y-m-d'); 
-            //$conn->exec("INSERT INTO `movimentacao` ( `id_produto`, `descricao`, `data`, `tipo`, `quantidade`) VALUES ('$id_produto', 'Pedido', '$dataAtual', '0', '$quantidade');");
+       for($i = 0; $i< $query->rowCount(); $i++){
+            $quantidade = $dados[$i]['quantidade'];
+            $id_produto = $dados[$i]['id_produto'];
+            $dataAtual = date('Y-m-d'); 
+            $conn->exec("INSERT INTO `movimentacao` ( `id_produto`, `descricao`, `data`, `tipo`, `quantidade`) VALUES ('$id_produto', 'Pedido', '$dataAtual', '0', '$quantidade');");
 
-        //}
+        }
 
 
 
     }
+
+    if ($status == 'Cancelado') {
+        $conn->exec("INSERT INTO `notificacao`(`id_pedido`,`id_cliente`,`mensagem`)VALUES('$id_pedido','$id_cliente','O Pedido #$id_pedido foi cancelado.')");
+    }
+
     
-
-
-
 
 
 

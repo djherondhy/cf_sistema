@@ -9,7 +9,7 @@
         -webkit-backdrop-filter: blur(4px);
         width: 100vw;
         height: 100vh;
-        z-index: 900;
+        z-index: 2000;
     }
 
     .fornecedor-modal {
@@ -70,3 +70,8 @@
         </form>
     </div>
 </div>
+
+<script>
+$('#fornecedores-cnpj').mask('00.000.000/0000-00');
+$('#fornecedores-telefone').mask('(00)00000-0000');
+</script>

@@ -1,3 +1,5 @@
+<?php include 'components/session_verify.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,9 @@
     <link rel="stylesheet" href="css/painel-pedido.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/preset.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="pluguins/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -21,13 +25,16 @@
         include 'components/sidemenu.php';
         include 'components/filtro-pedidos.php';
         ?>
+        <?php
+        include 'components/cancelar.php';
+        ?>
         <div class="content v-align">
             <div class="pedido-container neomorphism">
                 <p class="title">Gerenciamento de Pedidos</p>
                 <div class="actions">
                     <div class="input-date">
                         <input type="text" placeholder="Busca por Data, Cliente ou Código" id="busca">
-                        <label for="data" id="dataLabel"><i class='bx bx-calendar'></i></label>
+                        <label for="busca" id="dataLabel"><i class='bx bx-calendar'></i></label>
                     </div>
                     <button class="produto-filtro">Todos <i class='bx bx-filter-alt'></i></button>
                 </div>
@@ -93,6 +100,11 @@
         $('.produto-filtro').click(function () {
             $('.filtro-container').fadeIn('slow');
         });
+
+        $('#dataLabel').click(function () {
+            $('#busca').datepicker();
+        })
+
 
         $('#menu-pedidos').addClass('menu-active');
     </script>

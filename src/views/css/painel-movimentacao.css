@@ -73,6 +73,15 @@
     color: var(--dark-color);
 }
 
+.mov-filter input[type="radio"]{
+    display: none;
+}
+
+.active {
+    background-color: var(--main-color);
+    color: var(--white-color);
+}
+
 .input-date{
     display: flex;
     border: 1px solid var(--main-color);
@@ -173,4 +182,60 @@
     color:#eb2f61;
     font-size: 1.2rem;
    
+}
+
+.input-agroup {
+    gap: 0.5rem;
+}
+
+.input-agroup input[type="text"] {
+    border-radius: 6px;
+    padding: 0.5rem;
+    border: 1px solid var(--gray-color);
+    outline-color: var(--main-color);
+}
+
+.input-agroup input[type="number"] {
+    border-radius: 6px;
+    padding: 0.5rem;
+    border: 1px solid var(--gray-color);
+    outline-color: var(--main-color);
+}
+
+
+.input-agroup input[type="submit"] {
+    background-color: var(--main-color);
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    border: 0;
+    color: var(--white-color);
+}
+
+.input-agroup label {
+    color: var(--dark-gray);
+    font-weight: 600;
+}
+
+.input-agroup select{
+    border-radius: 6px;
+    padding: 0.4rem;
+    border: 1px solid var(--gray-color);
+    outline: 1px;
+    outline-color: var(--main-color);
+   
+}
+
+
+.input-agroup select:focus{
+    border: 1px solid var(--main-color);
+}
+
+@media screen and (max-width: 676px){
+    .mov-filter{
+        flex-wrap: wrap;
+    }
+
+    .mov-list{
+        height: 65%;
+    }
 }

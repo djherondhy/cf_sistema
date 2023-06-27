@@ -137,6 +137,33 @@ function MHistorico() {
     });
 }
 
+function getPedidoItens(_id_pedido) {
+ 
+    $('#pedido-content'+_id_pedido).slideDown('slow');
+
+    $.ajax({
+        url: '../backend/controllers/getPedidoItem.php',
+        method: 'post',
+        data: { id_pedido: _id_pedido },
+        dataType: 'json',
+        success: function (response) {
+            var length = response.length;
+            $('#itens-list'+ _id_pedido+' .item-pedido').remove();
+
+            for (var i = 0; i < length; i++) {
+                $('#itens-list' + _id_pedido).append('<div class="item-pedido">'
+                + '<p>'+response[i].quantidade+'x '+response[i].nome_comercial+'</p>'
+                + '<p>R$ '+response[i].preco+'</p>'
+                + '</div>');
+            }
+        }   
+    });
+   
+
+}
+
+
+
 
 function SemanaHistorico() {
     var dados = {
@@ -323,7 +350,7 @@ function showMorePedido(pedidoid) {
 function getPedidosEntregadorProntoEntrega() {
     var dados = {
         tabela: 'pedido',
-        status: 'Apto para entrega'
+        status: 'Apto para Entrega'
     }
 
     var dadosJson = JSON.stringify(dados);
@@ -344,19 +371,18 @@ function getPedidosEntregadorProntoEntrega() {
 
             for (var i = 0; i < length; i++) {
 
+                $('#list-pronto-entrega').append('<div class="pedido-card" onclick="openPedidoDetalhe(' + response[i].id_pedido + ',1,1)">'
+                + '<div class="pedido-info">'
+                + '<p class="pedido-id"><i class="bx bx-package"></i>Pedido #'+response[i].id_pedido+'</p>'
+                + '<p class="pedido-cliente"><i class="bx bx-user-circle"></i>'+response[i].username+'</p>'
+                + '<div class="pedido-tags">'
+                + '<p class="pedido-data"><i class="bx bx-calendar-alt"></i> '+response[i].data+' 14:75</p>'
+                + '<p class="pedido-total"><i class="bx bx-purchase-tag-alt"></i> R$ '+response[i].subtotal+'</p>'
+                + '<p class="pedido-pagamento"><i class="bx bx-wallet"></i> '+response[i].forma_pagamento+'</p>'
+                + '</div>'
+                + '</div>'
+                + '</div>');
 
-
-                $('#list-pronto-entrega').append('<div class="list" id="pronto-entreg" onclick="openPedidoDetalhe(' + response[i].id_pedido + ',1,1)">' +
-                    '<div class="info-list">' +
-                    ' <h4><i class="bx bxs-shopping-bag"></i>&ensp;Pedido ' + response[i].id_pedido + '&ensp;</h4>' +
-                    '<p>' + response[i].hora + ' h</p>' +
-                    '</div>' +
-                    '<h4><i class="bx bxs-user"></i>&ensp;' + response[i].username + '</h4>' +
-                    '<div class="info-list2">' +
-                    '<h4>R$     ' + response[i].subtotal + '&ensp;</h4><p>(' + response[i].forma_pagamento + ')</p>' +
-                    '</div>' +
-
-                    '</div>');
             }
         }
     });
@@ -371,7 +397,7 @@ function getPedidosEntregadorEmEntrega() {
 
     var dados = {
         tabela: 'pedido',
-        status: 'Em entrega'
+        status: 'Em Entrega'
     }
 
     var dadosJson = JSON.stringify(dados);
@@ -391,20 +417,18 @@ function getPedidosEntregadorEmEntrega() {
             var length = response.length;
 
             for (var i = 0; i < length; i++) {
-                var minutos = response[i].horas
 
-                $('#list-em-entrega').append('<div class="list" id="pronto-entreg" onclick="openPedidoDetalhe(' + response[i].id_pedido + ',2,1)">' +
-                    '<div class="info-list">' +
-                    ' <h4><i class="bx bxs-shopping-bag"></i>&ensp;Pedido ' + response[i].id_pedido + '&ensp;</h4>' +
-                    '<p> ' + response[i].hora + ' h</p>' +
-                    '</div>' +
-                    '<h4><i class="bx bxs-user"></i>&ensp;' + response[i].username + '</h4>' +
-                    '<div class="info-list2">' +
-                    '<h4>R$ ' + response[i].subtotal + '&ensp;</h4><p>(' + response[i].forma_pagamento + ')</p>' +
-                    '</div>' +
-                    '</div>');
-
-
+                $('#list-pronto-entrega').append('<div class="pedido-card" onclick="openPedidoDetalhe(' + response[i].id_pedido + ',2,1)">'
+                    + '<div class="pedido-info">'
+                    + '<p class="pedido-id"><i class="bx bx-package"></i>Pedido #'+response[i].id_pedido+'</p>'
+                    + '<p class="pedido-cliente"><i class="bx bx-user-circle"></i>'+response[i].username+'</p>'
+                    + '<div class="pedido-tags">'
+                    + '<p class="pedido-data"><i class="bx bx-calendar-alt"></i> '+response[i].data+' 14:75</p>'
+                    + '<p class="pedido-total"><i class="bx bx-purchase-tag-alt"></i> R$ '+response[i].subtotal+'</p>'
+                    + '<p class="pedido-pagamento"><i class="bx bx-wallet"></i> '+response[i].forma_pagamento+'</p>'
+                    + '</div>'
+                    + '</div>'
+                    + '</div>');
 
             }
 
@@ -601,26 +625,17 @@ function Finalizar(id_pedido) {
 
 //FUNÇÃO PARA MSOTRAR OS MEDICAMENTOS COMPRADOS
 function MedicamentosInfo(_id_pedido, tipo) {
-    var dados = {
-        tabela: 'pedido',
-        status: 'Apto para entrega'
-    }
-    var id = _id_pedido;
-    var dadosJson = JSON.stringify(dados);
 
     $.ajax({
-        url: '../backend/controllers/getPedidosMedicamento.php',
+        url: '../backend/controllers/getPedidoItem.php',
         method: 'post',
-        data: {
-            data: dadosJson
-        },
+        data: { id_pedido: _id_pedido },
         dataType: 'json',
         success: function (response) {
-            console.log(response);
             var length = response.length;
-
+            console.log(response);
             for (var s = 0; s < length; s++) {
-                if (id == response[s].id_pedido) {
+                
                     $('#' + tipo + '').append('' +
                         '' +
                         '<div class="item-pedido">' +
@@ -633,10 +648,12 @@ function MedicamentosInfo(_id_pedido, tipo) {
 
 
                     );
-                }
+                
             }
-        }
-    })
+        }   
+    });
+
+ 
 }
 
 getPedidosEntregadorProntoEntrega()

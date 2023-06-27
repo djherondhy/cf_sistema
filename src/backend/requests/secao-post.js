@@ -17,8 +17,11 @@ $('#form-secao').submit(function(e){
         dataType: 'json',
         success: function(response){
             console.log(response);
+            $('.secao-container').fadeOut('slow');
             getSecao();
             populateProdutos();
+            ('#secao-codigo').val('');
+            $('#secao-localizacao').val('');
         },
         error: function(status, error){
             console.log(error);

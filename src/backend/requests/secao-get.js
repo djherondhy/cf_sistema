@@ -14,7 +14,7 @@ function getSecao(){
                 +'<td>'+response[i].codigo+'</td>'
                 +'<td>'+response[i].localizacao+'</td>'
                 +'<td>'
-                +'<button><i class="bx bxs-edit"></i></button>  '
+                +'<button onclick="getSecaoUpdate('+response[i].id_secao+')"><i class="bx bxs-edit"></i></button>  '
                 +'<button class="delete" id="delete-secao" onclick="deleteSecao('+response[i].id_secao+')"><i class="bx bxs-trash-alt"></i></button>'
                 +'</td>'
                 +'</tr>')

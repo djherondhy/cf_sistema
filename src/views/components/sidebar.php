@@ -62,7 +62,7 @@
         top:1rem;
         left:0;
         padding: 1rem;
-        z-index: 1000;
+        z-index: 500;
         background-color: var(--main-color);
         border-radius: 0px 10px 10px 0px;
         cursor: pointer;
@@ -73,7 +73,7 @@
     }
     @media screen and (max-width: 660px){
         .sidebar{
-            z-index: 900;
+            z-index: 400;
              width: 150px;
              display: none;
              transition: all 0.5s ease-out;
@@ -97,7 +97,7 @@
     <i class='bx bx-menu'></i>
 </div>
 <div class="sidebar">
-    <div class="sidebar-item sidebar-active">
+    <div class="sidebar-item sidebar-active" onclick="window.location.href='cliente-home.php'">
     <i class='bx bxs-dashboard'></i>
         <p>Home</p>
     </div>
@@ -108,10 +108,6 @@
     <div class="sidebar-item" id="menu-carrinho" onclick="showCarrinho(<?php if (isset($_SESSION['active'])){ echo 0;}else{echo 1;} ?>)">
     <i class='bx bx-cart-alt' ></i>
         <p>Carrinho</p>
-    </div>
-    <div class="sidebar-item" onclick="">
-    <i class='bx bx-heart' ></i>
-        <p>Favoritos</p>
     </div>
     <?php if (isset($_SESSION['active'])){ ?>
     <div class="sidebar-item" onclick="window.location.href='profile-user.php'">

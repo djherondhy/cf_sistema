@@ -11,7 +11,7 @@ $data = json_decode($_POST['data'], true);
 $_data = $data['data'];
 $status = $data['status'];
 
-$sql = "SELECT mov.*, m.nome_comercial FROM `movimentacao` as mov JOIN `medicamentos` as m ON m.id_medicamento = mov.id_produto  WHERE data LIKE '$_data' and tipo LIKE '$status'";
+$sql = "SELECT mov.*, m.nome_comercial FROM `movimentacao` as mov JOIN `medicamentos` as m ON m.id_medicamento = mov.id_produto  WHERE mov.data LIKE '%$_data%' and mov.tipo LIKE '%$status%'";
 
 $stmt = $conn->prepare($sql);
 

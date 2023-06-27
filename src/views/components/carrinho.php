@@ -1,11 +1,11 @@
 <style>
     .carrinho {
         position: fixed;
-        width: 350px;
+        width: 400px;
         height: 100vh;
         right: 0;
         background-color: var(--dark-color);
-        z-index: 999;
+        z-index: 2000;
         gap: 1rem;
     }
 
@@ -143,3 +143,9 @@
         <button id="finalizar-pedido">Finalizar Pedido</button>
     </div>
 </div>
+
+<script>
+    $('#close-carrinho').click(function(){
+        $('.carrinho').fadeIn('slow');
+    })
+</script>

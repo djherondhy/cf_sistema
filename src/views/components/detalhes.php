@@ -32,9 +32,8 @@
 
     .detalhes-info{
         display: flex;
-        width: 20rem;
+        width: 50%;
         background-color: none;
-        align-items: center;
         flex-direction: column;
     }
 
@@ -44,27 +43,47 @@
 
     .detalhes-imagem img{
         width: 15rem;
+        object-fit: contain;
     } 
-    h1{
-        font-size:1.5rem;
+    .detalhes-imagem h1{
+        font-size:1rem;
         text-align: center;
         margin-bottom: 1rem;
     }
-    p{
+
+    .detalhes-info h1{
         font-size:1rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .detalhes-info p{
+        font-size:0.8rem;
         text-align: justify;
     }
 
-    .card-category, .card-info{
+    .card-category{
         display: flex;
         align-items: center;
         background-color: rgb(239, 239, 239);
         padding: 0.5rem;
-        padding-right: 13rem;
+        width: 100%;
         margin-top: 1rem;
         border-radius: 1rem;
-        
+        gap: 0.5rem;
+    } 
+
+    
+    .card-info{
+        display: flex;
+        align-items: center;
+        background-color: rgb(239, 239, 239);
+        padding: 0.5rem;
+        margin-top: 1rem;
+        border-radius: 1rem;
+        width: 100%;
     }
+
+ 
     i{
         color: var(--main-color);
         width: 30px;
@@ -73,8 +92,8 @@
 
     .cad-group{
         display: flex;
-        justify-content: space-between;
         flex-direction: row;
+        width: 100%;
     }
 
     .card-buttons a{
@@ -156,7 +175,7 @@
 
         <div class="detalhes-imagem">
             <h1 id="detalhes-nome">Omeprazol - 100 MG</h1>
-            <img src="pictures/remedios/omeprazol.png">
+            <img src="pictures/remedios/omeprazol.png" id="detalhes-imagem">
         </div>
 
         <div class="detalhes-info">
@@ -176,18 +195,12 @@
                 </div>
                 <div class="card-buttons">    
                     <div class="add">
-                        <a href="">
+                        <a href="#" onclick="" id='ad-carrinho'>
                             <i class='bx bxs-cart-add'></i>
                             <p>Carrinho</p>
                         </a>
                     </div>
                     
-                    <div class="favorito">
-                        <a href="">
-                            <i class='bx bxs-heart'></i>
-                            <p>Favorito</p>
-                        </a>
-                    </div>
 
                 </div>
             </div>
@@ -197,3 +210,7 @@
 
     </div>
 </div>
+
+<script>
+    $('.detalhes-container').hide();
+</script>

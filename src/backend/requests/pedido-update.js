@@ -1,4 +1,34 @@
 
+function cancelarPedidoInit(_id_pedido, _id_cliente){
+    $('.cancelar-container').fadeIn('slow');
+    $('#pedido-cancelar').click(function(){
+        $('.cancelar-container').fadeOut('slow');
+    });
+
+    $('#pedido-confirmar').click(function(){
+        updateStatus(_id_pedido, _id_cliente, 4);
+        $('.cancelar-container').fadeOut('slow');
+        getPedidos();
+    })
+   
+
+}
+
+
+
+function cancelarPedido(_id_pedido, _id_cliente){
+    $('.cancelar-container').fadeIn('slow');
+    $('#pedido-cancelar').click(function(){
+        $('.cancelar-container').fadeOut('slow');
+    });
+
+    $('#pedido-confirmar').click(function(){
+        updateStatus(_id_pedido, _id_cliente, 4);
+        $('.cancelar-container').fadeOut('slow');
+    })
+}
+
+
 function updateStatus(_id_pedido, _id_cliente, _status){
     var dados = {
         id_pedido: _id_pedido,
@@ -38,8 +68,8 @@ function updateStatus(_id_pedido, _id_cliente, _status){
         dataType: 'json',
         success: function(response){
             console.log(response);
-            getPopup('Pedido Atualizado');
             getPedidos();
+           
         }
     });
 }

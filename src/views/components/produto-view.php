@@ -9,7 +9,7 @@
         top: 0;
         padding: 1rem;
         gap: 1rem;
-        z-index: 1000;
+        z-index: 2000;
     }
 
     .produto-detalhes img {
@@ -176,24 +176,10 @@
                 </div>
                 <div class="secao-info h-align v-center">
                     <span class="icon"> <i class='bx bx-current-location'></i></span>
-                    <p>Localização: <span id="detalhe_localizacao">Prateleira X, Coluna N</span> </p>
-                </div>
-                <div class="secao-info h-align v-center">
-                    <span class="icon"> <i class='bx bx-current-location'></i></span>
                     <p>Fornecedor: <span id="detalhe_fornecedor">Souza LTDA</span> </p>
                 </div>
             </div>
-            <div class="movimentacao-info">
-               <p> Movimentação</p>
-                <div class="movimentacao-btns h-align"> 
-                    <button id="btn-saida" class="saida h-align vh-center">
-                        Saída
-                    </button>
-                    <button id="btn-entrada" class="entrada h-align vh-center">
-                        Entrada
-                    </button>
-                </div>
-            </div>
+          
         </div>
     </div>
 

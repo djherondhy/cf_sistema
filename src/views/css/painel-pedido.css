@@ -207,3 +207,56 @@
     color: var(--main-color);
     cursor: pointer;
 }
+
+@media screen and (max-width: 1037px){
+    .content{
+        width: 85%;
+    }
+
+    .pedido-card{
+        width: 95%;
+    }
+
+    .pedido-tags{
+        flex-wrap: wrap;
+    }
+}
+
+
+@media screen and (max-width: 1037px){
+    .pedido-card{
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .status-action{
+        flex-wrap: wrap;
+    }
+}
+
+
+@media screen and (max-width: 676px){
+
+    .pedido-list{
+        height: 70%;
+    }
+
+    .pedido-card .pedido-tags{
+        display: none;
+    }
+
+    .pedido-pagamento{
+        display: none;
+    }
+
+    .actions{
+        flex-wrap: wrap; 
+    }
+
+    .actions input{
+       width: 80%;
+    }
+
+}
+
+
